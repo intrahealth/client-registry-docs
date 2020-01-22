@@ -13,7 +13,7 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
-        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/developer/">
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/installation/">
       
       
         <meta name="author" content="IntraHealth">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Developer - Open Client Registry</title>
+        <title>Installation - Open Client Registry</title>
       
     
     
@@ -91,6 +91,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#installation" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -113,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Developer
+                Installation
               
             </span>
           
@@ -258,10 +262,74 @@
       
       
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Installation
+      </label>
+    
+    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
+      Installation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-ports" class="md-nav__link">
+    Default ports:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-usage" class="md-nav__link">
+    Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    How to Install
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
 
   <li class="md-nav__item">
-    <a href="../decision_rules/" title="Decision Rules" class="md-nav__link">
-      Decision Rules
+    <a href="../configuration/" title="Server Configuration" class="md-nav__link">
+      Server Configuration
     </a>
   </li>
 
@@ -270,18 +338,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Developer" class="md-nav__link md-nav__link--active">
-      Developer
+  <li class="md-nav__item">
+    <a href="../decision_rules/" title="Decision Rules" class="md-nav__link">
+      Decision Rules
     </a>
-    
   </li>
 
     
@@ -304,17 +365,81 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#default-ports" class="md-nav__link">
+    Default ports:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-usage" class="md-nav__link">
+    Memory Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install" class="md-nav__link">
+    How to Install
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/developer.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/installation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Developer</h1>
-                
-                
+                <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<h2 id="default-ports">Default ports:<a class="headerlink" href="#default-ports" title="Permanent link">&para;</a></h2>
+<p><strong>3000</strong>: Standalone/mediator application
+<strong>9200</strong>: ElasticSearch
+<strong>8080</strong>: HAPI FHIR Server</p>
+<h2 id="memory-usage">Memory Usage<a class="headerlink" href="#memory-usage" title="Permanent link">&para;</a></h2>
+<p>Memory usage depends on the number of records and the performance required.</p>
+<p>For local development on a PC:</p>
+<ul>
+<li>PC with multiple cores</li>
+<li>8GB of RAM should be available</li>
+</ul>
+<p>For production, at minimum:</p>
+<p>32GB with 24GB free for the Client Registry is recommended for light loads if using one VM.</p>
+<ul>
+<li>16GB minimum for ElasticSearch with 32GB preferred or 64GB for high volume: Follow the guidelines provided by the maintainers <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/hardware.html#_memory">here</a>. Use 2-8 cores.</li>
+<li>8GB for OpenHIM, mediator, Postgres, and HAPI FHIR Server.</li>
+</ul>
+<p>Benchmarking will be completed in future phases to make recommendations for heavy workloads.</p>
+<h2 id="how-to-install">How to Install<a class="headerlink" href="#how-to-install" title="Permanent link">&para;</a></h2>
+<p>Under construction.</p>
+<p><img alt="" src="https://media.giphy.com/media/905GG7MjDw61q/giphy.gif" /></p>
                 
                   
                 
@@ -346,7 +471,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../decision_rules/" title="Decision Rules" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../workflow/" title="Workflow" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -355,19 +480,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Decision Rules
+                Workflow
               </span>
             </div>
           </a>
         
         
-          <a href="../contributing/" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuration/" title="Server Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Contributing
+                Server Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

@@ -2,9 +2,9 @@
 
 ## Default ports:
 
-**3000**: Standalone/mediator application
-**9200**: ElasticSearch
-**8080**: HAPI FHIR Server
+* **3000**: Standalone/mediator application
+* **9200**: ElasticSearch
+* **8080**: HAPI FHIR Server
 
 ## Memory Usage
 
