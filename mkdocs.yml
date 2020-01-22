@@ -2,7 +2,7 @@
 site_name: "Open Client Registry"
 site_description: "Technical documentation for the Open Client Registry"
 site_author: "IntraHealth"
-site_url: "https://github.com/squidfunk/mkdocs-material"
+site_url: "https://github.com/intrahealth/client-registry-docs"
 
 # Repository
 repo_name: "intrahealth/client-registry-docs"
@@ -30,6 +30,7 @@ nav:
   - 'workflow.md'
   - 'decision_rules.md'
   - 'developer.md'
+  - 'contributing.md'
 
 markdown_extensions:
   - admonition
