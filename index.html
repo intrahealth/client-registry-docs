@@ -263,7 +263,7 @@
       
         <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
-    Use Cases?
+    Use Cases
   </a>
   
 </li>
@@ -375,7 +375,7 @@
       
         <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
-    Use Cases?
+    Use Cases
   </a>
   
 </li>
@@ -419,7 +419,7 @@
 <p class="admonition-title">Caution</p>
 <p>This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it patient clinical data.</p>
 </div>
-<h2 id="use-cases">Use Cases?<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
+<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h2>
 <p>The CR is one component in a more complex HIS architecture needed to accomplish important use cases, such as:</p>
 <ul>
 <li>
@@ -434,16 +434,16 @@
 <p>The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a unique identifier to enable use cases like deduplication - which must be an external process. </p>
 </div>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<p>The Client Registry is not one application, instead it's a set of applications that work together in the <a href="ohie.org">Open Health Information Exchange (OpenHIE)</a> architecture to serve point-of-service systems, like EMRs, insurance mechanisms, and labs.</p>
+<p>The Client Registry is not one application, instead it's a set of applications that work together in the <a href="http://ohie.org">Open Health Information Exchange (OpenHIE)</a> architecture to serve point-of-service systems, like EMRs, insurance mechanisms, and labs.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>This is not an OpenHIE product. It is a prototypical client registry to facilitate discussion among a broad set of stakeholders. </p>
 </div>
 <p>The architecture is made up of:</p>
 <ul>
-<li>The <a href="openhim.org"><strong>Open Health Information Mediator (OpenHIM)</strong></a>: The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions.</li>
-<li>The <a href="hapifhir.io"><strong>HAPI FHIR Server</strong></a>: HAPI is the reference FHIR server in Java and scalable into production environments.</li>
-<li>The <a href="elastic.co/products/elasticsearch"><strong>ElasticSearch</strong></a>: Elasticsearch is a powerful search engine that is highly performant.</li>
+<li>The <a href="http://openhim.org"><strong>Open Health Information Mediator (OpenHIM)</strong></a>: The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions.</li>
+<li>The <a href="http://hapifhir.io"><strong>HAPI FHIR Server</strong></a>: HAPI is the reference FHIR server in Java and scalable into production environments.</li>
+<li>The <a href="http://elastic.co/products/elasticsearch"><strong>ElasticSearch</strong></a>: Elasticsearch is a powerful search engine that is highly performant.</li>
 <li>An <strong>optional UI</strong> to view and break matches between records, and to select and chain together decision rules around matching algorithms.</li>
 </ul>
 <p><img alt="Alt text" src="images/architecture.png" title="Architecture" /></p>
