@@ -1,0 +1,47 @@
+# Project information
+site_name: "Open Client Registry"
+site_description: "Technical documentation for the Open Client Registry"
+site_author: "IntraHealth"
+site_url: "https://github.com/squidfunk/mkdocs-material"
+
+# Repository
+repo_name: "intrahealth/client-registry-docs"
+repo_url: "https://github.com/intrahealth/client-registry-docs"
+
+# Copyright
+copyright: "Copyright &copy; 2020 IntraHealth International"
+
+# Theme
+theme:
+  name: "material"
+  palette:
+    primary: "blue grey"
+    accent: "indigo"
+  language: "en"
+  feature:
+    tabs: false
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+
+nav:
+  - 'index.md'
+  - 'get_started.md'
+  - 'workflow.md'
+  - 'decision_rules.md'
+  - 'developer.md'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - git-revision-date-localized
+# theme:
+# logo: 'images/logo.png' must be 128x128
+# logo:
+#   icon: 'menu_book'
