@@ -4,7 +4,7 @@ There may be many areas of potential contribution as the Client Registry is not 
 
 It's recommended that you identify the specific feature or use case that needs support and 
 
-For a quick question, reach out on the iHRIS Slack team. Sign up here: https://www.ihris.org/wp-login.php?action=slack-invitation
+For a quick question, reach out on the iHRIS Slack team. Sign up [here](https://www.ihris.org/wp-login.php?action=slack-invitation)
 
 For a bug or feature, reach out to the relevant repository to share the information. See the developer page for links to the different applications.
 
