@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+     <loc>https://github.com/squidfunk/mkdocs-material/</loc>
+     <lastmod>2020-01-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/squidfunk/mkdocs-material/get_started/</loc>
+     <lastmod>2020-01-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/squidfunk/mkdocs-material/workflow/</loc>
+     <lastmod>2020-01-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/squidfunk/mkdocs-material/decision_rules/</loc>
+     <lastmod>2020-01-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/squidfunk/mkdocs-material/developer/</loc>
+     <lastmod>2020-01-21</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+</urlset>
