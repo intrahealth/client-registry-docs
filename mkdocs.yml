@@ -28,6 +28,7 @@ nav:
   - 'index.md'
   - 'get_started.md'
   - 'workflow.md'
+  - 'openmrs.md'
   - 'installation.md'
   - 'configuration.md'
   - 'decision_rules.md'
