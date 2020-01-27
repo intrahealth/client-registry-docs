@@ -14,7 +14,7 @@ Every client wishing to use the Client Registry must be authenticated and author
 
 Decision rules determine how matches are made among records, for example, by using a certain algorithm on one field and a different algorithm on another. 
 
-Let's use the below example.
+Let's use the below example:
 
 `rules.givenName` is used as one rule on the field givenName.
 
