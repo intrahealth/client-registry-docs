@@ -2,7 +2,7 @@
 
 ## Overview
 
-Demographic data from submitting systems is stored in HAPI FHIR. Demographic data may also be stored in ElasticSearch (ES) as required. It is recommended to use ES.
+Demographic data from submitting systems is stored in HAPI FHIR. It is also recommended that the demographic data that is primarily stored in HAPI FHIR be indexed into Elasticsearch.
 
 For match processing, there are two options. One is run in mediator-only mode, which is highly flexible and supports a handful of algorithms that can be chained together. Additional algorithms can be added as needed. 
 

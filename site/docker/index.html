@@ -13,7 +13,7 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
-        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/decision_rules/">
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/docker/">
       
       
         <meta name="author" content="IntraHealth">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Decision Rules - Open Client Registry</title>
+        <title>Docker - Open Client Registry</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#decision-rules" tabindex="1" class="md-skip">
+      <a href="#docker" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Decision Rules
+                Docker
               
             </span>
           
@@ -274,11 +274,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
       Docker
     </a>
+    
   </li>
 
     
@@ -334,56 +343,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Decision Rules
-      </label>
-    
-    <a href="./" title="Decision Rules" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../decision_rules/" title="Decision Rules" class="md-nav__link">
       Decision Rules
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-set-decision-rules" class="md-nav__link">
-    How to Set Decision Rules
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -416,29 +380,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-set-decision-rules" class="md-nav__link">
-    How to Set Decision Rules
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -449,55 +390,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/decision_rules.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/docker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="decision-rules">Decision Rules<a class="headerlink" href="#decision-rules" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Demographic data from submitting systems is stored in HAPI FHIR. Demographic data may also be stored in ElasticSearch (ES) as required. It is recommended to use ES.</p>
-<p>For match processing, there are two options. One is run in mediator-only mode, which is highly flexible and supports a handful of algorithms and more can be added and chained together. ES can also be used and is very fast but currently only supports Levenshtein distance but does support compound queries. When using ES, every request to the FHIR Server is cached in ES.</p>
-<p>(One additional caveat for Levenshtein distance is that the mediator-only matching can support edit distances exceeding two, while ES edit distance cannot exceed two.)</p>
-<p>Every client wishing to use the Client Registry must be authenticated and authorized. See the configuration page for more information. </p>
-<h2 id="how-to-set-decision-rules">How to Set Decision Rules<a class="headerlink" href="#how-to-set-decision-rules" title="Permanent link">&para;</a></h2>
-<p>Decision rules determine how matches are made among records, for example, by using a certain algorithm on one field and a different algorithm on another. </p>
-<p>Let's use the below example:</p>
-<p><code>rules.givenName</code> is used as one rule on the field givenName.</p>
-<p><code>rules.givenName.algorithm</code> defines an algorithm, in this instance Jaro-Winkler, and an threshold for that algorithm unique to it.</p>
-<p><code>rules.givenName.path</code> is a required FHIRpath for the fields, a standard way to define how to traverse a FHIR resource. In future, a GUI may be used for defining the FHIRpath.</p>
-<p>By default, all of the rules are chained together in a logical AND statement. In ES the search queries are assembled into compound queries.</p>
-<p><a href="https://github.com/openhie/client-registry/blob/master/server/config/decision_rules.json">Link to file</a></p>
-<p>Contents of <code>server/config/decision_rules.json</code></p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;__comments&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;Its a fhir path, for syntax refer to https://www.hl7.org/fhir/fhirpath.html&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String, Date, Number or Boolean&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;threshold&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;levenshtein&quot;</span><span class="p">:</span> <span class="s2">&quot;Lower the number, the closer the match, 0 being exact match&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;jaro-winkler&quot;</span><span class="p">:</span> <span class="s2">&quot;number between 0 and 1, where 0 for no match and 1 for exact match&quot;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;givenName&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;jaro-winkler&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.89</span><span class="p">,</span>
-      <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;name.where(use=&#39;official&#39;).last().given&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;systems&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;system1&quot;</span><span class="p">,</span> <span class="s2">&quot;system2&quot;</span><span class="p">,</span> <span class="s2">&quot;system3&quot;</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;familyName&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;damerau-levenshtein&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;threshold&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;name.where(use=&#39;official&#39;).last().family&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;gender&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">&quot;algorithm&quot;</span><span class="p">:</span> <span class="s2">&quot;exact&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;gender&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;String&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The latest tag is not supported by ES. </p>
+</div>
+<p>Under construction.</p>
+<p><img alt="" src="https://media.giphy.com/media/905GG7MjDw61q/giphy.gif" /></p>
                 
                   
                 
@@ -507,7 +409,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: January 27, 2020
+                        Last update: January 28, 2020
                       
                     </small>
                   </div>
@@ -529,7 +431,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../configuration/" title="Server Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../openmrs/" title="OpenMRS MPI Client" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -538,19 +440,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Server Configuration
+                OpenMRS MPI Client
               </span>
             </div>
           </a>
         
         
-          <a href="../contributing/" title="Contributing" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../installation/" title="Installation (Non-Production)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Contributing
+                Installation (Non-Production)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
