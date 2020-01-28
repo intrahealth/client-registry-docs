@@ -2,16 +2,16 @@
 
 ## Summary
 
-A Client Registry holds patient identifers and may include patient demographic information. It is a necessary tool for  the public health use cases that require managing patients, monitoring outcomes, and conducting case-based surveillance.
+A Client Registry (CR) holds patient identifers and may include patient demographic information. It is a necessary tool for public health use cases that require managing patients, monitoring outcomes, and conducting case-based surveillance.
 
-Client Registries can be implemented in many ways. This implementation is an open source and open standards-based and offers the ability to:
+This CR is an open source and open standards-based implementation that offers the ability to:
 
 * Assign and look-up unique identifiers,
-* Allow connections from diverse point of service (POS) systems, such as electronic medical record systems (EMRs), that can submit messages in FHIR, and
-* Configuration of decision rules around patient matching.
+* Allow connections from diverse point of service (POS) systems, such as electronic medical record (EMR) systems, that can submit messages in FHIR, and
+* Configure decision rules around patient matching.
 
 !!! caution
-    This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it patient clinical data.
+    This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.
 
 ## Use Cases
 
