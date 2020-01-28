@@ -4,7 +4,9 @@
 
 Demographic data from submitting systems is stored in HAPI FHIR. Demographic data may also be stored in ElasticSearch (ES) as required. It is recommended to use ES.
 
-For match processing, there are two options. One is run in mediator-only mode, which is highly flexible and supports a handful of algorithms and more can be added and chained together. ES can also be used and is very fast but currently only supports Levenshtein distance but does support compound queries. When using ES, every request to the FHIR Server is cached in ES.
+For match processing, there are two options. One is run in mediator-only mode, which is highly flexible and supports a handful of algorithms that can be chained together. Additional algorithms can be added as needed. 
+
+The second is to use ES. ES is very fast and supports compound queries but currently only supports Levenshtein distance.  When using ES, every request to the FHIR Server is cached in ES.
 
 (One additional caveat for Levenshtein distance is that the mediator-only matching can support edit distances exceeding two, while ES edit distance cannot exceed two.)
 
