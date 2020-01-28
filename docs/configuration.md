@@ -40,6 +40,12 @@ In standalone mode, the server runs TLS by default, and requires signed certific
 
 ## Connecting Services
 
+The default ports are as follows:
+
+* **3000**: Standalone/mediator application
+* **9200**: ElasticSearch
+* **8080**: HAPI FHIR Server
+
 In `server/config/config_development_template.json` there is a template for configuration.
 
 [Link to file](https://github.com/openhie/client-registry/blob/master/server/config/config_development_template.json)
@@ -49,7 +55,7 @@ Contents of `server/config/config_development_template.json`
 {
   "app": {
     "port": 3000,
-    "installed": true
+    "installed": false
   },
   "mediator": {
     "api": {
@@ -62,12 +68,44 @@ Contents of `server/config/config_development_template.json`
     "register": false
   },
   "fhirServer": {
-    "baseURL": "http://localhost:8080/hapi/fhir",
+    "baseURL": "http://localhost:8080/clientregistry/fhir",
     "username": "hapi",
     "password": "hapi"
+  },
+  "elastic": {
+    "server": "http://localhost:9200",
+    "username": "",
+    "password": "",
+    "max_compilations_rate": "10000/1m",
+    "index": "patients"
+  },
+  "structureDefinition": {
+    "reportRelationship": "patientreport"
+  },
+  "matching": {
+    "tool": "mediator"
+  },
+  "systems": {
+    "openmrs": {
+      "uri": "http://clientregistry.org/openmrs"
+    },
+    "dhis2": {
+      "uri": "http://clientregistry.org/dhis2"
+    },
+    "lims": {
+      "uri": "http://clientregistry.org/lims"
+    },
+    "brokenMatch": {
+      "uri": "http://ihris.org/CR/brokenMatch"
+    }
+  },
+  "sync": {
+    "lastFHIR2ESSync": "1970-01-01T00:00:06"
+  },
+  "__comments": {
+    "matching.tool": "this tells if the app should use mediator algorithms or elasticsearch algorithms for matching, two options mediator and elasticsearch"
   }
-}
-```
+}```
 
 ### General App Configuration
 
@@ -97,9 +135,6 @@ The currently supported FHIR version is R4.
 ### ElasticSearch Configuration
 
 For ES, the relationship between patient resources in FHIR and what fields are synchronized in ES must be explicitly defined. This is termed the Report Relationship mapping. One must define what resource to be used (patient) and what fields need to be available in ES. After this, the Client Registry reads these fields, and populates ES with the information.
-
-
-
 
 
 ### OpenHIM Mediator JSON Configuration
