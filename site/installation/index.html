@@ -517,7 +517,7 @@
 <p>Status should be yellow for a single-node cluster.</p>
 <h2 id="mediator">Mediator<a class="headerlink" href="#mediator" title="Permanent link">&para;</a></h2>
 <p>Clone the repository into a directory of choice.</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/openhie/client-registry.git
+<div class="codehilite"><pre><span></span>git clone https://github.com/intrahealth/client-registry.git
 </pre></div>
 
 
@@ -544,7 +544,12 @@ npm install
 
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p><strong>Symptom</strong>: The app does not run due to an error accessing <code>client-registry/server/lib/../../resources/SearchParameter</code>. The solution is to create an empty folder for <code>client-registry/resources/SearchParameter</code>.</p>
-<p><strong>Symptom</strong>: There is an error trying to use the Structure Definition for patient. This is because the SD for patient does not exist.</p>
+<p>For example:</p>
+<div class="codehilite"><pre><span></span>mkdir <span class="nv">$HOME</span>/src/github.com/intrahealth/client-registry/resources/SearchParameter
+</pre></div>
+
+
+<p><strong>Symptom</strong>: There is an error trying to use the FHIR Structure Definition resource for patient. This is because the SD for patient does not exist.</p>
 <div class="codehilite"><pre><span></span>{ resourceType: &#39;OperationOutcome&#39;,
   text:
    { status: &#39;generated&#39;,
@@ -558,7 +563,8 @@ npm install
 </pre></div>
 
 
-<p>The solution is to load an SD for Patient. This can be done directly using the HAPI FHIR Web Testing UI for Structure Definition resource --&gt; CRUD Operations --&gt; UPDATE and indicating the id as Patient, and pasting in the SD for patient. Alternatively, hapi-fhir-cli offers a tool to update all SD and ValueSets. In another terminal:</p>
+<p>The solution is to load a FHIR SD for patient. This can be done directly using the HAPI FHIR Web Testing UI for Structure Definition resource --&gt; CRUD Operations --&gt; UPDATE and indicating the id as Patient, and pasting in the SD for patient. </p>
+<p>Alternatively, hapi-fhir-cli offers a tool to update all SD and ValueSets. In another terminal:</p>
 <div class="codehilite"><pre><span></span>hapi-fhir-cli upload-definitions -v r4 -t http://localhost:8080/baseR4/
 </pre></div>
 
@@ -588,7 +594,7 @@ npm install
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: January 28, 2020
+                        Last update: January 29, 2020
                       
                     </small>
                   </div>

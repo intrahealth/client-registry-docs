@@ -38,4 +38,4 @@ The architecture is made up of:
 * The [**ElasticSearch**](http://elastic.co/products/elasticsearch): Elasticsearch is a powerful search engine that is highly performant.
 * An **optional UI** to view and break matches between records, and to select and chain together decision rules around matching algorithms.
 
-![Alt text](images/architecture.png "Architecture")
+![Alt text](images/architecture_updated.png "Architecture")
