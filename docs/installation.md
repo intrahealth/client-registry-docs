@@ -46,7 +46,7 @@ Status should be yellow for a single-node cluster.
 
 Clone the repository into a directory of choice.
 ```
-git clone https://github.com/openhie/client-registry.git
+git clone https://github.com/intrahealth/client-registry.git
 ```
 
 Enter the server directory, install node packages.
@@ -75,8 +75,12 @@ node lib/app.js
 
 **Symptom**: The app does not run due to an error accessing `client-registry/server/lib/../../resources/SearchParameter`. The solution is to create an empty folder for `client-registry/resources/SearchParameter`.
 
+For example:
+```sh
+mkdir $HOME/src/github.com/intrahealth/client-registry/resources/SearchParameter
+```
 
-**Symptom**: There is an error trying to use the Structure Definition for patient. This is because the SD for patient does not exist.
+**Symptom**: There is an error trying to use the FHIR Structure Definition resource for patient. This is because the SD for patient does not exist.
 ```
 { resourceType: 'OperationOutcome',
   text:
@@ -89,7 +93,9 @@ node lib/app.js
        diagnostics:
         'Resource StructureDefinition/Patient not found, specified in path: Basic.subject' } ] }
 ```
-The solution is to load an SD for Patient. This can be done directly using the HAPI FHIR Web Testing UI for Structure Definition resource --> CRUD Operations --> UPDATE and indicating the id as Patient, and pasting in the SD for patient. Alternatively, hapi-fhir-cli offers a tool to update all SD and ValueSets. In another terminal:
+The solution is to load a FHIR SD for patient. This can be done directly using the HAPI FHIR Web Testing UI for Structure Definition resource --> CRUD Operations --> UPDATE and indicating the id as Patient, and pasting in the SD for patient. 
+
+Alternatively, hapi-fhir-cli offers a tool to update all SD and ValueSets. In another terminal:
 ```
 hapi-fhir-cli upload-definitions -v r4 -t http://localhost:8080/baseR4/
 ```

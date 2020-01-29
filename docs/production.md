@@ -1,5 +1,24 @@
 # Production Considerations
 
+
+This page is under construction.
+
+!!! warning
+    Server and network hardening and production best practices are out of scope. This document only attempts to capture aspects relevant to the Client Registry.
+
+Hardening and production best practices include:
+
+* Removing unnecessary services, software, network protocols
+* Backup and recovery
+* Patches
+* Vulnerability scanning
+* Limiting remote administration
+* Managing open internal and external ports
+* Auditing, logging software
+
+See the Guide to General Server Security: Recommendations of the National Institute of Standards and Technology
+(Karen Scarfone Wayne Jansen Miles Tracy, July 2008, NIST Special Publication 800-123)
+
 ## Memory Usage
 
 Memory usage depends on the number of records and the performance required.

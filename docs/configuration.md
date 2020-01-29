@@ -1,6 +1,6 @@
 # Server Configuration
 
-This Client Registry implementation is a record locator service. Often there are many records of the same person but in many people in different systems. The purpose of the Client Registry is to link patients in different systems, but not to transfer clinical records or share demographic data. 
+This Client Registry implementation is a record locator service. Often there are many records of the same person but in many people in different systems. The purpose of the Client Registry is to link patients in different systems, but not to transfer any data, neither clinical records nor demographic data. 
 
 !!! caution 
     The Client Registry does not store clinical information. Having the Client Registry enables the ability to create a Shared Health Record in the future.
@@ -26,7 +26,7 @@ Choose running the app as a mediator when:
 
 * For production. The central application should be run as a mediator registered in OpenHIM.
 * There are many clients that will need to connect.
-* There is a to audit transactions.
+* There is a need to audit transactions.
 * There is an existing health information exchange layer or OpenHIM.
 * One advantage of using the OpenHIM interface is the ability to change settings like the FHIR server.
 
@@ -36,7 +36,7 @@ Many configuration options relate to privacy and security. These steps are criti
 
 Whether in standalone or as a mediator, the Client Registry must interact only with known, trusted clients with TLS certificates. Clients must be registered and certificates assigned to them.
 
-In standalone mode, the server runs TLS by default, and requires signed certificates. Client certificate needs can be turned off in OpenHIM when running as a meditiator and this feature must be regularly audited to ensure security.
+In standalone mode, the server runs TLS by default, and requires signed certificates. Client certificate needs can be turned off in OpenHIM when running as a mediator and this feature must be regularly audited to ensure security.
 
 ## Connecting Services
 

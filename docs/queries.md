@@ -10,7 +10,6 @@ There is a set of generated certificates for testing and demonstrations. They ar
 
 ## A Simple CLI Query
 
-
 Inside /client-registry/server directory, a cURL query using the provided example JSON file would be:
 
 ```sh
