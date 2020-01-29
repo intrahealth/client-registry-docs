@@ -105,7 +105,9 @@ Contents of `server/config/config_development_template.json`
   "__comments": {
     "matching.tool": "this tells if the app should use mediator algorithms or elasticsearch algorithms for matching, two options mediator and elasticsearch"
   }
-}```
+}
+
+```
 
 ### General App Configuration
 
