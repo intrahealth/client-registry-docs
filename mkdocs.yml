@@ -1,6 +1,6 @@
 # Project information
-site_name: "Open Client Registry"
-site_description: "Technical documentation for the Open Client Registry"
+site_name: "Client Registry Documentation"
+site_description: "Technical documentation for the Client Registry"
 site_author: "IntraHealth"
 site_url: "https://github.com/intrahealth/client-registry-docs"
 
@@ -26,16 +26,29 @@ theme:
 
 nav:
   - 'index.md'
-  - 'get_started.md'
-  - 'workflow.md'
-  - 'openmrs.md'
-  - 'docker.md'
-  - 'installation.md'
-  - 'production.md'
-  - 'queries.md'
-  - 'configuration.md'
-  - 'decision_rules.md'
+  - 'gettingstarted.md'
+  - User Manual: 
+    - 'workflow.md'
+    - 'decision_rules.md'
+    - 'benchmarks.md'
+    - 'ui.md'
+    - 'dashboard.md'
+    - 'resources.md'
+  - Developer Manual:
+    - 'security.md'
+    - 'openmrs.md'
+    - 'docker.md'
+    - 'installation.md'
+    - 'installation_full.md'
+    - 'queries.md'
+    - 'queriespy.md'
+    - 'configuration.md'
+    - 'configurebenchmarks.md'
+    - 'production.md'
+    - 'backup.md'
+    - 'troubleshooting.md'
   - 'contributing.md'
+  - 'about.md'
 
 markdown_extensions:
   - admonition
@@ -44,9 +57,12 @@ markdown_extensions:
   - toc:
       permalink: true
 
+# https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
 plugins:
   - search
   - git-revision-date-localized
+  - pdf-export:
+      combined: true
 # theme:
 # logo: 'images/logo.png' must be 128x128
 # logo:

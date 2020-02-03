@@ -1,4 +1,4 @@
-# Queries
+# Example API Query (cURL)
 
 ## Certificates (Mandatory)
 

@@ -1,6 +1,6 @@
 # Server Configuration
 
-This Client Registry implementation is a record locator service. Often there are many records of the same person but in many people in different systems. The purpose of the Client Registry is to link patients in different systems, but not to transfer any data, neither clinical records nor demographic data. 
+Often there are many records of the same person but in many people in different systems. The purpose of the Client Registry is to link patients in different systems, but not to transfer any data, neither clinical records nor demographic data. 
 
 !!! caution 
     The Client Registry does not store clinical information. Having the Client Registry enables the ability to create a Shared Health Record in the future.

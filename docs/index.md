@@ -1,10 +1,12 @@
-# Introduction
+# Overview
 
-## Summary
+*Welcome! Thank you for taking an interest in the Open Client Registry. This is a community project and meant for others to adopt to their use cases as they wish.*
 
-A Client Registry (CR) holds patient identifers and may include patient demographic information. It is a necessary tool for public health use cases that require managing patients, monitoring outcomes, and conducting case-based surveillance.
+## What Does It Do?
 
-This CR is an open source and open standards-based implementation that offers the ability to:
+A Client Registry holds patient identifers and may include patient demographic information. It is a necessary tool for public health use cases that require managing patients, monitoring outcomes, and conducting case-based surveillance.
+
+This Client Registry is an open source and open standards-based implementation that offers the ability to:
 
 * Assign and look-up unique identifiers,
 * Allow connections from diverse point of service (POS) systems, such as electronic medical record (EMR) systems, that can submit messages in FHIR, and
@@ -15,14 +17,18 @@ This CR is an open source and open standards-based implementation that offers th
 
 ## Use Cases
 
-The CR is one component in a more complex HIS architecture needed to accomplish important use cases, such as:
+The Client Registry is one component in a more complex HIS architecture needed to accomplish important use cases, such as:
 
 * **Deduplicating patients**: Sometimes patients have multiple diagnostic results stored within a POS. The Client Registry will link patients based on configurable decision rules so multiple test results for the same patient can be found. 
 
 * **Tracking patients lost to clinical care**: EMRs are often not interoperable with one another, resulting in difficulty tracking patients as they move between facilities to seek care. A Client Registry will help data managers to track patients, decreasing instances of duplicate and incomplete records, patients LTFU, and sub-optimal care. 
 
 !!! caution
-    The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a unique identifier to enable use cases like deduplication - which must be an external process. 
+    The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a way to enable use cases like deduplication - which must be an external process. 
+
+## Workflows
+
+
 
 ## Architecture
 

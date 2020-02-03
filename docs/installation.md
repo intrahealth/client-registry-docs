@@ -1,4 +1,4 @@
-# Installation (Non-Production)
+# Installation (Lite)
 
 !!! warning
     This guide is for demonstrations or tests only, not for production environments.
@@ -70,52 +70,4 @@ Run the server from inside client-registry/server:
 node lib/app.js
 ```
 
-## Troubleshooting
-
-
-**Symptom**: The app does not run due to an error accessing `client-registry/server/lib/../../resources/SearchParameter`. The solution is to create an empty folder for `client-registry/resources/SearchParameter`.
-
-For example:
-```sh
-mkdir $HOME/src/github.com/intrahealth/client-registry/resources/SearchParameter
-```
-
-**Symptom**: There is an error trying to use the FHIR Structure Definition resource for patient. This is because the SD for patient does not exist.
-```
-{ resourceType: 'OperationOutcome',
-  text:
-   { status: 'generated',
-     div:
-      '<div xmlns="http://www.w3.org/1999/xhtml"><h1>Operation Outcome</h1><table border="0"><tr><td style="font-weight: bold;">ERROR</td><td>[]</td><td><pre>Resource StructureDefinition/Patient not found, specified in path: Basic.subject</pre></td>\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t</tr>\n\t\t</table>\n\t</div>' },
-  issue:
-   [ { severity: 'error',
-       code: 'processing',
-       diagnostics:
-        'Resource StructureDefinition/Patient not found, specified in path: Basic.subject' } ] }
-```
-The solution is to load a FHIR SD for patient. This can be done directly using the HAPI FHIR Web Testing UI for Structure Definition resource --> CRUD Operations --> UPDATE and indicating the id as Patient, and pasting in the SD for patient. 
-
-Alternatively, hapi-fhir-cli offers a tool to update all SD and ValueSets. In another terminal:
-```
-hapi-fhir-cli upload-definitions -v r4 -t http://localhost:8080/baseR4/
-```
-There may be some errors, but the correct patient SD will be loaded.
-
-After a successful load the correct output is:
-```
-{ resourceType: 'Basic',
-  id: 'patientreport',
-  meta:
-   { versionId: '1',
-     lastUpdated: '2020-01-28T10:58:16.860+00:00',
-     profile:
-      [ 'http://ihris.org/fhir/StructureDefinition/iHRISRelationship' ] },
-  extension:
-   [ { url:
-        'http://ihris.org/fhir/StructureDefinition/iHRISReportDetails',
-       extension: [Array] } ],
-  code: { coding: [ [Object] ], text: 'iHRISRelationship' },
-  subject: { reference: 'StructureDefinition/Patient' } }
-```
-
-
+Congratulations! Now it's time to run a [query](queries.md).
