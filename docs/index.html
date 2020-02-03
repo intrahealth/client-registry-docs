@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="ie=edge" http-equiv="x-ua-compatible"/>
 <meta content="Technical documentation for the Client Registry" name="description"/>
-<link href="https://github.com/intrahealth/client-registry-docs/resources/" rel="canonical"/>
+<link href="https://github.com/intrahealth/client-registry-docs/docs/" rel="canonical"/>
 <meta content="IntraHealth" name="author"/>
 <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
 <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
@@ -20,7 +20,7 @@
 <meta content="[\s\-]+" name="lang:search.tokenizer"/>
 <link href="../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.0.4, mkdocs-material-4.6.0" name="generator"/>
-<title>Additional Resources - Client Registry Documentation</title>
+<title>Building Documentation - Client Registry Documentation</title>
 <link href="../assets/stylesheets/application.1b62728e.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
 <meta content="#546e7a" name="theme-color"/>
@@ -39,7 +39,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-<a class="md-skip" href="#additional-resources" tabindex="1">
+<a class="md-skip" href="#building-documentation" tabindex="1">
         Skip to content
       </a>
 <header class="md-header" data-md-component="header">
@@ -60,7 +60,7 @@
             </span>
 <span class="md-header-nav__topic">
               
-                Additional Resources
+                Building Documentation
               
             </span>
 </div>
@@ -143,8 +143,8 @@
       Getting Started
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-toggle md-nav__toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
 <label class="md-nav__link" for="nav-3">
       User Manual
     </label>
@@ -178,17 +178,16 @@
       Dashboard
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./" title="Additional Resources">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../resources/" title="Additional Resources">
       Additional Resources
     </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-toggle md-nav__toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
 <label class="md-nav__link" for="nav-4">
       Developer Manual
     </label>
@@ -257,8 +256,9 @@
       Troubleshooting
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../docs/" title="Building Documentation">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./" title="Building Documentation">
       Building Documentation
     </a>
 </li>
@@ -290,8 +290,12 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset"><a class="md-icon md-content__icon" download href="../pdf/combined.pdf" title="PDF Export"></a>
-<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/resources.md" title="Edit this page"></a>
-<h1 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">¶</a></h1>
+<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/docs.md" title="Edit this page"></a>
+<h1 id="building-documentation">Building Documentation<a class="headerlink" href="#building-documentation" title="Permanent link">¶</a></h1>
+<p>This documentation is built using <a href="https://www.mkdocs.org/">MkDocs</a> and the <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs theme</a>.</p>
+<p>PDF export is done using <a href="https://github.com/zhaoterryy/mkdocs-pdf-export-plugin">mkdocs-pdf-export-plugin</a>. All configuration information is in mkdocs.yaml in the <a href="https://github.com/intrahealth/client-registry-docs/">repository</a>. Note that at some future time the docs may be migrated into the main <a href="https://github.com/intrahealth/client-registry">client registry repository</a>.</p>
+<p>Edits to docs are made in the master branch of the <a href="https://github.com/intrahealth/client-registry">client registry repository docs repo</a>. </p>
+<p>After docs are edited, they are pushed to origin master, and then the <code>mkdocs gh-deploy</code> is run on the command line. This pushes into the gh-pages branch on GitHub. Only master is ever edited. The gh-pages is only modified by the CLI. </p>
 <hr/>
 <div class="md-source-date">
 <small>
@@ -307,7 +311,7 @@
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../dashboard/" rel="prev" title="Dashboard">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../troubleshooting/" rel="prev" title="Troubleshooting">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -316,17 +320,17 @@
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Dashboard
+                Troubleshooting
               </span>
 </div>
 </a>
-<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../security/" rel="next" title="Security">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../contributing/" rel="next" title="Contributing">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Security
+                Contributing
               </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">

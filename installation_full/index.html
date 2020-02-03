@@ -218,9 +218,47 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Installation (Production)
+      </label>
 <a class="md-nav__link md-nav__link--active" href="./" title="Installation (Production)">
       Installation (Production)
     </a>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+    Prerequisites
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openhim">
+    OpenHIM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hapi-fhir-server">
+    HAPI FHIR Server
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#elasticsearch">
+    ElasticSearch
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#client-registry-ui">
+    Client Registry UI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kibana-dashboard">
+    Kibana Dashboard
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../queries/" title="Example API Query (cURL)">
@@ -257,6 +295,11 @@
       Troubleshooting
     </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/" title="Building Documentation">
+      Building Documentation
+    </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -279,6 +322,39 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prerequisites">
+    Prerequisites
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#openhim">
+    OpenHIM
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hapi-fhir-server">
+    HAPI FHIR Server
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#elasticsearch">
+    ElasticSearch
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#client-registry-ui">
+    Client Registry UI
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#kibana-dashboard">
+    Kibana Dashboard
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
@@ -287,6 +363,55 @@
 <article class="md-content__inner md-typeset"><a class="md-icon md-content__icon" download href="../pdf/combined.pdf" title="PDF Export"></a>
 <a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/installation_full.md" title="Edit this page"></a>
 <h1 id="installation-production">Installation (Production)<a class="headerlink" href="#installation-production" title="Permanent link">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Installing and maintaining a production installation is not trivial. This installation method requires strong familiarity with the command line and expertise administering Linux environments. </p>
+</div>
+<p>The production stack consists of 10 components:</p>
+<ul>
+<li>OpenHIM core and OpenHIM admin console. Requires MongoDB and Nginx or another reverse proxy.</li>
+<li>Client Registry Service as an OpenHIM mediator.</li>
+<li>HAPI FHIR Server with a database backend.</li>
+<li>ElasticSearch (&gt;=7.5)</li>
+<li>Client Registry UI</li>
+<li>Kibana Dashboard</li>
+</ul>
+<p>The expected operating system is Linux for production. Only Ubuntu versions have been tested.</p>
+<p>It is critical that systems administrators note the version compatibilities outlined below. This guide does not cover most aspects of enterprise systems administration, rather it attempts to cover this Client Registry platform. If there are key areas missing, please open an <a href="https://github.com/intrahealth/client-registry/issues/new">issue on GitHub</a>.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¶</a></h2>
+<ul>
+<li>If entities outside of your LAN are connecting to the Client Registry, you will need a public-facing domain name. This is necessary for a certificate which is required for any interactions.</li>
+<li>See <a href="">production considerations</a></li>
+</ul>
+<h2 id="openhim">OpenHIM<a class="headerlink" href="#openhim" title="Permanent link">¶</a></h2>
+<p>OpenHIM supports the last 2 versions of NodeJS LTS and requires MongoDB.</p>
+<ul>
+<li>Follow the <a href="http://openhim.org/docs/installation/npm">instructions</a> to install OpenHIM core and admin console. The maintainers use the NPM PPA installation method.</li>
+<li>Note the important step to obtain a certificate immediately after installation. The configuration should be that any client must have a certificate and the server has a certificate (mutual TLS).</li>
+<li>Follow the instructions including console configuration. </li>
+<li>Note the important step to change the console password. It is also recommended that the console only be accessible on a local subnet and not to the WAN.</li>
+</ul>
+<h2 id="hapi-fhir-server">HAPI FHIR Server<a class="headerlink" href="#hapi-fhir-server" title="Permanent link">¶</a></h2>
+<p>HAPI FHIR should use a database backend in production. HAPI FHIR stores the patient demographic data from queries. If the data is lost, then the Client Registry is unrecoverable.</p>
+<ul>
+<li>Follow the <a href="https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html">JPA Server information</a> and <a href="https://github.com/hapifhir/hapi-fhir-jpaserver-starter">instructions</a> for how to customize the hapi.properties file and build the server using maven.</li>
+<li>The ES integration is separate from HAPI FHIR Server, so there is not need to use it as an indexer. ES only works with an old version of ES.</li>
+<li>Install and configure the preferred database. Postgres has been tested by the maintainers but any database should work that HAPI supports. Change default passwords on the database.</li>
+<li>Confirm that HAPI accepts requests. </li>
+<li>The web interface for HAPI should be disabled for privacy reasons.</li>
+</ul>
+<p>!! In production, Postgres should run on multiple nodes, with one as the leader and others as followers. This is to ensure high availability and backups of the data.</p>
+<h2 id="elasticsearch">ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permanent link">¶</a></h2>
+<ul>
+<li>Follow the instructions for <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">installation</a></li>
+<li>Systemd is the preferred system and service manager. There are commands to initiate systemd and journalctl.</li>
+</ul>
+<p>!! warning
+    ES is not production-ready when run one a single node. It is recommended to run ES on several nodes. Those nodes can also run followers of Postgres.</p>
+<h2 id="client-registry-ui">Client Registry UI<a class="headerlink" href="#client-registry-ui" title="Permanent link">¶</a></h2>
+<p>Under construction.</p>
+<h2 id="kibana-dashboard">Kibana Dashboard<a class="headerlink" href="#kibana-dashboard" title="Permanent link">¶</a></h2>
+<p>Under construction.</p>
 <hr/>
 <div class="md-source-date">
 <small>

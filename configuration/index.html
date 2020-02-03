@@ -309,6 +309,11 @@
       Troubleshooting
     </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/" title="Building Documentation">
+      Building Documentation
+    </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -395,7 +400,7 @@
 <p>ElasticSearch (ES) is an optional search engine, and requires configuration. ES can also store patient data fields selectably.</p>
 <p>JSON files are used to configure the system. Later iterations will support environment variables and a graphical interface. See https://github.com/openhie/client-registry/tree/master/server/config for example configuration files discussed here.</p>
 <h2 id="deciding-between-a-standalone-or-mediator-configuration">Deciding Between a Standalone or Mediator Configuration<a class="headerlink" href="#deciding-between-a-standalone-or-mediator-configuration" title="Permanent link">¶</a></h2>
-<p>A central application is the Client Registry application, as distinct from the larger Client Registry platform. There are two options for running the application, as an OpenHIM mediator or as standalone application. </p>
+<p>A central application is the Client Registry Service, as distinct from the larger Client Registry platform. There are two options for running the application, as an OpenHIM mediator or as standalone application. </p>
 <p>Choose running the app standalone when:</p>
 <ul>
 <li>For testing, demonstration, or development environments.</li>
@@ -417,7 +422,7 @@
 <h2 id="connecting-services">Connecting Services<a class="headerlink" href="#connecting-services" title="Permanent link">¶</a></h2>
 <p>The default ports are as follows:</p>
 <ul>
-<li><strong>3000</strong>: Standalone/mediator application</li>
+<li><strong>3000</strong>: Client Registry Service</li>
 <li><strong>9200</strong>: ElasticSearch</li>
 <li><strong>8080</strong>: HAPI FHIR Server</li>
 </ul>
@@ -481,9 +486,9 @@
 </pre></div>
 <h3 id="general-app-configuration">General App Configuration<a class="headerlink" href="#general-app-configuration" title="Permanent link">¶</a></h3>
 <p><code>app.port</code> is the port the application will run on. </p>
-<p><code>app.installed</code> can be left to True. This tells the Client Registry to load structure definitions into FHIR Server, otherwise it will not.</p>
+<p><code>app.installed</code> can be left to True. This tells the Client Registry Service to load structure definitions into HAPI FHIR Server, otherwise it will not.</p>
 <h3 id="mediator-app-configuration">Mediator App Configuration<a class="headerlink" href="#mediator-app-configuration" title="Permanent link">¶</a></h3>
-<p><code>mediator.register</code> to true if the application will run as a mediator. Or, to false if the app will not run as a mediator.</p>
+<p><code>mediator.register</code> to true if the application will run as a mediator. Or, to false if the app will run as standalone.</p>
 <p><code>mediator.api.xx</code> settings are only if running as a mediator. </p>
 <p><code>mediator.api.username | password</code> must be different. The existing settings are defaults and must be changed when configuring the OpenHIM.</p>
 <p><code>mediator.api.trustSelfSigned</code> should be set to false in production or any sensitive environment. True is only for demonstrations.</p>
