@@ -32,7 +32,7 @@ Choose running the app as a mediator when:
 
 ## Security and Privacy
 
-Many configuration options relate to privacy and security. These steps are critical to address.
+Many configuration options relate to privacy and security. These steps are critical to address. See the [security page](security.md)
 
 Whether in standalone or as a mediator, the Client Registry must interact only with known, trusted clients with TLS certificates. Clients must be registered and certificates assigned to them.
 
@@ -43,8 +43,8 @@ In standalone mode, the server runs TLS by default, and requires signed certific
 The default ports are as follows:
 
 * **3000**: Client Registry Service
-* **9200**: ElasticSearch
-* **8080**: HAPI FHIR Server
+* **9200**: ElasticSearch (closed to external)
+* **8080**: HAPI FHIR Server (closed to external)
 
 In `server/config/config_development_template.json` there is a template for configuration.
 

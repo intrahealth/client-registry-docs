@@ -30,17 +30,18 @@ OpenHIM supports the last 2 versions of NodeJS LTS and requires MongoDB.
 * Follow the instructions including console configuration. 
 * Note the important step to change the console password. It is also recommended that the console only be accessible on a local subnet and not to the WAN.
 
-## HAPI FHIR Server
+## HAPI FHIR Server and Postgres
 
 HAPI FHIR should use a database backend in production. HAPI FHIR stores the patient demographic data from queries. If the data is lost, then the Client Registry is unrecoverable.
 
 * Follow the [JPA Server information](https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html) and [instructions](https://github.com/hapifhir/hapi-fhir-jpaserver-starter) for how to customize the hapi.properties file and build the server using maven.
 * The ES integration is separate from HAPI FHIR Server, so there is not need to use it as an indexer. ES only works with an old version of ES.
 * Install and configure the preferred database. Postgres has been tested by the maintainers but any database should work that HAPI supports. Change default passwords on the database.
+* Database replication should be encrypted.
 * Confirm that HAPI accepts requests. 
 * The web interface for HAPI should be disabled for privacy reasons.
 
-!! In production, Postgres should run on multiple nodes, with one as the leader and others as followers. This is to ensure high availability and backups of the data.
+!! In production, Postgres should run on multiple nodes with replication. This is to ensure high availability and backups of the data.
 
 ## ElasticSearch
 

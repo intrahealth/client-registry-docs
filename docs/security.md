@@ -1,79 +1,70 @@
 # Security
 
-It is difficult (and irresponsible) to try to explain all of the best practices in computer security. This page focuses on how security is addressed in the Open Client Registry. For links to information on server and network hardening and production best practices see the [production](production.md) page.
-
-Several areas are addressed, user authentication, node authentication, ATNA auditing, and non-production (demos, tests) configuration.
-
-Secure Node
-Any IHE actor which is capable of authenticating itself to other nodes and transmitting data securely.
-Audit Repository
-Responsible for the storage of audit events
-
-[IHE ITI](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf)
-
-The IHE IT Infrastructure (ITI) domain addresses the implementation of standards-based interoperability solutions to improve information sharing, workflow and patient care.
-
-## User Authentication
+!!! warning
+    It is difficult (and irresponsible) to try to explain all of the best practices in computer security. This page focuses on how security is addressed in the Open Client Registry. The information may be incomplete. Where there is more clarity or information needed, please provide feedback in an [issue on GitHub](https://github.com/intrahealth/client-registry/issues/new) so that it can be added.
 
 
-## Node Authentication
+This page addresses several security areas, including hardening, user authentication, node authentication, auditing, and non-production (demos, tests) configurations.
 
-Authenticate Node [ITI-19]
+For links to information on server resource planning see the [production](production.md) page.
 
+## Hardening
+
+!!! warning
+    Server and network hardening and production best practices are out of scope. This document only attempts to capture aspects relevant to the Client Registry.
+
+### General Server, Network, and Service Hardening
+
+Hardening and production best practices include:
+
+* Removing unnecessary services, software, network protocols
+* Backup and recovery
+* Patches
+* Vulnerability scanning
+* Limiting remote administration
+* Managing open internal and external ports
+* Auditing, logging software
+
+See, for example, the [Guide to General Server Security: Recommendations of the National Institute of Standards and Technology](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf) by Karen Scarfone, Wayne Jansen, Miles Tracy, July 2008, (NIST Special Publication 800-123).
+
+### Client Registry Platform Hardening
+
+In addition to the above general hardening practices that should be followed, some additional areas are important for the Client Registry.
+
+* The admin interface should only be available on a local subnet, and further restricted with user and node authentication so that it is not exposed on the WAN.
+* **Close external ports**: Ports for Client Registry services should be locked down to localhost. The only external port required is for TLS with point-of-service systems that make queries to the Client Registry Service. This includes ES and HAPI FHIR. Those services can serve localhost only and effectively. 
+* **TLS for interservice communication**: Where Postgres and ES must communicate with other nodes TLS can be configured for ES for internode communication and Postgres for replication.
+* **Disable HAPI Web Testing**: The HAPI FHIR Server Web Testing UI should be disabled. This tool allows the viewing of demographic records on the server. It is not a tool suitable for production, or if it is used, then it is restricted to a local subnet and further restricted with user and node authentication.
+* **Double-check for default passwords**: Ensure no default passwords are in use for OpenHIM core and console, HAPI FHIR Server, ES, Postgres, and other services.
+
+## Authentication
+
+### User Authentication
+
+Point-of-service systems should possess an appropriate identity provider solution built-in or externally. This also means following best practices for user authentication. 
+
+The Client Registry Service and admin interface are the only direct access to demographic data systems that should require user authentication. As this Client Registry is meant for further customization during deployment, JWT and other user authentication solutions are not provided out-of-the-box but can be added.
+
+It is intended to support user-requested user authentication solutions as use cases are further identified.
+
+### Node Authentication
+
+The Client Registry follows best practices outlined in the [ITI-19 standard](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf) for node authentication. Only secure nodes -- one with the ability to authenticate itself to other nodes and transmit data securely -- should be allowed to communicate with the Client Registry.
+
+Systems administrators should ensure that all clients must be registered and certificates assigned to them. In production, the Client Registry should act as an OpenHIM mediator which provides an extra layer of security. Clients may be registered in OpenHIM.
 
 ## ATNA Logging
 
-Audit Trail and Node Authentication (ATNA) Integration Profile is 
+OpenHIM supports the Audit Trail and Node Authentication (ATNA) Integration Profile, which establishes a standard for responsibly storing audit events. It is highly recommended that the OpenHIM be configured as such but only after it is ensured that all default passwords have been changed and the OpenHIM is operating on a local subnet and thus not exposed externally. See the above hardening notes.
 
+See the [OpenHIM user guide](https://openhim.readthedocs.io/en/latest/user-guide/auditing.html) for information on ATNA configuration.
 
 ## Non-Production
 
+In non-production settings only may self-signed certificates be created for testing and demonstrations. An example is as follows:
 ```sh
-# create a private key with pem extension
 openssl req -newkey rsa:4096 -keyout dhis2_key.pem -out dhis2_csr.pem -nodes -days 365 -subj "/CN=dhis2"
-# generate a 
 openssl x509 -req -in dhis2_csr.pem -CA ../certificates/server_cert.pem -CAkey ../certificates/server_key.pem -out dhis2_cert.pem -set_serial 01 -days 36500
-# 
 openssl pkcs12 -export -in dhis2_cert.pem -inkey dhis2_key.pem -out dhis2.p12
 ```
-
-
-
-The `.p12` filename extension is for [PKCS #12](https://en.wikipedia.org/wiki/PKCS_12) file archives. PKCS #12 is for storing several cryptographic objects together including user-defined values. In the provided example .p12 files in the Client Registry repository, they include an X.509 (public key) certificate and a private key, and some information about the owner, including, for the Client Registry, the `subject`, meaning the name of the system (such as a specfic EMR POS system) that it was issued for.
-
-A useful way to understand this better is to open one of the .p12 files using no password (hit enter) for the Import Password, and the subject name for the PEM pass phrase (in this example 'openmrs' without quotes and in lowercase).
-
-When certificate is self-signed, then issuer and subject field contains the same value
-
-```sh
-# from client-registry/server/sampleclientcertificates
-$ openssl pkcs12 -info -in openmrs.p12
-Enter Import Password:
-MAC Iteration 2048
-MAC verified OK
-PKCS7 Encrypted data: pbeWithSHA1And40BitRC2-CBC, Iteration 2048
-Certificate bag
-Bag Attributes
-    localKeyID: 36 7A 50 BC 1C 0E 69 93 22 7F CC FB 4D 07 C2 BE B2 37 02 C6
-subject=/CN=openmrs
-issuer=/CN=localhost/O=Client Registry
------BEGIN CERTIFICATE-----
-...
------END CERTIFICATE-----
-PKCS7 Data
-Shrouded Keybag: pbeWithSHA1And3-KeyTripleDES-CBC, Iteration 2048
-Bag Attributes
-    localKeyID: 36 7A 50 BC 1C 0E 69 93 22 7F CC FB 4D 07 C2 BE B2 37 02 C6
-Key Attributes: <No Attributes>
-Enter PEM pass phrase:
-Verifying - Enter PEM pass phrase:
------BEGIN ENCRYPTED PRIVATE KEY-----
-...
------END ENCRYPTED PRIVATE KEY-----
-```
-
-
-the p12 is normally protected with a password and is not shared. It is imported in an application (e.g. a browser or a password manager) When a authentication must take place, the browser sends the identification information and its public key. The server then offers a challenge only the owner of the private key can solve. The browsers then sends back the solution of the challenge and the user is both identified and authenticated. Anyone getting access to the p12 will be able to impersonate the real owner.
-
-
 

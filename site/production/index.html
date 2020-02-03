@@ -253,9 +253,33 @@
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#memory-usage">
-    Memory Usage
+<a class="md-nav__link" href="#it-resource-planning">
+    IT Resource Planning
   </a>
+<nav class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#servers">
+    Servers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cpu">
+    CPU
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory">
+    Memory
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disk-space">
+    Disk Space
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -268,6 +292,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../troubleshooting/" title="Troubleshooting">
       Troubleshooting
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../docs/" title="Building Documentation">
+      Building Documentation
     </a>
 </li>
 </ul>
@@ -295,9 +324,33 @@
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#memory-usage">
-    Memory Usage
+<a class="md-nav__link" href="#it-resource-planning">
+    IT Resource Planning
   </a>
+<nav class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#servers">
+    Servers
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cpu">
+    CPU
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory">
+    Memory
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#disk-space">
+    Disk Space
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -323,27 +376,31 @@
 <li>Managing open internal and external ports</li>
 <li>Auditing, logging software</li>
 </ul>
-<p>See the Guide to General Server Security: Recommendations of the National Institute of Standards and Technology
-(Karen Scarfone Wayne Jansen Miles Tracy, July 2008, NIST Special Publication 800-123)</p>
-<h2 id="memory-usage">Memory Usage<a class="headerlink" href="#memory-usage" title="Permanent link">¶</a></h2>
-<p>Memory usage depends on the number of records and the performance required.</p>
-<p>For local development on a PC:</p>
+<p>See, for example, the <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf">Guide to General Server Security: Recommendations of the National Institute of Standards and Technology</a> by Karen Scarfone, Wayne Jansen, Miles Tracy, July 2008, (NIST Special Publication 800-123).</p>
+<h2 id="it-resource-planning">IT Resource Planning<a class="headerlink" href="#it-resource-planning" title="Permanent link">¶</a></h2>
+<p>Benchmarking will be completed in future phases to make recommendations for medium to heavy workloads. The below resource suggestions should be revised based on benchmarking for the particular context into which the Client Registry is being deployed.</p>
+<h3 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">¶</a></h3>
+<p>For an MVP in a production environment where potential data loss is acceptable, a single large server can be used. ES has high memory requirements. </p>
+<h3 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">¶</a></h3>
 <ul>
-<li>PC with multiple cores</li>
-<li>8GB of RAM should be available</li>
+<li>Local development: PC with multiple cores</li>
+<li>Production: Use 2-8 cores.</li>
 </ul>
-<p>For production, at minimum:</p>
-<p>32GB with 24GB free for the Client Registry is recommended for light loads if using one VM.</p>
+<h3 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">¶</a></h3>
+<p>Memory usage depends on the number of records and the performance required.</p>
+<p>Local development on a PC: 8GB of RAM should be available</p>
+<p>Production, at minimum: 32GB with 24GB free for the Client Registry is recommended for light loads if using one VM.</p>
 <ul>
-<li>16GB minimum for ElasticSearch with 32GB preferred or 64GB for high volume: Follow the guidelines provided by the maintainers <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/hardware.html#_memory">here</a>. Use 2-8 cores.</li>
+<li>16GB minimum for ElasticSearch with 32GB preferred or 64GB for high volume: Follow the guidelines provided by the maintainers <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/hardware.html#_memory">here</a>. </li>
 <li>8GB for OpenHIM, mediator, Postgres, and HAPI FHIR Server.</li>
 </ul>
-<p>Benchmarking will be completed in future phases to make recommendations for heavy workloads.</p>
+<h3 id="disk-space">Disk Space<a class="headerlink" href="#disk-space" title="Permanent link">¶</a></h3>
+<p>This depends heavily on the workload. Expect 200GB at minimum per node.</p>
 <hr/>
 <div class="md-source-date">
 <small>
                       
-                        Last update: January 29, 2020
+                        Last update: February 3, 2020
                       
                     </small>
 </div>

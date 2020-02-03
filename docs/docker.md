@@ -1,4 +1,4 @@
-# Docker
+# Installation (Docker)
 
 !!! warning
     The latest tag is not supported by ES. 
