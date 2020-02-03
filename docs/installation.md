@@ -42,7 +42,7 @@ curl -X GET "localhost:9200/_cat/health?v&pretty"
 ```
 Status should be yellow for a single-node cluster.
 
-## Mediator
+## Client Registry Service (Standalone)
 
 Clone the repository into a directory of choice.
 ```

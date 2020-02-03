@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="ie=edge" http-equiv="x-ua-compatible"/>
 <meta content="Technical documentation for the Client Registry" name="description"/>
-<link href="https://github.com/intrahealth/client-registry-docs/installation/" rel="canonical"/>
+<link href="https://github.com/intrahealth/client-registry-docs/backup/" rel="canonical"/>
 <meta content="IntraHealth" name="author"/>
 <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
 <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
@@ -20,7 +20,7 @@
 <meta content="[\s\-]+" name="lang:search.tokenizer"/>
 <link href="../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.0.4, mkdocs-material-4.6.0" name="generator"/>
-<title>Installation (Lite) - Client Registry Documentation</title>
+<title>Backup and Recovery - Client Registry Documentation</title>
 <link href="../assets/stylesheets/application.1b62728e.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
 <meta content="#546e7a" name="theme-color"/>
@@ -39,7 +39,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-<a class="md-skip" href="#installation-lite" tabindex="1">
+<a class="md-skip" href="#backup-and-recovery" tabindex="1">
         Skip to content
       </a>
 <header class="md-header" data-md-component="header">
@@ -60,7 +60,7 @@
             </span>
 <span class="md-header-nav__topic">
               
-                Installation (Lite)
+                Backup and Recovery
               
             </span>
 </div>
@@ -211,34 +211,10 @@
       Docker
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-        Installation (Lite)
-      </label>
-<a class="md-nav__link md-nav__link--active" href="./" title="Installation (Lite)">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/" title="Installation (Lite)">
       Installation (Lite)
     </a>
-<nav class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">Table of contents</label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hapi-fhir-server-cli">
-    HAPI FHIR Server CLI
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elasticsearch-optional">
-    ElasticSearch (Optional)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mediator">
-    Mediator
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../installation_full/" title="Installation (Production)">
@@ -270,8 +246,9 @@
       Production Considerations
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../backup/" title="Backup and Recovery">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./" title="Backup and Recovery">
       Backup and Recovery
     </a>
 </li>
@@ -302,80 +279,17 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">Table of contents</label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hapi-fhir-server-cli">
-    HAPI FHIR Server CLI
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#elasticsearch-optional">
-    ElasticSearch (Optional)
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mediator">
-    Mediator
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset"><a class="md-icon md-content__icon" download href="../pdf/combined.pdf" title="PDF Export"></a>
-<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/installation.md" title="Edit this page"></a>
-<h1 id="installation-lite">Installation (Lite)<a class="headerlink" href="#installation-lite" title="Permanent link">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This guide is for demonstrations or tests only, not for production environments.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This installation method requires familiarity with the command line.</p>
-</div>
-<h2 id="hapi-fhir-server-cli">HAPI FHIR Server CLI<a class="headerlink" href="#hapi-fhir-server-cli" title="Permanent link">¶</a></h2>
-<p>For non-production environments, the HAPI maintainers provide a simple CLI-based tool to run it.</p>
-<p>The only required dependency is Java &gt;= 8 (1.8).</p>
-<p>See <a href="https://smilecdr.com/hapi-fhir/docs/tools/hapi_fhir_cli.html">HAPI FHIR CLI</a> for instructions for the OS of choice.</p>
-<p>The Client Registry requires FHIR version R4 and HAPI must be started for this version. To run HAPI:</p>
-<div class="codehilite"><pre><span></span>hapi-fhir-cli run-server -v r4
-</pre></div>
-<p>The HAPI Web Testing UI is available at <a href="http://localhost:8080/">http://localhost:8080/</a> The Web Testing UI should be disabled for production. It allows the viewing of any resource on the server.</p>
-<p>The FHIR Base URL is at <a href="http://localhost:8080/baseR4/">http://localhost:8080/baseR4/</a></p>
-<p>Visit <a href="http://localhost:8080/">http://localhost:8080/</a> to ensure HAPI is up and running or</p>
-<div class="codehilite"><pre><span></span>curl -X GET <span class="s2">"localhost:8080/baseR4/Patient?"</span>
-</pre></div>
-<h2 id="elasticsearch-optional">ElasticSearch (Optional)<a class="headerlink" href="#elasticsearch-optional" title="Permanent link">¶</a></h2>
-<p>By default, the configuration does not require ES but including it will enable ES-based matching.</p>
-<p>Install and start ES for the intended OS. See the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html">ES install instructions</a></p>
-<p>The required version is &gt;=7.5.</p>
-<p>Once installed and started, ensure that ES is up and running:</p>
-<div class="codehilite"><pre><span></span>curl -X GET <span class="s2">"localhost:9200/_cat/health?v&amp;pretty"</span>
-</pre></div>
-<p>Status should be yellow for a single-node cluster.</p>
-<h2 id="mediator">Mediator<a class="headerlink" href="#mediator" title="Permanent link">¶</a></h2>
-<p>Clone the repository into a directory of choice.</p>
-<div class="codehilite"><pre><span></span>git clone https://github.com/intrahealth/client-registry.git
-</pre></div>
-<p>Enter the server directory, install node packages.</p>
-<div class="codehilite"><pre><span></span>cd client-registry/server
-npm install
-</pre></div>
-<p>Copy and edit the configuration file to your liking.</p>
-<div class="codehilite"><pre><span></span>cp config/config_development_template.json config/config_development.json
-# edit the servers...
-</pre></div>
-<p>The minimum changes to start a running standalone system are:</p>
-<ul>
-<li>Change <code>fhirServer.baseURL</code> to "http://localhost:8080/baseR4/"</li>
-</ul>
-<p>Run the server from inside client-registry/server:</p>
-<div class="codehilite"><pre><span></span>node lib/app.js
-</pre></div>
-<p>Congratulations! Now it's time to run a <a href="../queries/">query</a>.</p>
+<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/backup.md" title="Edit this page"></a>
+<h1 id="backup-and-recovery">Backup and Recovery<a class="headerlink" href="#backup-and-recovery" title="Permanent link">¶</a></h1>
+<h1 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">¶</a></h1>
+<p>The primary datastore is the database configured for HAPI FHIR Server. This means that while an ES cluster should be backed-up, the ES index can be rebuilt from HAPI. </p>
+<h1 id="recovery">Recovery<a class="headerlink" href="#recovery" title="Permanent link">¶</a></h1>
 <hr/>
 <div class="md-source-date">
 <small>
@@ -391,7 +305,7 @@ npm install
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../docker/" rel="prev" title="Docker">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../production/" rel="prev" title="Production Considerations">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -400,17 +314,17 @@ npm install
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Docker
+                Production Considerations
               </span>
 </div>
 </a>
-<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../installation_full/" rel="next" title="Installation (Production)">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../troubleshooting/" rel="next" title="Troubleshooting">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Installation (Production)
+                Troubleshooting
               </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">

@@ -14,7 +14,7 @@ JSON files are used to configure the system. Later iterations will support envir
 
 ## Deciding Between a Standalone or Mediator Configuration
 
-A central application is the Client Registry application, as distinct from the larger Client Registry platform. There are two options for running the application, as an OpenHIM mediator or as standalone application. 
+A central application is the Client Registry Service, as distinct from the larger Client Registry platform. There are two options for running the application, as an OpenHIM mediator or as standalone application. 
 
 Choose running the app standalone when:
 
@@ -42,7 +42,7 @@ In standalone mode, the server runs TLS by default, and requires signed certific
 
 The default ports are as follows:
 
-* **3000**: Standalone/mediator application
+* **3000**: Client Registry Service
 * **9200**: ElasticSearch
 * **8080**: HAPI FHIR Server
 
@@ -113,11 +113,11 @@ Contents of `server/config/config_development_template.json`
 
 `app.port` is the port the application will run on. 
 
-`app.installed` can be left to True. This tells the Client Registry to load structure definitions into FHIR Server, otherwise it will not.
+`app.installed` can be left to True. This tells the Client Registry Service to load structure definitions into HAPI FHIR Server, otherwise it will not.
 
 ### Mediator App Configuration
 
-`mediator.register` to true if the application will run as a mediator. Or, to false if the app will not run as a mediator.
+`mediator.register` to true if the application will run as a mediator. Or, to false if the app will run as standalone.
 
 `mediator.api.xx` settings are only if running as a mediator. 
 
