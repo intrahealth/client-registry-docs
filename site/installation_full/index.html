@@ -207,8 +207,8 @@
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../docker/" title="Docker">
-      Docker
+<a class="md-nav__link" href="../docker/" title="Installation (Docker)">
+      Installation (Docker)
     </a>
 </li>
 <li class="md-nav__item">
@@ -238,8 +238,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hapi-fhir-server">
-    HAPI FHIR Server
+<a class="md-nav__link" href="#hapi-fhir-server-and-postgres">
+    HAPI FHIR Server and Postgres
   </a>
 </li>
 <li class="md-nav__item">
@@ -335,8 +335,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hapi-fhir-server">
-    HAPI FHIR Server
+<a class="md-nav__link" href="#hapi-fhir-server-and-postgres">
+    HAPI FHIR Server and Postgres
   </a>
 </li>
 <li class="md-nav__item">
@@ -391,16 +391,17 @@
 <li>Follow the instructions including console configuration. </li>
 <li>Note the important step to change the console password. It is also recommended that the console only be accessible on a local subnet and not to the WAN.</li>
 </ul>
-<h2 id="hapi-fhir-server">HAPI FHIR Server<a class="headerlink" href="#hapi-fhir-server" title="Permanent link">¶</a></h2>
+<h2 id="hapi-fhir-server-and-postgres">HAPI FHIR Server and Postgres<a class="headerlink" href="#hapi-fhir-server-and-postgres" title="Permanent link">¶</a></h2>
 <p>HAPI FHIR should use a database backend in production. HAPI FHIR stores the patient demographic data from queries. If the data is lost, then the Client Registry is unrecoverable.</p>
 <ul>
 <li>Follow the <a href="https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html">JPA Server information</a> and <a href="https://github.com/hapifhir/hapi-fhir-jpaserver-starter">instructions</a> for how to customize the hapi.properties file and build the server using maven.</li>
 <li>The ES integration is separate from HAPI FHIR Server, so there is not need to use it as an indexer. ES only works with an old version of ES.</li>
 <li>Install and configure the preferred database. Postgres has been tested by the maintainers but any database should work that HAPI supports. Change default passwords on the database.</li>
+<li>Database replication should be encrypted.</li>
 <li>Confirm that HAPI accepts requests. </li>
 <li>The web interface for HAPI should be disabled for privacy reasons.</li>
 </ul>
-<p>!! In production, Postgres should run on multiple nodes, with one as the leader and others as followers. This is to ensure high availability and backups of the data.</p>
+<p>!! In production, Postgres should run on multiple nodes with replication. This is to ensure high availability and backups of the data.</p>
 <h2 id="elasticsearch">ElasticSearch<a class="headerlink" href="#elasticsearch" title="Permanent link">¶</a></h2>
 <ul>
 <li>Follow the instructions for <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">installation</a></li>
