@@ -188,6 +188,11 @@
     </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="architecture/" title="Architecture">
+      Architecture
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="decision_rules/" title="Decision Rules">
       Decision Rules
     </a>
@@ -371,6 +376,23 @@
 <p>The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a way to enable use cases like deduplication - which must be an external process. </p>
 </div>
 <h2 id="workflows">Workflows<a class="headerlink" href="#workflows" title="Permanent link">¶</a></h2>
+<p>At its core, the Client Registry provides a unique identifier (UID) that also links to all other already matched records from submitting systems. This means that the Client Registry stores an identifier from submitting systems so that it can uniquely identify according to however the submitting systems store their records, but it also produces a UID for the entire domain using the service.</p>
+<p>Several workflows are supported out-of-the-box depending on the POS-Client Registry use case. For example:</p>
+<ul>
+<li>
+<p>A specimen is received by a laboratory. Demographic data and requesting location data is entered into the LMIS. The LMIS queries the Client Registry for a UID. The Client Registry provides the UID if one did not exist and stores limited patient demographic information but <strong>does not</strong> store test results. A use that this enables (but the Client Registry <strong>does not</strong> provide) is the ability to track persons lab results over time.</p>
+</li>
+<li>
+<p>A patient is registered at a clinic. The clinician recommends a viral load test. The specimen is sent for processing to the laboratory. The Client Registry receives the UID and specimen and returns a diagnostic result that is then stored in the EMR. </p>
+</li>
+<li>
+<p>A patient is registered at a clinic and has been assigned a UID. In the course of their clinical encounter, a sentinel event occurs, triggering the EMR to send limited clinical information to the Health Information Exchange (HIE). The HIE sends the data to a data analysis warehouse for population analysis and case-based surveillance.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is important to note that in the above workflows the Client Registry does not store or provide clinical data. Such processes are external to the Client Registry and must be separately created, governed, and enabled. </p>
+</div>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¶</a></h2>
 <p>The Client Registry is not one application, instead it's a set of applications that work together in the <a href="http://ohie.org">Open Health Information Exchange (OpenHIE)</a> architecture to serve point-of-service systems, like EMRs, insurance mechanisms, and labs.</p>
 <div class="admonition caution">
@@ -389,7 +411,7 @@
 <div class="md-source-date">
 <small>
                       
-                        Last update: February 3, 2020
+                        Last update: February 5, 2020
                       
                     </small>
 </div>

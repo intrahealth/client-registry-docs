@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="ie=edge" http-equiv="x-ua-compatible"/>
 <meta content="Technical documentation for the Client Registry" name="description"/>
-<link href="https://github.com/intrahealth/client-registry-docs/queriespy/" rel="canonical"/>
+<link href="https://github.com/intrahealth/client-registry-docs/architecture/" rel="canonical"/>
 <meta content="IntraHealth" name="author"/>
 <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
 <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
@@ -20,7 +20,7 @@
 <meta content="[\s\-]+" name="lang:search.tokenizer"/>
 <link href="../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.0.4, mkdocs-material-4.6.0" name="generator"/>
-<title>Example API Query (Python) - Client Registry Documentation</title>
+<title>Architecture - Client Registry Documentation</title>
 <link href="../assets/stylesheets/application.1b62728e.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
 <meta content="#546e7a" name="theme-color"/>
@@ -39,7 +39,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-<a class="md-skip" href="#example-api-query-python" tabindex="1">
+<a class="md-skip" href="#architecture" tabindex="1">
         Skip to content
       </a>
 <header class="md-header" data-md-component="header">
@@ -60,7 +60,7 @@
             </span>
 <span class="md-header-nav__topic">
               
-                Example API Query (Python)
+                Architecture
               
             </span>
 </div>
@@ -143,8 +143,8 @@
       Getting Started
     </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-toggle md-nav__toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
 <label class="md-nav__link" for="nav-3">
       User Manual
     </label>
@@ -158,10 +158,29 @@
       Workflows
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../architecture/" title="Architecture">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Architecture
+      </label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Architecture">
       Architecture
     </a>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#process">
+    Process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requirements">
+    Requirements
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../decision_rules/" title="Decision Rules">
@@ -191,8 +210,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-toggle md-nav__toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
 <label class="md-nav__link" for="nav-4">
       Developer Manual
     </label>
@@ -231,9 +250,8 @@
       Example API Query (cURL)
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./" title="Example API Query (Python)">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../queriespy/" title="Example API Query (Python)">
       Example API Query (Python)
     </a>
 </li>
@@ -289,53 +307,44 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#process">
+    Process
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requirements">
+    Requirements
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset"><a class="md-icon md-content__icon" download href="../pdf/combined.pdf" title="PDF Export"></a>
-<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/queriespy.md" title="Edit this page"></a>
-<h1 id="example-api-query-python">Example API Query (Python)<a class="headerlink" href="#example-api-query-python" title="Permanent link">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This example is available in the Jupyter notebook at: <a href="https://github.com/intrahealth/client-registry/blob/master/examples/simple_query.ipynb">github.com/intrahealth/client-registry/examples/simple_query.ipynb</a></p>
-</div>
-<p>This is a simple query in Python exactly like the cURL query:</p>
-<div class="codehilite"><pre><span></span>curl --cert sampleclientcertificates/openmrs.p12 --cert-type p12 --cacert certificates/server_cert.pem -d @/Users/richard/src/github.com/openhie/client-registry/DemoData/patient1_openmrs.json -H <span class="s2">"Content-Type: application/json"</span> -XPOST https://localhost:3000/addPatient
-</pre></div>
-<p>The only requirement is a version of the requests package that has been modified to take p12 certs.</p>
-<div class="codehilite"><pre><span></span>pip3 install requests_pkcs12
-</pre></div>
-<p>Import the required modules.</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="c1"># import requests modded dor pkcs12</span>
-<span class="kn">from</span> <span class="nn">requests_pkcs12</span> <span class="kn">import</span> <span class="n">get</span><span class="p">,</span> <span class="n">post</span>
-</pre></div>
-<p>This example assumes running from <code>github.com/intrahealth/client-registry/examples</code>. Change paths as required. Using the Path module ensures that the path resolution works in Mac, Linux, Windows.</p>
-<div class="codehilite"><pre><span></span><span class="n">clientcert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"../server/sampleclientcertificates"</span><span class="p">)</span>
-<span class="n">clientcert</span> <span class="o">=</span> <span class="n">clientcert_folder</span> <span class="o">/</span> <span class="s2">"openmrs.p12"</span>
-
-<span class="n">servercert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"../server/certificates"</span><span class="p">)</span>
-<span class="n">servercert</span> <span class="o">=</span> <span class="n">servercert_folder</span> <span class="o">/</span> <span class="s2">"server_cert.pem"</span>
-
-<span class="n">payload_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"../DemoData/"</span><span class="p">)</span>
-<span class="n">payload_bytes</span> <span class="o">=</span> <span class="n">payload_folder</span> <span class="o">/</span> <span class="s2">"patient1_openmrs.json"</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">payload_bytes</span><span class="p">)</span>
-</pre></div>
-<p>Define headers and initiated the POST request.</p>
-<div class="codehilite"><pre><span></span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'application/json'</span><span class="p">}</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">post</span><span class="p">(</span><span class="s2">"https://localhost:3000/addPatient"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> 
-                <span class="n">pkcs12_filename</span><span class="o">=</span><span class="n">clientcert</span><span class="p">,</span> 
-                <span class="n">pkcs12_password</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> 
-                <span class="n">verify</span><span class="o">=</span><span class="n">servercert</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-</pre></div>
+<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/architecture.md" title="Edit this page"></a>
+<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¶</a></h1>
+<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">¶</a></h2>
+<p><img alt="Matching Process" src="../images/matching.png"/></p>
+<p>When requests are submitted with demographic data in a FHIR message, the Client Registry reads an submitting system's ID of that patient. The Client Registry searches for that submitting system's ID in its records. This happens regardless if it is a new patient or update of existing patient.</p>
+<p>When the submitting system's ID matches an existing record, the Client Registry updates the patient demographic information of that record with changes submitted. Once the update is complete, the existing record linkages may affected. This is because algorithms may not continue to link records as before because details have changed. Therefore, the Client Registry will pool all patients that were previously matched and break all the matches. The Client Registry will rerun matching algorithms again to see what matches are currently true matches of the patient. Then the Client Registry will be updated with the true matches given the changes in demographic data.</p>
+<p>Another scenario is when the Client Registry searches and doesn't find anyone already with same submitting system's ID.
+If there is not existing match, the Client Registry runs the matching algorithms for existing patients who matches that patient and will provide record linkages with other records.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
+<p>In order for this process to work as expected, there are some requirements:</p>
+<ul>
+<li>Requests sent to the Client Registry must be made of FHIR messages. FHIR is a popular specification for accessing an API for providing data in health systems. Messages must support FHIR R4.</li>
+<li>Requests can only be received from trusted systems. See the <a href="../security/">security page</a> in the Developers Manual for mode detail.</li>
+</ul>
 <hr/>
 <div class="md-source-date">
 <small>
                       
-                        Last update: February 3, 2020
+                        Last update: February 5, 2020
                       
                     </small>
 </div>
@@ -346,7 +355,7 @@
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../queries/" rel="prev" title="Example API Query (cURL)">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../workflow/" rel="prev" title="Workflows">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -355,17 +364,17 @@
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Example API Query (cURL)
+                Workflows
               </span>
 </div>
 </a>
-<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../configuration/" rel="next" title="Server Configuration">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../decision_rules/" rel="next" title="Decision Rules">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Server Configuration
+                Decision Rules
               </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">

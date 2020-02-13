@@ -2,117 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/gettingstarted/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/workflow/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/architecture/</loc>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/decision_rules/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/benchmarks/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/ui/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/dashboard/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/resources/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/security/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/openmrs/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/docker/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/installation/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/installation_full/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/queries/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/queriespy/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/configuration/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/configurebenchmarks/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/production/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/backup/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/troubleshooting/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/docs/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/contributing/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/about/</loc>
-     <lastmod>2020-02-03</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
