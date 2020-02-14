@@ -139,6 +139,102 @@ The currently supported FHIR version is R4.
 For ES, the relationship between patient resources in FHIR and what fields are synchronized in ES must be explicitly defined. This is termed the Report Relationship mapping. One must define what resource to be used (patient) and what fields need to be available in ES. After this, the Client Registry reads these fields, and populates ES with the information.
 
 
+In `resources/Relationships/PatientRelationship.json` there is a template for configuration.
+
+[Link to file](https://github.com/intrahealth/client-registry/blob/master/resources/Relationships/PatientRelationship.json)
+
+Contents of `resources/Relationships/PatientRelationship.json`
+
+```json
+{
+  "resourceType": "Basic",
+  "id": "patientreport",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2019-07-30T07:34:24.098+00:00",
+    "profile": [
+      "http://ihris.org/fhir/StructureDefinition/iHRISRelationship"
+    ]
+  },
+  "extension": [{
+    "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportDetails",
+    "extension": [{
+      "url": "label",
+      "valueString": "Patient Report"
+    }, {
+      "url": "name",
+      "valueString": "patients"
+    }, {
+      "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+      "extension": [{
+        "url": "label",
+        "valueString": "gender"
+      }, {
+        "url": "name",
+        "valueString": "gender"
+      }]
+    }, {
+      "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+      "extension": [{
+        "url": "label",
+        "valueString": "birthDate"
+      }, {
+        "url": "name",
+        "valueString": "birthDate"
+      }]
+    }, {
+      "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+      "extension": [{
+        "url": "label",
+        "valueString": "given"
+      }, {
+        "url": "name",
+        "valueString": "name.where(use='official').last().given"
+      }]
+    }, {
+      "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+      "extension": [{
+        "url": "label",
+        "valueString": "family"
+      }, {
+        "url": "name",
+        "valueString": "name.where(use='official').last().family"
+      }]
+    }, {
+      "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+      "extension": [{
+        "url": "label",
+        "valueString": "fullname"
+      }, {
+        "url": "name",
+        "valueString": "name.where(use='official').last().text"
+      }]
+    }, {
+      "url": "http://ihris.org/fhir/StructureDefinition/iHRISReportElement",
+      "extension": [{
+        "url": "label",
+        "valueString": "phone"
+      }, {
+        "url": "name",
+        "valueString": "telecom.where(system='phone').value"
+      }]
+    }]
+  }],
+  "code": {
+    "coding": [{
+      "system": "http://ihris.org/fhir/ValueSet/ihris-resource",
+      "code": "iHRISRelationship"
+    }],
+    "text": "iHRISRelationship"
+  },
+  "subject": {
+    "reference": "StructureDefinition/Patient"
+  }
+}
+
+```
+
+
 ### OpenHIM Mediator JSON Configuration
 
 If using OpenHIM, it must be configured for proper clients and roles to accept and forward requests from the Client Registry. An example export of a working JSON configuration that can be imported for development purposes is available.
