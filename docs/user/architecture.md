@@ -2,7 +2,7 @@
 
 ## Process
 
-![Matching Process](images/matching.png)
+![Matching Process](../images/matching.png)
 
 When requests are submitted with demographic data in a FHIR message, the Client Registry reads an submitting system's ID of that patient. The Client Registry searches for that submitting system's ID in its records. This happens regardless if it is a new patient or update of existing patient.
 
@@ -16,4 +16,4 @@ If there is not existing match, the Client Registry runs the matching algorithms
 In order for this process to work as expected, there are some requirements:
 
 * Requests sent to the Client Registry must be made of FHIR messages. FHIR is a popular specification for accessing an API for providing data in health systems. Messages must support FHIR R4.
-* Requests can only be received from trusted systems. See the [security page](security.md) in the Developers Manual for mode detail.
+* Requests can only be received from trusted systems. See the [security page](../dev/security.md) in the Developers Manual for mode detail.

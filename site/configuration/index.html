@@ -19,7 +19,7 @@
 <meta content="# matching documents" name="lang:search.result.other"/>
 <meta content="[\s\-]+" name="lang:search.tokenizer"/>
 <link href="../assets/images/favicon.png" rel="shortcut icon"/>
-<meta content="mkdocs-1.0.4, mkdocs-material-4.6.2" name="generator"/>
+<meta content="mkdocs-1.0.4, mkdocs-material-4.6.3" name="generator"/>
 <title>Server Configuration - Client Registry Documentation</title>
 <link href="../assets/stylesheets/application.adb8469c.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
@@ -503,6 +503,95 @@
 <p><code>fhirServer.username | password</code> must be changed from defaults in HAPI.</p>
 <h3 id="elasticsearch-configuration">ElasticSearch Configuration<a class="headerlink" href="#elasticsearch-configuration" title="Permanent link">¶</a></h3>
 <p>For ES, the relationship between patient resources in FHIR and what fields are synchronized in ES must be explicitly defined. This is termed the Report Relationship mapping. One must define what resource to be used (patient) and what fields need to be available in ES. After this, the Client Registry reads these fields, and populates ES with the information.</p>
+<p>In <code>resources/Relationships/PatientRelationship.json</code> there is a template for configuration.</p>
+<p><a href="https://github.com/intrahealth/client-registry/blob/master/resources/Relationships/PatientRelationship.json">Link to file</a></p>
+<p>Contents of <code>resources/Relationships/PatientRelationship.json</code></p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">"resourceType"</span><span class="p">:</span> <span class="s2">"Basic"</span><span class="p">,</span>
+  <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"patientreport"</span><span class="p">,</span>
+  <span class="nt">"meta"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"versionId"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="nt">"lastUpdated"</span><span class="p">:</span> <span class="s2">"2019-07-30T07:34:24.098+00:00"</span><span class="p">,</span>
+    <span class="nt">"profile"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISRelationship"</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+    <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportDetails"</span><span class="p">,</span>
+    <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+      <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"Patient Report"</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+      <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"patients"</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportElement"</span><span class="p">,</span>
+      <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"gender"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"gender"</span>
+      <span class="p">}]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportElement"</span><span class="p">,</span>
+      <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"birthDate"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"birthDate"</span>
+      <span class="p">}]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportElement"</span><span class="p">,</span>
+      <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"given"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"name.where(use='official').last().given"</span>
+      <span class="p">}]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportElement"</span><span class="p">,</span>
+      <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"family"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"name.where(use='official').last().family"</span>
+      <span class="p">}]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportElement"</span><span class="p">,</span>
+      <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"fullname"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"name.where(use='official').last().text"</span>
+      <span class="p">}]</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/StructureDefinition/iHRISReportElement"</span><span class="p">,</span>
+      <span class="nt">"extension"</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"label"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"phone"</span>
+      <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="nt">"valueString"</span><span class="p">:</span> <span class="s2">"telecom.where(system='phone').value"</span>
+      <span class="p">}]</span>
+    <span class="p">}]</span>
+  <span class="p">}],</span>
+  <span class="nt">"code"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"coding"</span><span class="p">:</span> <span class="p">[{</span>
+      <span class="nt">"system"</span><span class="p">:</span> <span class="s2">"http://ihris.org/fhir/ValueSet/ihris-resource"</span><span class="p">,</span>
+      <span class="nt">"code"</span><span class="p">:</span> <span class="s2">"iHRISRelationship"</span>
+    <span class="p">}],</span>
+    <span class="nt">"text"</span><span class="p">:</span> <span class="s2">"iHRISRelationship"</span>
+  <span class="p">},</span>
+  <span class="nt">"subject"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"reference"</span><span class="p">:</span> <span class="s2">"StructureDefinition/Patient"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="openhim-mediator-json-configuration">OpenHIM Mediator JSON Configuration<a class="headerlink" href="#openhim-mediator-json-configuration" title="Permanent link">¶</a></h3>
 <p>If using OpenHIM, it must be configured for proper clients and roles to accept and forward requests from the Client Registry. An example export of a working JSON configuration that can be imported for development purposes is available.</p>
 <p><a href="https://github.com/openhie/client-registry/blob/master/server/config/mediator.json">Link to file</a></p>
@@ -669,7 +758,7 @@
 <div class="md-source-date">
 <small>
                       
-                        Last update: February 3, 2020
+                        Last update: February 14, 2020
                       
                     </small>
 </div>
