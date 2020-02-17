@@ -86,6 +86,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://github.com/intrahealth/client-registry-docs/dev/queries/</loc>
      <lastmod>2020-02-17</lastmod>
      <changefreq>daily</changefreq>
