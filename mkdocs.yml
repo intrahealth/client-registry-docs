@@ -45,6 +45,7 @@ nav:
     - 'dev/docker.md'
     - 'dev/installation.md'
     - 'dev/installation_full.md'
+    - 'internals.md'
     - 'dev/queries.md'
     - 'dev/queriespy.md'
     - 'dev/configuration.md'
