@@ -37,8 +37,8 @@ nav:
     - 'user/dashboard.md'
     - 'user/resources.md'
   - Implementer Manual:
+    - 'impl/guide.md'
     - 'impl/roles.md'
-    - 'impl/considerations.md'
   - Developer Manual:
     - 'dev/security.md'
     - 'dev/openmrs.md'
