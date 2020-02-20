@@ -1,10 +1,10 @@
-# Welcome!
+# Welcome
 
-*Thank you for taking an interest in the Open Client Registry. This is a community project and meant for others to adopt to their use cases as they wish.*
+*Thank you for taking an interest in the Open Client Registry! This is a community project and meant for others to adopt to their use cases as they wish.*
 
 To the left you'll see the Table of Contents for the documentation. On the right are the sections of each page.
 
-The documentation is divided into the **User Manual**, **Implementer Manual**, and **Developer Manual**.
+The documentation is divided into the **User Manual** and **Developer Manual**.
 
 
 ## How to use this site effectively
@@ -26,7 +26,7 @@ Please read the User Manual first as it introduces the basics. Here are some sug
 
 
 !!! tip
-    Regardless if you're just curious, an implementer, or a developer, please read the introduction page first and then the User Manual. We've kept them short.
+    Regardless if you're just curious, an implementer, or a developer, please read the OpenCR Overview tab first and then the User Manual. We've kept them short.
 
 
 

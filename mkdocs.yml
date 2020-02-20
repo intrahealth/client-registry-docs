@@ -26,12 +26,16 @@ theme:
 
 nav:
   - 'index.md'
-  - 'overview.md'
+  - Overview:
+    - 'overview.md'
+    - 'process.md'
+    - 'usecases.md'
+    - 'algos.md'
+    - 'supported.md'
+    - 'architecture.md'
   - User Manual: 
     - 'user/introduction.md'
-    - 'user/workflow.md'
-    - 'user/architecture.md'
-    - 'user/concepts.md'
+    - 'user/process.md'
     - 'user/decision_rules.md'
     - 'user/benchmarks.md'
     - 'user/ui.md'

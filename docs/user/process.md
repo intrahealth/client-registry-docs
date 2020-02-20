@@ -1,6 +1,6 @@
-# Record linkage process
+# Record Linkage Process
 
-The below diagram shows how OpenCR performs matching and record linkage. The diagram begins with a source system submitting a request with patient demographic data in a FHIR message, as indicated by the circle on the left.
+The below diagram shows how OpenCR performs record linkage after the matching process. The diagram begins with a source system submitting a request with patient demographic data in a FHIR message, as indicated by the circle on the left.
 
 ![Matching Process](../images/matching.png)
 
