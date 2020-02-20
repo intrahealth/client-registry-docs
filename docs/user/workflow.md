@@ -1,4 +1,4 @@
-# Workflows
+# Use cases
 
 Several workflows are supported out-of-the-box depending on the POS-Client Registry use case.
 

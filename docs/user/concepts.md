@@ -1,2 +1,5 @@
-# Record linkage concepts
+# Matching concepts
+
+# What is patient matching?
+
 

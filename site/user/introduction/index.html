@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="ie=edge" http-equiv="x-ua-compatible"/>
 <meta content="Technical documentation for the Open Client Registry" name="description"/>
-<link href="https://github.com/intrahealth/client-registry-docs/user/architecture/" rel="canonical"/>
+<link href="https://github.com/intrahealth/client-registry-docs/user/introduction/" rel="canonical"/>
 <meta content="IntraHealth" name="author"/>
 <meta content="Copy to clipboard" name="lang:clipboard.copy"/>
 <meta content="Copied to clipboard" name="lang:clipboard.copied"/>
@@ -20,7 +20,7 @@
 <meta content="[\s\-]+" name="lang:search.tokenizer"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.0.4, mkdocs-material-4.6.3" name="generator"/>
-<title>Architecture - OpenCR Documentation</title>
+<title>Introduction - OpenCR Documentation</title>
 <link href="../../assets/stylesheets/application.adb8469c.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/application-palette.a8b3c06d.css" rel="stylesheet"/>
 <meta content="#546e7a" name="theme-color"/>
@@ -39,7 +39,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-<a class="md-skip" href="#architecture" tabindex="0">
+<a class="md-skip" href="#introduction" tabindex="0">
         Skip to content
       </a>
 <header class="md-header" data-md-component="header">
@@ -60,7 +60,7 @@
             </span>
 <span class="md-header-nav__topic">
               
-                Architecture
+                Introduction
               
             </span>
 </div>
@@ -117,7 +117,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
+<a class="md-tabs__link md-tabs__link--active" href="./">
           User Manual
         </a>
 </li>
@@ -179,39 +179,34 @@
         User Manual
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/" title="Introduction">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduction
+      </label>
+<a class="md-nav__link md-nav__link--active" href="./" title="Introduction">
       Introduction
     </a>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-does-opencr-do">
+    What does OpenCR do?
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../workflow/" title="Workflows">
       Workflows
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-toggle md-nav__toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-        Architecture
-      </label>
-<a class="md-nav__link md-nav__link--active" href="./" title="Architecture">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../architecture/" title="Architecture">
       Architecture
     </a>
-<nav class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">Table of contents</label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#process">
-    Process
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#requirements">
-    Requirements
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../concepts/" title="Record linkage concepts">
@@ -389,13 +384,8 @@
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#process">
-    Process
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#requirements">
-    Requirements
+<a class="md-nav__link" href="#what-does-opencr-do">
+    What does OpenCR do?
   </a>
 </li>
 </ul>
@@ -405,25 +395,38 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset"><a class="md-icon md-content__icon" download href="../../pdf/combined.pdf" title="PDF Export"></a>
-<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/user/architecture.md" title="Edit this page"></a>
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¶</a></h1>
-<h2 id="process">Process<a class="headerlink" href="#process" title="Permanent link">¶</a></h2>
-<p><img alt="Matching Process" src="../../images/matching.png"/></p>
-<p>When requests are submitted with demographic data in a FHIR message, the Client Registry reads an submitting system's ID of that patient. The Client Registry searches for that submitting system's ID in its records. This happens regardless if it is a new patient or update of existing patient.</p>
-<p>When the submitting system's ID matches an existing record, the Client Registry updates the patient demographic information of that record with changes submitted. Once the update is complete, the existing record linkages may affected. This is because algorithms may not continue to link records as before because details have changed. Therefore, the Client Registry will pool all patients that were previously matched and break all the matches. The Client Registry will rerun matching algorithms again to see what matches are currently true matches of the patient. Then the Client Registry will be updated with the true matches given the changes in demographic data.</p>
-<p>Another scenario is when the Client Registry searches and doesn't find anyone already with same submitting system's ID.
-If there is not existing match, the Client Registry runs the matching algorithms for existing patients who matches that patient and will provide record linkages with other records.</p>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
-<p>In order for this process to work as expected, there are some requirements:</p>
+<a class="md-icon md-content__icon" href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/user/introduction.md" title="Edit this page"></a>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h1>
+<p>OpenCR is an open source and standards-based client registry. A client registry facilitates the exchange of patient information between disparate systems. A client registry holds patient identifers and may include patient demographic information. It is a necessary tool for public health to help manage patients, monitor outcomes, and conduct case-based surveillance.</p>
+<p>A client registry sits within a health information exchange (HIE). An HIE is used to safely and effectively exchange information. A critical component of an HIE are registries, such as those to manage a shared, canonical facility list, practitioners, and patients. </p>
+<h2 id="what-does-opencr-do">What does OpenCR do?<a class="headerlink" href="#what-does-opencr-do" title="Permanent link">¶</a></h2>
+<p>OpenCR is offers the ability to:</p>
 <ul>
-<li>Requests sent to the Client Registry must be made of FHIR messages. FHIR is a popular specification for accessing an API for providing data in health systems. Messages must support FHIR R4.</li>
-<li>Requests can only be received from trusted systems. See the <a href="../../dev/security/">security page</a> in the Developers Manual for mode detail.</li>
+<li>Assign and look-up unique identifiers,</li>
+<li>Allow connections from diverse point of service (POS) systems, such as electronic medical record (EMR) systems, that can submit messages in FHIR, and</li>
+<li>Configure decision rules around patient matching.</li>
 </ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.</p>
+</div>
+<p>The process for a point-of-service system like an EMR to get a unique ID from the Client Registry is straightforward though it looks complicated at first.</p>
+<ol>
+<li>A POS provides some demographic information to the Client Registry.</li>
+<li>The Client Registry looks for an existing record matching that patient.</li>
+<li>If there is an existing record, the Client Registry provides the unique ID back to the POS.</li>
+<li>If there is not an existing record, the Client Registry makes a new one and provides a unique ID back to the POS.</li>
+</ol>
+<p>As noted in the introduction, the Client Registry provides a unique identifier that also links to all other already matched records from submitting systems. This means that the Client Registry stores an identifier from submitting systems so that it can uniquely identify according to however the submitting systems store their records, but it also produces a UID for the entire domain using the service.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The below workflows the Client Registry does not store or provide clinical data. Such processes are external to the Client Registry and must be separately created, governed, and enabled. </p>
+</div>
 <hr/>
 <div class="md-source-date">
 <small>
                       
-                        Last update: February 16, 2020
+                        Last update: February 20, 2020
                       
                     </small>
 </div>
@@ -434,7 +437,7 @@ If there is not existing match, the Client Registry runs the matching algorithms
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../workflow/" rel="prev" title="Workflows">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--prev" href="../../overview/" rel="prev" title="What is OpenCR?">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -443,17 +446,17 @@ If there is not existing match, the Client Registry runs the matching algorithms
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Workflows
+                What is OpenCR?
               </span>
 </div>
 </a>
-<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../concepts/" rel="next" title="Record linkage concepts">
+<a class="md-flex md-footer-nav__link md-footer-nav__link--next" href="../workflow/" rel="next" title="Workflows">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Record linkage concepts
+                Workflows
               </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">

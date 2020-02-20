@@ -1,10 +1,10 @@
-# Architecture
+# Record linkage process
 
-## Process
+The below diagram shows how OpenCR performs matching and record linkage. The diagram begins with a source system submitting a request with patient demographic data in a FHIR message, as indicated by the circle on the left.
 
 ![Matching Process](../images/matching.png)
 
-When requests are submitted with demographic data in a FHIR message, the Client Registry reads an submitting system's ID of that patient. The Client Registry searches for that submitting system's ID in its records. This happens regardless if it is a new patient or update of existing patient.
+After requests are submitted with demographic data, OpenCR reads the submitting system's ID of that patient. The Client Registry searches for that source system's ID in its records. This happens regardless if it is a new patient or update of existing patient.
 
 When the submitting system's ID matches an existing record, the Client Registry updates the patient demographic information of that record with changes submitted. Once the update is complete, the existing record linkages may affected. This is because algorithms may not continue to link records as before because details have changed. Therefore, the Client Registry will pool all patients that were previously matched and break all the matches. The Client Registry will rerun matching algorithms again to see what matches are currently true matches of the patient. Then the Client Registry will be updated with the true matches given the changes in demographic data.
 

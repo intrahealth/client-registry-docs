@@ -36,11 +36,9 @@ nav:
     - 'user/benchmarks.md'
     - 'user/ui.md'
     - 'user/dashboard.md'
-    - 'user/resources.md'
-  - Implementer Manual:
-    - 'impl/introduction.md'
     - 'impl/guide.md'
     - 'impl/roles.md'
+    - 'user/resources.md'
   - Developer Manual:
     - 'dev/introduction.md'
     - 'dev/internals.md'
@@ -66,14 +64,16 @@ markdown_extensions:
   - codehilite:
       guess_lang: false
   - toc:
-      permalink: true
+      toc_depth : "1-1"
+  - footnotes
+  #     permalink: true
 
 # https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
 plugins:
   - search
   - git-revision-date-localized
-  - pdf-export:
-      combined: true
+  # - pdf-export:
+  #     combined: true
 # theme:
 # logo: 'images/logo.png' must be 128x128
 # logo:
