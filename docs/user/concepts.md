@@ -1,2 +1,2 @@
-# Concepts
+# Record linkage concepts
 

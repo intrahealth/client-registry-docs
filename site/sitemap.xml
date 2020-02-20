@@ -86,8 +86,8 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc></loc>
-     
+     <loc>https://github.com/intrahealth/client-registry-docs/dev/internals/</loc>
+     <lastmod>2020-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -132,6 +132,11 @@
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/contributing/</loc>
+     <lastmod>2020-02-17</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/license/</loc>
      <lastmod>2020-02-17</lastmod>
      <changefreq>daily</changefreq>
     </url>

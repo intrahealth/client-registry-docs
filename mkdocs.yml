@@ -1,6 +1,6 @@
 # Project information
-site_name: "Client Registry Documentation"
-site_description: "Technical documentation for the Client Registry"
+site_name: "OpenCR Documentation"
+site_description: "Technical documentation for the Open Client Registry"
 site_author: "IntraHealth"
 site_url: "https://github.com/intrahealth/client-registry-docs"
 
@@ -19,33 +19,36 @@ theme:
     accent: "indigo"
   language: "en"
   feature:
-    tabs: false
+    tabs: true
   font:
     text: "Roboto"
     code: "Roboto Mono"
 
 nav:
   - 'index.md'
-  - 'gettingstarted.md'
+  - 'overview.md'
   - User Manual: 
-    - 'user/concepts.md'
+    - 'user/introduction.md'
     - 'user/workflow.md'
     - 'user/architecture.md'
+    - 'user/concepts.md'
     - 'user/decision_rules.md'
     - 'user/benchmarks.md'
     - 'user/ui.md'
     - 'user/dashboard.md'
     - 'user/resources.md'
   - Implementer Manual:
+    - 'impl/introduction.md'
     - 'impl/guide.md'
     - 'impl/roles.md'
   - Developer Manual:
+    - 'dev/introduction.md'
+    - 'dev/internals.md'
     - 'dev/security.md'
     - 'dev/openmrs.md'
     - 'dev/docker.md'
     - 'dev/installation.md'
     - 'dev/installation_full.md'
-    - 'dev/internals.md'
     - 'dev/queries.md'
     - 'dev/queriespy.md'
     - 'dev/configuration.md'
