@@ -51,22 +51,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/intrahealth/client-registry-docs/user/resources/</loc>
-     <lastmod>2020-02-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://github.com/intrahealth/client-registry-docs/impl/introduction/</loc>
-     <lastmod>2020-02-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://github.com/intrahealth/client-registry-docs/impl/guide/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://github.com/intrahealth/client-registry-docs/impl/roles/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/user/resources/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
