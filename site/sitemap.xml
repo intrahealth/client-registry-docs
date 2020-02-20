@@ -11,22 +11,37 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/process/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/usecases/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/algos/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/supported/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://github.com/intrahealth/client-registry-docs/architecture/</loc>
+     <lastmod>2020-02-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://github.com/intrahealth/client-registry-docs/user/introduction/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://github.com/intrahealth/client-registry-docs/user/workflow/</loc>
-     <lastmod>2020-02-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://github.com/intrahealth/client-registry-docs/user/architecture/</loc>
-     <lastmod>2020-02-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://github.com/intrahealth/client-registry-docs/user/concepts/</loc>
+     <loc>https://github.com/intrahealth/client-registry-docs/user/process/</loc>
      <lastmod>2020-02-20</lastmod>
      <changefreq>daily</changefreq>
     </url>

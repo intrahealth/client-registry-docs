@@ -76,8 +76,8 @@ markdown_extensions:
 plugins:
   - search
   - git-revision-date-localized
-  # - pdf-export:
-  #     combined: true
+  - pdf-export:
+      combined: true
 # theme:
 # logo: 'images/logo.png' must be 128x128
 # logo:
