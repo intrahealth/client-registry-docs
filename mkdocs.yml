@@ -30,6 +30,7 @@ nav:
     - 'overview.md'
     - 'process.md'
     - 'usecases.md'
+    - 'cruid.md'
     - 'algos.md'
     - 'supported.md'
     - 'architecture.md'
@@ -78,6 +79,7 @@ plugins:
   - git-revision-date-localized
   # - pdf-export:
   #     combined: true
+
 # theme:
 # logo: 'images/logo.png' must be 128x128
 # logo:
