@@ -1,6 +1,6 @@
 # Welcome
 
-*Thank you for taking an interest in the Open Client Registry! This is a community project and meant for others to adopt to their use cases as they wish.*
+*Thank you for taking an interest in the Open Client Registry (OpenCR)! This is a community project and meant for others to adopt to their use cases as they wish.*
 
 To the left you'll see the Table of Contents for the documentation. On the right are the sections of each page.
 

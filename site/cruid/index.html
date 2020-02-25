@@ -13,6 +13,8 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/cruid/">
+      
       
         <meta name="author" content="IntraHealth">
       
@@ -35,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/intrahealth/client-registry-docs/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
     
     
       
-        <title>OpenCR Documentation</title>
+        <title>Unique Identifiers - OpenCR Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/intrahealth/client-registry-docs/assets/stylesheets/application.adb8469c.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="/intrahealth/client-registry-docs/assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -55,7 +57,7 @@
       
     
     
-      <script src="/intrahealth/client-registry-docs/assets/javascripts/modernizr.86422ebf.js"></script>
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -64,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="/intrahealth/client-registry-docs/assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -89,6 +91,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#unique-identifiers" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -111,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                
+                Unique Identifiers
               
             </span>
           
@@ -179,14 +185,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="/intrahealth/client-registry-docs/." class="md-tabs__link md-tabs__link--active">
+      <a href=".." class="md-tabs__link">
         Welcome
       </a>
     
@@ -198,7 +206,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/intrahealth/client-registry-docs/overview/" class="md-tabs__link">
+        <a href="../overview/" class="md-tabs__link md-tabs__link--active">
           Overview
         </a>
       
@@ -211,7 +219,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/intrahealth/client-registry-docs/user/introduction/" class="md-tabs__link">
+        <a href="../user/introduction/" class="md-tabs__link">
           User Manual
         </a>
       
@@ -224,7 +232,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="/intrahealth/client-registry-docs/dev/introduction/" class="md-tabs__link">
+        <a href="../dev/introduction/" class="md-tabs__link">
           Developer Manual
         </a>
       
@@ -287,7 +295,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/." title="Welcome" class="md-nav__link">
+    <a href=".." title="Welcome" class="md-nav__link">
       Welcome
     </a>
   </li>
@@ -297,10 +305,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Overview
@@ -318,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/overview/" title="What is OpenCR?" class="md-nav__link">
+    <a href="../overview/" title="What is OpenCR?" class="md-nav__link">
       What is OpenCR?
     </a>
   </li>
@@ -330,7 +340,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/process/" title="Matching Process" class="md-nav__link">
+    <a href="../process/" title="Matching Process" class="md-nav__link">
       Matching Process
     </a>
   </li>
@@ -342,7 +352,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/usecases/" title="Use Cases" class="md-nav__link">
+    <a href="../usecases/" title="Use Cases" class="md-nav__link">
       Use Cases
     </a>
   </li>
@@ -352,11 +362,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/cruid/" title="Unique Identifiers" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Unique Identifiers" class="md-nav__link md-nav__link--active">
       Unique Identifiers
     </a>
+    
   </li>
 
         
@@ -366,7 +385,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/algos/" title="Intro to Algorithms" class="md-nav__link">
+    <a href="../algos/" title="Intro to Algorithms" class="md-nav__link">
       Intro to Algorithms
     </a>
   </li>
@@ -378,7 +397,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/supported/" title="Supported Algorithms" class="md-nav__link">
+    <a href="../supported/" title="Supported Algorithms" class="md-nav__link">
       Supported Algorithms
     </a>
   </li>
@@ -390,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/architecture/" title="Architecture" class="md-nav__link">
+    <a href="../architecture/" title="Architecture" class="md-nav__link">
       Architecture
     </a>
   </li>
@@ -426,7 +445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../user/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -438,7 +457,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/process/" title="Record Linkage Process" class="md-nav__link">
+    <a href="../user/process/" title="Record Linkage Process" class="md-nav__link">
       Record Linkage Process
     </a>
   </li>
@@ -450,7 +469,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/decision_rules/" title="Decision Rules" class="md-nav__link">
+    <a href="../user/decision_rules/" title="Decision Rules" class="md-nav__link">
       Decision Rules
     </a>
   </li>
@@ -462,7 +481,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/benchmarks/" title="Matching Benchmarks" class="md-nav__link">
+    <a href="../user/benchmarks/" title="Matching Benchmarks" class="md-nav__link">
       Matching Benchmarks
     </a>
   </li>
@@ -474,7 +493,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/ui/" title="Admin Interface" class="md-nav__link">
+    <a href="../user/ui/" title="Admin Interface" class="md-nav__link">
       Admin Interface
     </a>
   </li>
@@ -486,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/dashboard/" title="Dashboard" class="md-nav__link">
+    <a href="../user/dashboard/" title="Dashboard" class="md-nav__link">
       Dashboard
     </a>
   </li>
@@ -498,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/impl/guide/" title="OpenHIE Implementation Guide" class="md-nav__link">
+    <a href="../impl/guide/" title="OpenHIE Implementation Guide" class="md-nav__link">
       OpenHIE Implementation Guide
     </a>
   </li>
@@ -510,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/impl/roles/" title="Roles and Responsibilities" class="md-nav__link">
+    <a href="../impl/roles/" title="Roles and Responsibilities" class="md-nav__link">
       Roles and Responsibilities
     </a>
   </li>
@@ -522,7 +541,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/user/resources/" title="Additional Resources" class="md-nav__link">
+    <a href="../user/resources/" title="Additional Resources" class="md-nav__link">
       Additional Resources
     </a>
   </li>
@@ -558,7 +577,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../dev/introduction/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -570,7 +589,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/internals/" title="Internals" class="md-nav__link">
+    <a href="../dev/internals/" title="Internals" class="md-nav__link">
       Internals
     </a>
   </li>
@@ -582,7 +601,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/security/" title="Security" class="md-nav__link">
+    <a href="../dev/security/" title="Security" class="md-nav__link">
       Security
     </a>
   </li>
@@ -594,7 +613,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/openmrs/" title="OpenMRS MPI Client" class="md-nav__link">
+    <a href="../dev/openmrs/" title="OpenMRS MPI Client" class="md-nav__link">
       OpenMRS MPI Client
     </a>
   </li>
@@ -606,7 +625,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/docker/" title="Installation (Docker)" class="md-nav__link">
+    <a href="../dev/docker/" title="Installation (Docker)" class="md-nav__link">
       Installation (Docker)
     </a>
   </li>
@@ -618,7 +637,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/installation/" title="Installation (Lite)" class="md-nav__link">
+    <a href="../dev/installation/" title="Installation (Lite)" class="md-nav__link">
       Installation (Lite)
     </a>
   </li>
@@ -630,7 +649,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/installation_full/" title="Installation (Production)" class="md-nav__link">
+    <a href="../dev/installation_full/" title="Installation (Production)" class="md-nav__link">
       Installation (Production)
     </a>
   </li>
@@ -642,7 +661,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/queries/" title="Example API Query (cURL)" class="md-nav__link">
+    <a href="../dev/queries/" title="Example API Query (cURL)" class="md-nav__link">
       Example API Query (cURL)
     </a>
   </li>
@@ -654,7 +673,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/queriespy/" title="Example API Query (Python)" class="md-nav__link">
+    <a href="../dev/queriespy/" title="Example API Query (Python)" class="md-nav__link">
       Example API Query (Python)
     </a>
   </li>
@@ -666,7 +685,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/configuration/" title="Server Configuration" class="md-nav__link">
+    <a href="../dev/configuration/" title="Server Configuration" class="md-nav__link">
       Server Configuration
     </a>
   </li>
@@ -678,7 +697,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/configurebenchmarks/" title="Configure Benchmarks" class="md-nav__link">
+    <a href="../dev/configurebenchmarks/" title="Configure Benchmarks" class="md-nav__link">
       Configure Benchmarks
     </a>
   </li>
@@ -690,7 +709,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/production/" title="Production Considerations" class="md-nav__link">
+    <a href="../dev/production/" title="Production Considerations" class="md-nav__link">
       Production Considerations
     </a>
   </li>
@@ -702,7 +721,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/backup/" title="Backup and Recovery" class="md-nav__link">
+    <a href="../dev/backup/" title="Backup and Recovery" class="md-nav__link">
       Backup and Recovery
     </a>
   </li>
@@ -714,7 +733,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/troubleshooting/" title="Troubleshooting" class="md-nav__link">
+    <a href="../dev/troubleshooting/" title="Troubleshooting" class="md-nav__link">
       Troubleshooting
     </a>
   </li>
@@ -726,7 +745,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/dev/docs/" title="Building Documentation" class="md-nav__link">
+    <a href="../dev/docs/" title="Building Documentation" class="md-nav__link">
       Building Documentation
     </a>
   </li>
@@ -743,7 +762,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/contributing/" title="Contributing" class="md-nav__link">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -755,7 +774,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/license/" title="License" class="md-nav__link">
+    <a href="../license/" title="License" class="md-nav__link">
       License
     </a>
   </li>
@@ -767,7 +786,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/intrahealth/client-registry-docs/about/" title="About" class="md-nav__link">
+    <a href="../about/" title="About" class="md-nav__link">
       About
     </a>
   </li>
@@ -780,12 +799,56 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/cruid.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="unique-identifiers">Unique Identifiers</h1>
+<p>OpenCR creates unique idenfiers (CRUIDs) which provide the key for record linkage.</p>
+<h2>Example</h2>
+<p>In this example, there are three records for one person, Luke, and a CRUID has been assigned.</p>
+<ul>
+<li>Luke has records one EMR, another EMR, and a lab system.</li>
+<li>Each of his records has some demographic data.</li>
+<li>OpenCR has also created a CRUID - "CRUID-1", for Luke.</li>
+<li>There is a record for CRUID-1. It does not have demographic data, but it does have links to all of Luke's records.</li>
+<li>Once CRUID-1 has been assigned to Luke's records, his CRUID-1 is also linked to the original records.</li>
+</ul>
+<p><img alt="CRUID" src="../images/cruid.png" /></p>
+                
+                  
+                
+                
+                  
+                  <hr>
+                  <div class="md-source-date">
+                    <small>
+                      
+                        Last update: February 25, 2020
+                      
+                    </small>
+                  </div>
+                
+              
               
                 
 
@@ -798,6 +861,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../usecases/" title="Use Cases" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Use Cases
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../algos/" title="Intro to Algorithms" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Intro to Algorithms
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -820,9 +918,9 @@
       
     </div>
     
-      <script src="/intrahealth/client-registry-docs/assets/javascripts/application.c33a9706.js"></script>
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
       
-      <script>app.initialize({version:"1.1",url:{base:"/intrahealth/client-registry-docs"}})</script>
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
       
     
   </body>

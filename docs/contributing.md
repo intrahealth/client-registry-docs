@@ -1,6 +1,6 @@
 # Contributing
 
-There may be many areas of potential contribution as the Client Registry is not one application, it's several and can be more than that in your use case.
+There may be many areas of potential contribution as OpenCR is not one application, it's several and can be more than that in your use case.
 
 It's recommended that you identify the specific feature or use case that needs support and 
 
