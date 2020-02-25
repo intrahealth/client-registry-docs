@@ -42,7 +42,7 @@
     
     
       
-        <title>Matching process - OpenCR Documentation</title>
+        <title>Matching Process - OpenCR Documentation</title>
       
     
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Matching process
+                Matching Process
               
             </span>
           
@@ -348,8 +348,8 @@
       
     
     
-    <a href="./" title="Matching process" class="md-nav__link md-nav__link--active">
-      Matching process
+    <a href="./" title="Matching Process" class="md-nav__link md-nav__link--active">
+      Matching Process
     </a>
     
   </li>
@@ -363,6 +363,18 @@
   <li class="md-nav__item">
     <a href="../usecases/" title="Use Cases" class="md-nav__link">
       Use Cases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../cruid/" title="Unique Identifiers" class="md-nav__link">
+      Unique Identifiers
     </a>
   </li>
 
@@ -810,8 +822,30 @@
                   <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/process.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="matching-process">Matching process</h1>
-<p><a href="">Insert block diagram</a></p>
+                <h1 id="matching-process">Matching Process</h1>
+<p>This is an overview of the matching process. </p>
+<h2>Generic Matching Process</h2>
+<p>It is helpful to look at a generic matching process first, and then move to to see where OpenCR fits.</p>
+<p>This diagram is reproduced from <a href="https://www.springer.com/gp/book/9783642311635">Christen, Peter, 2012, "Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection"</a></p>
+<p>The diagram is an example of a deduplication process with only one data source. </p>
+<ul>
+<li><strong>Database</strong>: The flow begins on the top left at 'Database'.</li>
+<li><strong>Preprocessing</strong>: Data from the database source is preprocessed. This means cleaning the data before submission of errors in date formats, data entry mistakes, biologically implausible values, and similar.</li>
+<li><strong>Blocking</strong>: This means using filters to be more efficient in queries. For example, filtering on the birth year of 1960 reduces the amount of searching that has to be done because only 1960 is used.</li>
+<li><strong>Comparison</strong>: Algorithms compare pairs of records.</li>
+<li><strong>Classification</strong>: Records are classified as matches, non-matches, or potential matches. </li>
+<li><strong>Clerical review</strong>: For records that are potential matches, they may be reviewed individually.</li>
+<li><strong>Evaluation</strong>: This process is a way to understand the matching performance against a known baseline. It is not necessarily built into the client registry but may be conducted using other tools.</li>
+</ul>
+<p><img alt="Overall matching process" src="../images/matchingprocess.png" /></p>
+<p>OpenCR performs much of the functionality in the matching process.</p>
+<ul>
+<li><strong>Database and preprocessing</strong>: The database and cleaning of records is done outside of OpenCR.</li>
+<li><strong>Comparison and classification</strong>: In production, ElasticSearch is used for these processes. ElasticSearch is a part of OpenCR.</li>
+<li><strong>Clerical review</strong>: There is a UI for viewing and breaking matches. </li>
+<li><strong>Evaluation</strong>: This process is conducted externally with other tools, it is not provided as a feature set in OpenCR. </li>
+</ul>
+<p><img alt="OpenCR matching process" src="../images/matchingprocessopencr.png" /></p>
                 
                   
                 
@@ -821,7 +855,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: February 20, 2020
+                        Last update: February 25, 2020
                       
                     </small>
                   </div>
