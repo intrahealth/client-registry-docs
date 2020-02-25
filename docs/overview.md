@@ -9,7 +9,7 @@ A client registry sits within a health information exchange (HIE). An HIE is use
 OpenCR is offers the ability to:
 
 * Assign and look-up unique identifiers,
-* Allow connections from diverse point of service (POS) systems, such as electronic medical record (EMR) systems, that can submit messages in FHIR,
+* Allow connections from diverse point of service (POS) systems, such as lab systems and electronic medical record (EMR) systems, that can submit messages in FHIR,
 * Configure decision rules around patient matching.
 
 !!! caution

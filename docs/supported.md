@@ -1,18 +1,11 @@
 # Supported Algorithms
 
-[Add table of algos and definitions]
-[link to algo background]
-
-Mediator
-1.Metaphone
-2.Levenshtein
-3.Exact
-
-Standalone
-1.levenshtein
-2.damerau-levenshtein
-3.jaro-winkler
-4.soundex
-5.Exact
-6.metaphone
-7.double-metaphone
+Algorithm | OpenCR Service | ElasticSearch
+--- | --- | ---
+**Exact** | Yes | Yes
+[**Metaphone**](https://en.wikipedia.org/wiki/Metaphone) | Yes | Yes
+[**Double-metaphone**](https://en.wikipedia.org/wiki/Metaphone#Double_Metaphone) | Yes | No
+[**Levenshtein**](https://en.wikipedia.org/wiki/Levenshtein_distance) | Yes | Yes
+[**Damerau-Levenshtein**](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance) | Yes | Yes
+[**Jaro-Winkler**](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance) | Yes | No
+[**Soundex**](https://en.wikipedia.org/wiki/Soundex) | Yes | No
