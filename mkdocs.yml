@@ -25,9 +25,8 @@ theme:
     code: "Roboto Mono"
 
 nav:
-  - 'index.md'
   - Overview:
-    - 'overview.md'
+    - 'index.md'
     - 'process.md'
     - 'usecases.md'
     - 'openmrs.md'
@@ -60,9 +59,8 @@ nav:
     - 'dev/backup.md'
     - 'dev/troubleshooting.md'
     - 'dev/docs.md'
-  - 'contributing.md'
-  - 'license.md'
-  - 'about.md'
+    - 'dev/license.md'
+    - 'dev/contributing.md'
 
 markdown_extensions:
   - admonition
