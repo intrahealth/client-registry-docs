@@ -6,7 +6,6 @@ To the left you'll see the Table of Contents for the documentation. On the right
 
 The documentation is divided into the **User Manual** and **Developer Manual**.
 
-
 ## How to use this site effectively
 
 Please read the User Manual first as it introduces the basics. Here are some suggestions about how to use this documentation depending on your role or interest.

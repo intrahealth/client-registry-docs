@@ -823,12 +823,12 @@
                 
                 
                 <h1 id="architecture">Architecture</h1>
-<p>The Client Registry is not one application, instead it's a set of applications that work together in the <a href="http://ohie.org">Open Health Information Exchange (OpenHIE)</a> architecture to serve point-of-service systems, like EMRs, insurance mechanisms, and labs.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>This is not an OpenHIE product. It is a prototypical client registry to facilitate discussion among a broad set of stakeholders. </p>
+<p>OpenCR is not one application, instead it's a set of applications that work together in the <a href="http://ohie.org">Open Health Information Exchange (OpenHIE)</a> architecture to serve point-of-service systems, like EMRs, insurance mechanisms, and labs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not an OpenHIE product. OpenHIE does not produce software products, rather it produces an architecture specification and is composed of a large, global community of practice around standards-based health information exchanges, particularly in low resource settings. Please <a href="https://ohie.org">join us</a>!</p>
 </div>
-<p>The architecture is made up of both a lite and a production version. In the production version it includes:</p>
+<p>The OpenCR architecture is made up of both a lite and a production version. In the production version it includes:</p>
 <ul>
 <li>The <a href="http://openhim.org"><strong>Open Health Information Mediator (OpenHIM)</strong></a>: The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions.</li>
 <li>The <a href="http://hapifhir.io"><strong>HAPI FHIR Server</strong></a>: HAPI is the reference FHIR server in Java and scalable into production environments.</li>
@@ -836,7 +836,7 @@
 <li>An <strong>optional UI</strong> to view and break matches between records, and to select and chain together decision rules around matching algorithms.</li>
 </ul>
 <p><img alt="Alt text" src="../images/production_architecture.png" title="Production Architecture" /></p>
-<p>The lite architecture is for non-production and does not require OpenHIM or ElasticSearch.</p>
+<p>The lite architecture is for non-production and does not require OpenHIM.</p>
 <p><img alt="Alt text" src="../images/lite_architecture.png" title="Lite Architecture" /></p>
                 
                   
@@ -847,7 +847,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: February 20, 2020
+                        Last update: February 25, 2020
                       
                     </small>
                   </div>
