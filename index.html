@@ -42,7 +42,7 @@
     
     
       
-        <title>OpenCR Documentation</title>
+        <title>Welcome - OpenCR Documentation</title>
       
     
     
@@ -185,26 +185,18 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
-      
-        
-  <li class="md-tabs__item">
-    
-      <a href="." class="md-tabs__link md-tabs__link--active">
-        Welcome
-      </a>
-    
-  </li>
-
       
         
   
   
     <li class="md-tabs__item">
       
-        <a href="overview/" class="md-tabs__link">
+        <a href="." class="md-tabs__link md-tabs__link--active">
           Overview
         </a>
       
@@ -237,12 +229,6 @@
     </li>
   
 
-      
-        
-      
-        
-      
-        
       
     </ul>
   </div>
@@ -294,6 +280,27 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Overview
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Overview
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -305,37 +312,6 @@
       Welcome
     </a>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Overview
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Overview
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="overview/" title="What is OpenCR?" class="md-nav__link">
-      What is OpenCR?
-    </a>
   </li>
 
         
@@ -435,13 +411,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-2">
       User Manual
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-2">
         User Manual
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -567,13 +543,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-3">
       Developer Manual
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         Developer Manual
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -747,44 +723,32 @@
   </li>
 
         
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
+          
+          
+          
 
 
   <li class="md-nav__item">
-    <a href="contributing/" title="Contributing" class="md-nav__link">
-      Contributing
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="license/" title="License" class="md-nav__link">
+    <a href="dev/license/" title="License" class="md-nav__link">
       License
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
-    <a href="about/" title="About" class="md-nav__link">
-      About
+    <a href="dev/contributing/" title="Contributing" class="md-nav__link">
+      Contributing
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -820,29 +784,40 @@
                 
                 <h1 id="welcome">Welcome</h1>
 <p><em>Thank you for taking an interest in the Open Client Registry (OpenCR)! This is a community project and meant for others to adopt to their use cases as they wish.</em></p>
-<p>To the left you'll see the Table of Contents for the documentation. On the right are the sections of each page.</p>
-<p>The documentation is divided into the <strong>User Manual</strong> and <strong>Developer Manual</strong>.</p>
-<h2>How to use this site effectively</h2>
-<p>Please read the User Manual first as it introduces the basics. Here are some suggestions about how to use this documentation depending on your role or interest.</p>
-<ul>
-<li><strong>Implementer</strong>: The workflow and decision rules pages explain the record linkage process and have links to resources to help teach others how to understand it and run it in an organization.</li>
-</ul>
-<!-- link to starting page -->
-
-<ul>
-<li><strong>Data manager or analyst</strong> The decision rules page is an overview of how matching is configured and discusses how algorithms are selected and chained together.</li>
-</ul>
-<!-- link to starting page -->
-
-<ul>
-<li><strong>Developer</strong> or <strong>systems administrator</strong>: The installation and configuration pages go into more detail about setup and configuration. </li>
-</ul>
-<!-- link to starting page -->
-
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Regardless if you're just curious, an implementer, or a developer, please read the OpenCR Overview tab first and then the User Manual. We've kept them short.</p>
+<p>Regardless if you're just curious, an implementer, or a developer, please read the this Overview tab first and then the User Manual. We've kept them short.</p>
 </div>
+<h1 id="what-is-opencr">What is OpenCR?</h1>
+<p>OpenCR is an open source and standards-based client registry. A client registry facilitates the exchange of patient information between disparate systems. A client registry holds patient identifers and may include patient demographic information. It is a necessary tool for public health to help manage patients, monitor outcomes, and conduct case-based surveillance.</p>
+<p>A client registry sits within a health information exchange (HIE). An HIE is used to safely and effectively exchange information. A critical component of an HIE are registries, such as those to manage a shared, canonical facility list, practitioners, and patients. </p>
+<h2>What does OpenCR do?</h2>
+<p>OpenCR is offers the ability to:</p>
+<ul>
+<li>Assign and look-up unique identifiers,</li>
+<li>Allow connections from diverse point of service (POS) systems, such as lab systems and electronic medical record (EMR) systems, that can submit messages in FHIR,</li>
+<li>Configure decision rules around patient matching.</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.</p>
+</div>
+<h2>Use Cases</h2>
+<p>The Client Registry is one component in a more complex HIS architecture needed to accomplish important use cases, such as:</p>
+<ul>
+<li>
+<p><strong>Deduplicating patients</strong>: Sometimes patients have multiple diagnostic results stored within a POS. The Client Registry will link patients based on configurable decision rules so multiple test results for the same patient can be found. </p>
+</li>
+<li>
+<p><strong>Tracking patients lost to clinical care</strong>: EMRs are often not interoperable with one another, resulting in difficulty tracking patients as they move between facilities to seek care. A Client Registry will help data managers to track patients, decreasing instances of duplicate and incomplete records, patients LTFU, and sub-optimal care. </p>
+</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a way to enable use cases like deduplication - which must be an external process. </p>
+</div>
+<h1 id="about">About</h1>
+<p>OpenCR was developed by IntraHealth International with support from PEPFAR through the USAID MEASURE Evaluation Project. Technical direction was provided by CDC. </p>
                 
                   
                 
@@ -875,13 +850,13 @@
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="overview/" title="What is OpenCR?" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="process/" title="Matching Process" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                What is OpenCR?
+                Matching Process
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
