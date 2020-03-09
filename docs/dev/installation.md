@@ -36,6 +36,12 @@ Install and start ES for the intended OS. See the [ES install instructions](http
 
 The required version is >=7.5.
 
+The phonetic analysis package must be installed.
+
+```
+/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
+```
+
 Once installed and started, ensure that ES is up and running:
 ```sh
 curl -X GET "localhost:9200/_cat/health?v&pretty"

@@ -6,11 +6,9 @@
 The production stack consists of 10 components:
 
 * OpenHIM core and OpenHIM admin console. Requires MongoDB and Nginx or another reverse proxy.
-* Client Registry Service as an OpenHIM mediator.
+* Client Registry Service as an OpenHIM mediator which includes Client Registry UI
 * HAPI FHIR Server with a database backend.
-* ElasticSearch (>=7.5)
-* Client Registry UI
-* Kibana Dashboard
+* ElasticSearch (>=7.5) with the 
 
 The expected operating system is Linux for production. Only Ubuntu versions have been tested.
 
@@ -47,6 +45,12 @@ HAPI FHIR should use a database backend in production. HAPI FHIR stores the pati
 
 * Follow the instructions for [installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html)
 * Systemd is the preferred system and service manager. There are commands to initiate systemd and journalctl.
+* The phonetic analysis package must be installed.
+
+```
+/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
+```
+
 
 !! warning
     ES is not production-ready when run one a single node. It is recommended to run ES on several nodes. Those nodes can also run followers of Postgres.
