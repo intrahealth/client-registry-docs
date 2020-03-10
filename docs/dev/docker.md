@@ -41,7 +41,9 @@ npm install
 ```
 
 * Copy a configuration for Docker for the OpenCR Service to use.
+```
 cp config/config_docker_template.json config/config_docker.json
+```
 
 * Run the server using the docker config for NODE_ENV.
 ```
