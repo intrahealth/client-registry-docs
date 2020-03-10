@@ -226,7 +226,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../internals/" class="md-tabs__link">
+        <a href="../proficiencies/" class="md-tabs__link">
           Developer Manual
         </a>
       
@@ -484,8 +484,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user/dashboard/" title="Dashboard" class="md-nav__link">
-      Dashboard
+    <a href="../../user/dashboard.md" title="None" class="md-nav__link">
+      None
     </a>
   </li>
 
@@ -577,6 +577,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../proficiencies/" title="Proficiencies" class="md-nav__link">
+      Proficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../internals/" title="Internals" class="md-nav__link">
       Internals
     </a>
@@ -637,8 +649,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Installation (Docker)" class="md-nav__link">
-      Installation (Docker)
+    <a href="../docker/" title="Test and Demo using Docker" class="md-nav__link">
+      Test and Demo using Docker
     </a>
   </li>
 
@@ -649,8 +661,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../installation/" title="Installation (Lite)" class="md-nav__link">
-      Installation (Lite)
+    <a href="../installation/" title="Installation (Only for Testing CR Service app)" class="md-nav__link">
+      Installation (Only for Testing CR Service app)
     </a>
   </li>
 
@@ -877,7 +889,26 @@
                 <h1 id="backup-and-recovery">Backup and Recovery</h1>
 <h1 id="backup">Backup</h1>
 <p>The primary datastore is the database configured for HAPI FHIR Server. This means that while an ES cluster should be backed-up, the ES index can be rebuilt from HAPI. </p>
-<h1 id="recovery">Recovery</h1>
+<ul>
+<li>
+<p>Either Postgres or MySQL are recommended to be used with HAPI FHIR Server. In production, database should be cloned or replicas created and cloned and those backups tested.</p>
+</li>
+<li>
+<p>Depending on the database, there are separate processes to backup data itself in a database and information about users, groups and other metadata. </p>
+</li>
+<li>
+<p>It is recommended to create a backup and recovery policy (data and metadata, timeframes, full-versus-incremental, from replicas or not).</p>
+</li>
+</ul>
+<h1 id="recovery-policy">Recovery Policy</h1>
+<ul>
+<li>
+<p>Backups should be tested for their ability to be used for recovery. There are existing online resources on how to test backups. </p>
+</li>
+<li>
+<p>A backup policy should include scheduled recovery tests to ensure that backups are suitable.</p>
+</li>
+</ul>
                 
                   
                 
@@ -887,7 +918,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: February 16, 2020
+                        Last update: March 10, 2020
                       
                     </small>
                   </div>
