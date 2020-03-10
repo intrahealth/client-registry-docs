@@ -923,13 +923,14 @@ npm install
 
 
 <ul>
-<li>
-<p>Copy a configuration for Docker for the OpenCR Service to use.
-cp config/config_docker_template.json config/config_docker.json</p>
-</li>
-<li>
-<p>Run the server using the docker config for NODE_ENV.</p>
-</li>
+<li>Copy a configuration for Docker for the OpenCR Service to use.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>cp config/config_docker_template.json config/config_docker.json
+</code></pre></div>
+
+
+<ul>
+<li>Run the server using the docker config for NODE_ENV.</li>
 </ul>
 <div class="codehilite"><pre><span></span><code># from client-registry/server
 sudo NODE_ENV=docker node lib/app.js

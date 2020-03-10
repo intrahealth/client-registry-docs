@@ -51,4 +51,9 @@ cp config/config_docker_template.json config/config_docker.json
 sudo NODE_ENV=docker node lib/app.js
 ```
 
+Visit the UI at: [https://localhost:3000/crux](https://localhost:3000/crux)
+
+Default username: root@intrahealth.org
+Default password: intrahealth
+
 OpenCR may require access to /var/log for logging. This requirement may be changed in the future.
