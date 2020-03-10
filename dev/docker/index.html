@@ -42,7 +42,7 @@
     
     
       
-        <title>Installation (Docker) - OpenCR Documentation</title>
+        <title>Test and Demo using Docker - OpenCR Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#installation-docker" tabindex="0" class="md-skip">
+      <a href="#test-and-demo-using-docker" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Installation (Docker)
+                Test and Demo using Docker
               
             </span>
           
@@ -226,7 +226,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../internals/" class="md-tabs__link">
+        <a href="../proficiencies/" class="md-tabs__link">
           Developer Manual
         </a>
       
@@ -484,8 +484,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user/dashboard/" title="Dashboard" class="md-nav__link">
-      Dashboard
+    <a href="../../user/dashboard.md" title="None" class="md-nav__link">
+      None
     </a>
   </li>
 
@@ -577,6 +577,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../proficiencies/" title="Proficiencies" class="md-nav__link">
+      Proficiencies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../internals/" title="Internals" class="md-nav__link">
       Internals
     </a>
@@ -647,8 +659,8 @@
       
     
     
-    <a href="./" title="Installation (Docker)" class="md-nav__link md-nav__link--active">
-      Installation (Docker)
+    <a href="./" title="Test and Demo using Docker" class="md-nav__link md-nav__link--active">
+      Test and Demo using Docker
     </a>
     
   </li>
@@ -660,8 +672,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../installation/" title="Installation (Lite)" class="md-nav__link">
-      Installation (Lite)
+    <a href="../installation/" title="Installation (Only for Testing CR Service app)" class="md-nav__link">
+      Installation (Only for Testing CR Service app)
     </a>
   </li>
 
@@ -874,13 +886,69 @@
                   <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/docker.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="installation-docker">Installation (Docker)</h1>
+                <h1 id="test-and-demo-using-docker">Test and Demo using Docker</h1>
+<div class="admonition time to complete">
+<p class="admonition-title">Time</p>
+<p>10 Minutes</p>
+</div>
+<p>The easiest way to get started with OpenCR is to use Docker to launch ElasticSearch and HAPI FHIR Server and run the OpenCR Service directly. By running the OpenCR Service directly, it is easy to revise and reload decision rules.</p>
+<p>These instructions have been tested on Linux and macOS.</p>
+<h2>Prerequisites</h2>
+<ul>
+<li>Docker.</li>
+<li>Java runtime version 8.</li>
+<li>Node and NPM.</li>
+</ul>
+<h2>Instructions</h2>
+<ul>
+<li>Clone the repository and change directory into the root folder.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>https://github.com/intrahealth/client-registry.git
+cd client-registry
+</code></pre></div>
+
+
+<ul>
+<li>Ensure that Docker is installed and running.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>docker --version
+</code></pre></div>
+
+
+<ul>
+<li>Start ElasticSearch and HAPI FHIR Server using Docker. </li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The latest tag is not supported by ES. </p>
+<p>You cannot use the existing hosted ElasticSearch image because OpenCR requires a plugin to be installed. The docker-compose file provided uses the Dockerfile-es which builds an ES image with the plugin.</p>
 </div>
-<p>Under construction.</p>
-<p><img alt="" src="https://media.giphy.com/media/905GG7MjDw61q/giphy.gif" /></p>
+<div class="codehilite"><pre><span></span><code>docker-compose -f docker-compose.dev.yml up fhir es
+</code></pre></div>
+
+
+<ul>
+<li>Switch to a new terminal window. Install the requirements for the OpenCR Service.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>cd server
+npm install
+</code></pre></div>
+
+
+<ul>
+<li>
+<p>Copy a configuration for Docker for the OpenCR Service to use.
+cp config/config_docker_template.json config/config_docker.json</p>
+</li>
+<li>
+<p>Run the server using the docker config for NODE_ENV.</p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code># from client-registry/server
+sudo NODE_ENV=docker node lib/app.js
+</code></pre></div>
+
+
+<p>OpenCR may require access to /var/log for logging. This requirement may be changed in the future.</p>
                 
                   
                 
@@ -890,7 +958,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: February 16, 2020
+                        Last update: March 10, 2020
                       
                     </small>
                   </div>
@@ -927,13 +995,13 @@
           </a>
         
         
-          <a href="../installation/" title="Installation (Lite)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../installation/" title="Installation (Only for Testing CR Service app)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Installation (Lite)
+                Installation (Only for Testing CR Service app)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
