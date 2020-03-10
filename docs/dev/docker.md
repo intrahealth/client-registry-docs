@@ -1,6 +1,6 @@
 # Test and Demo using Docker
 
-!!! Time to complete
+!!! note "Time to complete"
     10 Minutes
 
 The easiest way to get started with OpenCR is to use Docker to launch ElasticSearch and HAPI FHIR Server and run the OpenCR Service directly. By running the OpenCR Service directly, it is easy to revise and reload decision rules.
@@ -51,9 +51,8 @@ cp config/config_docker_template.json config/config_docker.json
 sudo NODE_ENV=docker node lib/app.js
 ```
 
-Visit the UI at: [https://localhost:3000/crux](https://localhost:3000/crux)
-
-Default username: root@intrahealth.org
-Default password: intrahealth
+* Visit the UI at: [https://localhost:3000/crux](https://localhost:3000/crux)
+    * **Default username**: root@intrahealth.org 
+    * **Default password**: intrahealth
 
 OpenCR may require access to /var/log for logging. This requirement may be changed in the future.
