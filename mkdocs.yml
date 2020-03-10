@@ -46,6 +46,7 @@ nav:
     - 'user/resources.md'
   - Developer Manual:
     - 'Introduction': 
+      - 'dev/proficiencies.md'
       - 'dev/internals.md'
       - 'dev/security.md'
     - 'Installation':

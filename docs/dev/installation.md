@@ -1,4 +1,4 @@
-# Installation (Lite)
+# Installation (Only for Testing CR Service app)
 
 !!! warning
     This guide is for demonstrations or tests only, not for production environments.

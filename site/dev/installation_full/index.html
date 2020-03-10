@@ -220,13 +220,19 @@
         
   
   
+    
+    
+  
+  
     <li class="md-tabs__item">
       
-        <a href="../introduction/" class="md-tabs__link md-tabs__link--active">
+        <a href="../internals/" class="md-tabs__link">
           Developer Manual
         </a>
       
     </li>
+  
+
   
 
       
@@ -551,12 +557,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../introduction/" title="Introduction" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
       Introduction
-    </a>
-  </li>
-
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Introduction
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -578,6 +591,44 @@
   <li class="md-nav__item">
     <a href="../security/" title="Security" class="md-nav__link">
       Security
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../production/" title="System Requirements" class="md-nav__link">
+      System Requirements
     </a>
   </li>
 
@@ -627,15 +678,8 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../queries/" title="Example API Query (cURL)" class="md-nav__link">
-      Example API Query (cURL)
-    </a>
+      </ul>
+    </nav>
   </li>
 
         
@@ -644,12 +688,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Configuration and Testing
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Configuration and Testing
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -681,11 +732,47 @@
 
 
   <li class="md-nav__item">
-    <a href="../production/" title="Production Considerations" class="md-nav__link">
-      Production Considerations
+    <a href="../queries/" title="Example API Query (cURL)" class="md-nav__link">
+      Example API Query (cURL)
     </a>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
+      Example API Query (Python)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Production
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Production
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -708,6 +795,11 @@
     <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
       Troubleshooting
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -790,11 +882,9 @@
 <p>The production stack consists of 10 components:</p>
 <ul>
 <li>OpenHIM core and OpenHIM admin console. Requires MongoDB and Nginx or another reverse proxy.</li>
-<li>Client Registry Service as an OpenHIM mediator.</li>
+<li>Client Registry Service as an OpenHIM mediator which includes Client Registry UI</li>
 <li>HAPI FHIR Server with a database backend.</li>
-<li>ElasticSearch (&gt;=7.5)</li>
-<li>Client Registry UI</li>
-<li>Kibana Dashboard</li>
+<li>ElasticSearch (&gt;=7.5) with the </li>
 </ul>
 <p>The expected operating system is Linux for production. Only Ubuntu versions have been tested.</p>
 <p>It is critical that systems administrators note the version compatibilities outlined below. This guide does not cover most aspects of enterprise systems administration, rather it attempts to cover this Client Registry platform. If there are key areas missing, please open an <a href="https://github.com/intrahealth/client-registry/issues/new">issue on GitHub</a>.</p>
@@ -826,7 +916,12 @@
 <ul>
 <li>Follow the instructions for <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">installation</a></li>
 <li>Systemd is the preferred system and service manager. There are commands to initiate systemd and journalctl.</li>
+<li>The phonetic analysis package must be installed.</li>
 </ul>
+<div class="codehilite"><pre><span></span><code>/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
+</code></pre></div>
+
+
 <p>!! warning
     ES is not production-ready when run one a single node. It is recommended to run ES on several nodes. Those nodes can also run followers of Postgres.</p>
 <h2>Client Registry UI</h2>
@@ -842,7 +937,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: February 16, 2020
+                        Last update: March 9, 2020
                       
                     </small>
                   </div>
@@ -879,13 +974,13 @@
           </a>
         
         
-          <a href="../queries/" title="Example API Query (cURL)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuration/" title="Server Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Example API Query (cURL)
+                Server Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
