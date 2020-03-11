@@ -4,8 +4,8 @@
 
 This demo shows how a patient is registered in OpenMRS with the MPI module (see below) and how that patient shows up in OpenCR where matches can be viewed and broken.
 
-<video width="800" height="600" controls>
-  <source src="../images/openCR.mp4" type="video/mp4">
+<video width="720" height="576" controls>
+  <source src="../images/opencr_openmrs_newvo_h265.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
