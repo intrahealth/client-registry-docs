@@ -13,7 +13,7 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
-        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/production/">
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/requirements/">
       
       
         <meta name="author" content="IntraHealth">
@@ -42,7 +42,7 @@
     
     
       
-        <title>System Requirements - OpenCR Documentation</title>
+        <title>System Requirements (Production) - OpenCR Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#system-requirements" tabindex="0" class="md-skip">
+      <a href="#system-requirements-production" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                System Requirements
+                System Requirements (Production)
               
             </span>
           
@@ -625,6 +625,54 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../method/" title="Choosing an Installation Method" class="md-nav__link">
+      Choosing an Installation Method
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Local Installation (Docker)" class="md-nav__link">
+      Local Installation (Docker)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="Local Installation (Direct)" class="md-nav__link">
+      Local Installation (Direct)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation_full/" title="Server Installation" class="md-nav__link">
+      Server Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -635,46 +683,10 @@
       
     
     
-    <a href="./" title="System Requirements" class="md-nav__link md-nav__link--active">
-      System Requirements
+    <a href="./" title="System Requirements (Production)" class="md-nav__link md-nav__link--active">
+      System Requirements (Production)
     </a>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../docker/" title="Test and Demo using Docker" class="md-nav__link">
-      Test and Demo using Docker
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../installation/" title="Installation (Only for Testing CR Service app)" class="md-nav__link">
-      Installation (Only for Testing CR Service app)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../installation_full/" title="Installation (Production)" class="md-nav__link">
-      Installation (Production)
-    </a>
   </li>
 
         
@@ -871,24 +883,20 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/production.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/requirements.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="system-requirements">System Requirements</h1>
-<p>This page is under construction.</p>
+                <h1 id="system-requirements-production">System Requirements (Production)</h1>
 <h2>IT Resource Planning</h2>
-<p>Benchmarking will be completed in future phases to make recommendations for medium to heavy workloads. The below resource suggestions should be revised based on benchmarking for the particular context into which the Client Registry is being deployed.</p>
+<p>Benchmarking will be completed in future phases to make recommendations for medium to heavy workloads. The below resource suggestions should be revised based on benchmarking for the particular context into which OpenCR is being deployed.</p>
 <h3>Servers</h3>
 <p>For an MVP in a production environment where potential data loss is acceptable, a single large server can be used. ES has high memory requirements. </p>
 <h3>CPU</h3>
 <ul>
-<li>Local development: PC with multiple cores</li>
-<li>Production: Use 2-8 cores.</li>
+<li>2-8 cores available for the OpenCR platform apps.</li>
 </ul>
 <h3>Memory</h3>
-<p>Memory usage depends on the number of records and the performance required.</p>
-<p>Local development on a PC: 8GB of RAM should be available</p>
-<p>Production, at minimum: 32GB with 24GB free for the Client Registry is recommended for light loads if using one VM.</p>
+<p>Memory usage depends on the number of records and the performance required. At minimum: 32GB with 24GB free for OpenCR is recommended for light loads if using one VM.</p>
 <ul>
 <li>16GB minimum for ElasticSearch with 32GB preferred or 64GB for high volume: Follow the guidelines provided by the maintainers <a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/hardware.html#_memory">here</a>. </li>
 <li>8GB for OpenHIM, mediator, Postgres, and HAPI FHIR Server.</li>
@@ -904,7 +912,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 9, 2020
+                        Last update: March 12, 2020
                       
                     </small>
                   </div>
@@ -926,7 +934,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../installation_full/" title="Server Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -935,19 +943,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Security
+                Server Installation
               </span>
             </div>
           </a>
         
         
-          <a href="../docker/" title="Test and Demo using Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuration/" title="Server Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Test and Demo using Docker
+                Server Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

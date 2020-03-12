@@ -42,7 +42,7 @@
     
     
       
-        <title>Installation (Only for Testing CR Service app) - OpenCR Documentation</title>
+        <title>Local Installation (Direct) - OpenCR Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#installation-only-for-testing-cr-service-app" tabindex="0" class="md-skip">
+      <a href="#local-installation-direct" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Installation (Only for Testing CR Service app)
+                Local Installation (Direct)
               
             </span>
           
@@ -627,8 +627,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../production/" title="System Requirements" class="md-nav__link">
-      System Requirements
+    <a href="../method/" title="Choosing an Installation Method" class="md-nav__link">
+      Choosing an Installation Method
     </a>
   </li>
 
@@ -639,8 +639,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Test and Demo using Docker" class="md-nav__link">
-      Test and Demo using Docker
+    <a href="../docker/" title="Local Installation (Docker)" class="md-nav__link">
+      Local Installation (Docker)
     </a>
   </li>
 
@@ -659,8 +659,8 @@
       
     
     
-    <a href="./" title="Installation (Only for Testing CR Service app)" class="md-nav__link md-nav__link--active">
-      Installation (Only for Testing CR Service app)
+    <a href="./" title="Local Installation (Direct)" class="md-nav__link md-nav__link--active">
+      Local Installation (Direct)
     </a>
     
   </li>
@@ -672,8 +672,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../installation_full/" title="Installation (Production)" class="md-nav__link">
-      Installation (Production)
+    <a href="../installation_full/" title="Server Installation" class="md-nav__link">
+      Server Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../requirements/" title="System Requirements (Production)" class="md-nav__link">
+      System Requirements (Production)
     </a>
   </li>
 
@@ -874,7 +886,11 @@
                   <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/installation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="installation-only-for-testing-cr-service-app">Installation (Only for Testing CR Service app)</h1>
+                <h1 id="local-installation-direct">Local Installation (Direct)</h1>
+<div class="admonition note">
+<p class="admonition-title">Time to complete</p>
+<p>60 Minutes</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This guide is for demonstrations or tests only, not for production environments.</p>
@@ -883,6 +899,13 @@
 <p class="admonition-title">Note</p>
 <p>This installation method requires familiarity with the command line.</p>
 </div>
+<h2>Prerequisites</h2>
+<ul>
+<li>CPU/RAM: Modern CPUs with 8GB RAM.</li>
+<li>Java version 8 (1.8). Oracle-licensed Java (requires sign-in) and <a href="https://adoptopenjdk.net">AdoptOpenJDK</a> (not sign-in required) have been tested.</li>
+<li><a href="https://nodejs.org/en/download/package-manager">Node 10</a> which includes npm.</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a></li>
+</ul>
 <h2>HAPI FHIR Server CLI</h2>
 <p>For non-production environments, the HAPI maintainers provide a simple CLI-based tool to run it.</p>
 <p>The only required dependency is Java &gt;= 8 (1.8).</p>
@@ -899,11 +922,10 @@
 </code></pre></div>
 
 
-<h2>ElasticSearch (Optional)</h2>
-<p>By default, the configuration does not require ES but including it will enable ES-based matching.</p>
+<h2>ElasticSearch</h2>
 <p>Install and start ES for the intended OS. See the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html">ES install instructions</a></p>
 <p>The required version is &gt;=7.5.</p>
-<p>The phonetic analysis package must be installed.</p>
+<p>The phonetic analysis package must be installed. For example:</p>
 <div class="codehilite"><pre><span></span><code>/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
 </code></pre></div>
 
@@ -914,7 +936,7 @@
 
 
 <p>Status should be yellow for a single-node cluster.</p>
-<h2>Client Registry Service (Standalone)</h2>
+<h2>OpenCR Service and UI</h2>
 <p>Clone the repository into a directory of choice.</p>
 <div class="codehilite"><pre><span></span><code>git clone https://github.com/intrahealth/client-registry.git
 </code></pre></div>
@@ -951,7 +973,7 @@ npm install
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 10, 2020
+                        Last update: March 12, 2020
                       
                     </small>
                   </div>
@@ -973,7 +995,7 @@ npm install
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../docker/" title="Test and Demo using Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docker/" title="Local Installation (Docker)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -982,19 +1004,19 @@ npm install
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Test and Demo using Docker
+                Local Installation (Docker)
               </span>
             </div>
           </a>
         
         
-          <a href="../installation_full/" title="Installation (Production)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../installation_full/" title="Server Installation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Installation (Production)
+                Server Installation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
