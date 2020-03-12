@@ -6,7 +6,7 @@
 
 This page addresses several security areas, including hardening, user authentication, node authentication, auditing, and non-production (demos, tests) configurations.
 
-For links to information on server resource planning see the [production](production.md) page.
+For links to information on server resource planning see the [requirements](requirements.md) page.
 
 ## Hardening
 
