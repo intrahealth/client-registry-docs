@@ -1,10 +1,20 @@
-# Installation (Only for Testing CR Service app)
+# Local Installation (Direct)
+
+!!! note "Time to complete"
+    60 Minutes
 
 !!! warning
     This guide is for demonstrations or tests only, not for production environments.
 
 !!! note
     This installation method requires familiarity with the command line.
+
+## Prerequisites
+
+* CPU/RAM: Modern CPUs with 8GB RAM.
+* Java version 8 (1.8). Oracle-licensed Java (requires sign-in) and [AdoptOpenJDK](https://adoptopenjdk.net) (not sign-in required) have been tested.
+* [Node 10](https://nodejs.org/en/download/package-manager) which includes npm.
+* [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## HAPI FHIR Server CLI
 
@@ -28,16 +38,13 @@ Visit [http://localhost:8080/](http://localhost:8080/) to ensure HAPI is up and 
 curl -X GET "localhost:8080/baseR4/Patient?"
 ```
 
-## ElasticSearch (Optional)
-
-By default, the configuration does not require ES but including it will enable ES-based matching.
+## ElasticSearch
 
 Install and start ES for the intended OS. See the [ES install instructions](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 
 The required version is >=7.5.
 
-The phonetic analysis package must be installed.
-
+The phonetic analysis package must be installed. For example:
 ```
 /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
 ```
@@ -48,7 +55,8 @@ curl -X GET "localhost:9200/_cat/health?v&pretty"
 ```
 Status should be yellow for a single-node cluster.
 
-## Client Registry Service (Standalone)
+
+## OpenCR Service and UI
 
 Clone the repository into a directory of choice.
 ```

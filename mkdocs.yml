@@ -49,10 +49,11 @@ nav:
       - 'dev/internals.md'
       - 'dev/security.md'
     - 'Installation':
-      - 'dev/production.md'
+      - 'dev/method.md'
       - 'dev/docker.md'
       - 'dev/installation.md'
       - 'dev/installation_full.md'
+      - 'dev/requirements.md'
     - 'Configuration and Testing':
       - 'dev/configuration.md'
       - 'dev/configurebenchmarks.md'

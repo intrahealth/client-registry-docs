@@ -1,4 +1,4 @@
-# Test and Demo using Docker
+# Local Installation (Docker)
 
 !!! note "Time to complete"
     10 Minutes
@@ -7,11 +7,20 @@ The easiest way to get started with OpenCR is to use Docker to launch ElasticSea
 
 These instructions have been tested on Linux and macOS.
 
+!!! warning
+    This guide is for demonstrations or tests only, not for production environments.
+
+!!! note
+    This installation method requires some familiarity with the command line.
+
 ## Prerequisites
 
-* Docker.
-* Java runtime version 8.
-* Node and NPM.
+* Any modern PC capable of running Docker for Desktop. 
+    * macOS: 2010 and newer Macs. macOS 10.13 or later (Sierra, Mojava, Catalina). 4GB of RAM is the minimum but 8GB RAM is recommended for OpenCR.
+    * Windows 10 64-bit (Education, Pro, or Enterprise). Note that you must have Hyper-V and Containers Windows enabled and these require administrator privileges.
+* Docker for Desktop
+* [Node 10](https://nodejs.org/en/download/package-manager) which includes npm.
+* [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 ## Instructions
 
