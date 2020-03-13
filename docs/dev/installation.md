@@ -81,7 +81,14 @@ The minimum changes to start a running standalone system are:
 
 Run the server from inside client-registry/server:
 ```
-node lib/app.js
+# from client-registry/server
+sudo NODE_ENV=development node lib/app.js
 ```
+
+* Visit the UI at: [https://localhost:3000/crux](https://localhost:3000/crux)
+    * **Default username**: root@intrahealth.org 
+    * **Default password**: intrahealth
+
+OpenCR may require access to /var/log for logging. This requirement may be changed in the future.
 
 Congratulations! Now it's time to run a [query](queries.md).
