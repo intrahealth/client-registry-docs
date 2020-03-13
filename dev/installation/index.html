@@ -959,10 +959,19 @@ npm install
 <li>Change <code>fhirServer.baseURL</code> to "http://localhost:8080/baseR4/"</li>
 </ul>
 <p>Run the server from inside client-registry/server:</p>
-<div class="codehilite"><pre><span></span><code>node lib/app.js
+<div class="codehilite"><pre><span></span><code># from client-registry/server
+sudo NODE_ENV=development node lib/app.js
 </code></pre></div>
 
 
+<ul>
+<li>Visit the UI at: <a href="https://localhost:3000/crux">https://localhost:3000/crux</a><ul>
+<li><strong>Default username</strong>: root@intrahealth.org </li>
+<li><strong>Default password</strong>: intrahealth</li>
+</ul>
+</li>
+</ul>
+<p>OpenCR may require access to /var/log for logging. This requirement may be changed in the future.</p>
 <p>Congratulations! Now it's time to run a <a href="../queries/">query</a>.</p>
                 
                   
@@ -973,7 +982,7 @@ npm install
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 12, 2020
+                        Last update: March 13, 2020
                       
                     </small>
                   </div>
