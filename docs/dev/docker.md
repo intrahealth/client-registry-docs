@@ -16,8 +16,9 @@ These instructions have been tested on Linux and macOS.
 ## Prerequisites
 
 * Any modern PC capable of running Docker for Desktop. 
-    * macOS: 2010 and newer Macs. macOS 10.13 or later (Sierra, Mojava, Catalina). 4GB of RAM is the minimum but 8GB RAM is recommended for OpenCR.
+    * macOS: 2010 and newer Macs. macOS 10.13 or later (Sierra, Mojava, Catalina).
     * Windows 10 64-bit (Education, Pro, or Enterprise). Note that you must have Hyper-V and Containers Windows enabled and these require administrator privileges.
+* 8GB RAM on the computer is recommended. ElasticSearch and HAPI FHIR Server will use up to 1GB of RAM. OpenCR Service will use less than 200MB RAM.
 * Docker for Desktop
 * [Node 10](https://nodejs.org/en/download/package-manager) which includes npm.
 * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)

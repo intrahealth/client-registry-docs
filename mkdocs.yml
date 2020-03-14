@@ -54,7 +54,8 @@ nav:
       - 'dev/installation.md'
       - 'dev/installation_full.md'
       - 'dev/requirements.md'
-    - 'Configuration and Testing':
+    - 'Queries and Configuration':
+      - 'dev/loadjs.md'
       - 'dev/configuration.md'
       - 'dev/configurebenchmarks.md'
       - 'dev/queries.md'
