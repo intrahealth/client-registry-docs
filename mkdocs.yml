@@ -37,7 +37,6 @@ nav:
   - User Manual: 
     - 'user/introduction.md'
     - 'user/process.md'
-    - 'user/decision_rules.md'
     - 'user/benchmarks.md'
     - 'user/ui.md'
     - 'user/guide.md'
@@ -47,20 +46,22 @@ nav:
     - 'Introduction': 
       - 'dev/proficiencies.md'
       - 'dev/internals.md'
-      - 'dev/security.md'
-    - 'Installation':
-      - 'dev/method.md'
+    - 'Getting Started':
       - 'dev/docker.md'
-      - 'dev/installation.md'
-      - 'dev/installation_full.md'
-      - 'dev/requirements.md'
-    - 'Queries and Configuration':
-      - 'dev/loadjs.md'
-      - 'dev/configuration.md'
-      - 'dev/configurebenchmarks.md'
       - 'dev/queries.md'
       - 'dev/queriespy.md'
-    - 'Production':
+      - 'dev/decision_rules.md'
+    - 'Installation':
+      - 'dev/requirements.md'
+      - 'dev/method.md'
+      - 'dev/configuration.md'
+      - 'dev/installation.md'
+      - 'dev/installation_full.md'
+    - 'Load Bulk Data':
+      - 'dev/loadjs.md'
+      - 'dev/loadpy.md'
+    - 'Production Considerations':
+      - 'dev/security.md'
       - 'dev/backup.md'
       - 'dev/troubleshooting.md'
     - 'dev/docs.md'

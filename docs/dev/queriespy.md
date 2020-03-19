@@ -36,7 +36,7 @@ payload = open(payload_bytes)
 Define headers and initiated the POST request.
 ```py
 headers = {'Content-Type': 'application/json'}
-response = post("https://localhost:3000/addPatient", headers=headers, data=payload, 
+response = post("https://localhost:3000/Patient", headers=headers, data=payload, 
                 pkcs12_filename=clientcert, 
                 pkcs12_password='', 
                 verify=servercert)

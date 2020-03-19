@@ -1,4 +1,4 @@
-# Local Installation (Direct)
+# Local Installation
 
 !!! note "Time to complete"
     60 Minutes

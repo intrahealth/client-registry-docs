@@ -13,7 +13,7 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
-        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/method/">
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/loadjs/">
       
       
         <meta name="author" content="IntraHealth">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Choosing an Installation Method - OpenCR Documentation</title>
+        <title>Load Demo Data (JavaScript) - OpenCR Documentation</title>
       
     
     
@@ -91,7 +91,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#choosing-an-installation-method" tabindex="0" class="md-skip">
+      <a href="#load-demo-data-javascript" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Choosing an Installation Method
+                Load Demo Data (JavaScript)
               
             </span>
           
@@ -604,12 +604,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
     
     <label class="md-nav__link" for="nav-3-2">
       Installation
@@ -625,20 +623,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Choosing an Installation Method" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../method/" title="Choosing an Installation Method" class="md-nav__link">
       Choosing an Installation Method
     </a>
-    
   </li>
 
         
@@ -699,10 +688,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
     
     <label class="md-nav__link" for="nav-3-3">
       Queries and Configuration
@@ -718,11 +709,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../loadjs/" title="Load Demo Data (JavaScript)" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Load Demo Data (JavaScript)" class="md-nav__link md-nav__link--active">
       Load Demo Data (JavaScript)
     </a>
+    
   </li>
 
         
@@ -895,33 +895,57 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/method.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/loadjs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="choosing-an-installation-method">Choosing an Installation Method</h1>
-<p>Select an installation method based on your requirements.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>If you've used Docker before, it's the fastest way to evaluate OpenCR.</p>
+                <h1 id="load-demo-data-javascript">Load Demo Data (JavaScript)</h1>
+<p>Demonstration data is provided in the /tests directory in the <a href="https://github.com/intrahealth/client-registry">code repository</a>. </p>
+<h2>Install the Node Packages</h2>
+<div class="codehilite"><pre><span></span><code>cd tests
+npm install
+</code></pre></div>
+
+
+<h2>Configure the Script</h2>
+<p>The /tests/uploadCSV.js script is used to upload the CSV data in the /tests directory.</p>
+<p>If using OpenHIM, then change the auth options and the IP address/hostname in /tests/uploadCSV</p>
+<div class="codehilite"><pre><span></span><code># make a copy to modify
+cp uploadCSV.js uploadCSV_mychanges.js
+</code></pre></div>
+
+
+<p>The defaults are:</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+<span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:5001/Patient&#39;</span><span class="p">,</span>
+<span class="nx">auth</span><span class="p">,</span>
+<span class="nx">json</span><span class="o">:</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">resource</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div>
+
+
+<p>Edit uploadCSV_mychanges.js. If not running OpenHIM then change:
+* remove <code>auth</code> and change it to <code>agentOptions</code>
+* Change the IP address/hostname as required, for example for Docker: 'https://localhost:3000/Patient'.</p>
+<p>After the edits, the code block looks like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+<span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://localhost:3000/Patient&#39;</span><span class="p">,</span>
+<span class="nx">agentOptions</span><span class="p">,</span>
+<span class="nx">json</span><span class="o">:</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">resource</span><span class="p">,</span>
+<span class="p">};</span>
+</code></pre></div>
+
+
+<p>Notice the https as without OpenHIM the OpenCR Service encrypts the connections using TLS instead of OpenHIM doing so.</p>
+<h2>Running the Script</h2>
+<p>While in the /tests directory, ensure that OpenCR is running and run the script, with the required argument of the CSV:</p>
+<div class="codehilite"><pre><span></span><code>sudo node uploadCSV_mychanges.js uganda_data_v21_20201501.csv
+</code></pre></div>
+
+
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The script may take several hours to process all of the records.</p>
 </div>
-<p><strong>Local installation (Docker)</strong>: </p>
-<ul>
-<li><em>Skills required</em>: git, Docker, some command line familiarity</li>
-<li><em>OS</em>: macOS, Windows, Linux. </li>
-<li><em>Usage</em>: Demos, training, evaluation, research.</li>
-</ul>
-<p><strong>Local installation (Direct)</strong>: </p>
-<ul>
-<li><em>Skills required</em>: git, Docker, some command line familiarity</li>
-<li><em>OS</em>: macOS, Windows, Linux. </li>
-<li><em>Usage</em>: Software development, demos, training, evaluation, research.</li>
-</ul>
-<p><strong>Server installation</strong>: </p>
-<ul>
-<li><em>Skills required</em>: Command line and Linux expertise.</li>
-<li><em>OS</em>: Linux. </li>
-<li><em>Usage</em>: Production, research.</li>
-</ul>
                 
                   
                 
@@ -931,7 +955,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 12, 2020
+                        Last update: March 14, 2020
                       
                     </small>
                   </div>
@@ -953,7 +977,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../requirements/" title="System Requirements (Production)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -962,19 +986,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Security
+                System Requirements (Production)
               </span>
             </div>
           </a>
         
         
-          <a href="../docker/" title="Local Installation (Docker)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../configuration/" title="Server Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Local Installation (Docker)
+                Server Configuration
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

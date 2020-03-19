@@ -1,14 +1,14 @@
-# Local Installation (Docker)
+# Local Installation using Docker
 
 !!! note "Time to complete"
     10 Minutes
 
+!!! warning
+    This guide is for demonstrations or tests only, not for servers or production environments.
+
 The easiest way to get started with OpenCR is to use Docker to launch ElasticSearch and HAPI FHIR Server and run the OpenCR Service directly. By running the OpenCR Service directly, it is easy to revise and reload decision rules.
 
 These instructions have been tested on Linux and macOS.
-
-!!! warning
-    This guide is for demonstrations or tests only, not for production environments.
 
 !!! note
     This installation method requires some familiarity with the command line.
@@ -41,7 +41,7 @@ docker --version
 !!! warning 
     You cannot use the existing hosted ElasticSearch image because OpenCR requires a plugin to be installed. The docker-compose file provided uses the Dockerfile-es which builds an ES image with the plugin.
 ```
-docker-compose -f docker-compose.dev.yml up fhir es
+docker-compose up fhir es
 ```
 
 * Switch to a new terminal window. Install the requirements for the OpenCR Service.

@@ -1,4 +1,4 @@
-# Choosing an Installation Method
+# Choosing a Method
 
 Select an installation method based on your requirements.
 

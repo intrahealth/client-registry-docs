@@ -705,14 +705,26 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
     
     <label class="md-nav__link" for="nav-3-3">
-      Configuration and Testing
+      Queries and Configuration
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-3">
-        Configuration and Testing
+        Queries and Configuration
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../loadjs/" title="Load Demo Data (JavaScript)" class="md-nav__link">
+      Load Demo Data (JavaScript)
+    </a>
+  </li>
+
         
           
           
@@ -904,10 +916,11 @@
 <h2>Prerequisites</h2>
 <ul>
 <li>Any modern PC capable of running Docker for Desktop. <ul>
-<li>macOS: 2010 and newer Macs. macOS 10.13 or later (Sierra, Mojava, Catalina). 4GB of RAM is the minimum but 8GB RAM is recommended for OpenCR.</li>
+<li>macOS: 2010 and newer Macs. macOS 10.13 or later (Sierra, Mojava, Catalina).</li>
 <li>Windows 10 64-bit (Education, Pro, or Enterprise). Note that you must have Hyper-V and Containers Windows enabled and these require administrator privileges.</li>
 </ul>
 </li>
+<li>8GB RAM on the computer is recommended. ElasticSearch and HAPI FHIR Server will use up to 1GB of RAM. OpenCR Service will use less than 200MB RAM.</li>
 <li>Docker for Desktop</li>
 <li><a href="https://nodejs.org/en/download/package-manager">Node 10</a> which includes npm.</li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a></li>
@@ -979,7 +992,7 @@ sudo NODE_ENV=docker node lib/app.js
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 12, 2020
+                        Last update: March 14, 2020
                       
                     </small>
                   </div>
