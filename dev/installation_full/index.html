@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
     
       
     
@@ -625,8 +631,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -731,9 +737,66 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Server Installation
+      </label>
+    
     <a href="./" title="Server Installation" class="md-nav__link md-nav__link--active">
       Server Installation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hapi-fhir-server-and-postgres" class="md-nav__link">
+    HAPI FHIR Server and Postgres
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    ElasticSearch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencr-service-and-ui" class="md-nav__link">
+    OpenCR Service and UI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openhim-optional" class="md-nav__link">
+    OpenHIM (Optional)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -780,8 +843,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -909,6 +972,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hapi-fhir-server-and-postgres" class="md-nav__link">
+    HAPI FHIR Server and Postgres
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elasticsearch" class="md-nav__link">
+    ElasticSearch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opencr-service-and-ui" class="md-nav__link">
+    OpenCR Service and UI
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openhim-optional" class="md-nav__link">
+    OpenHIM (Optional)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -923,10 +1030,8 @@
                 
                 
                 <h1 id="server-installation">Server Installation</h1>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>Installing and maintaining a production installation is not trivial. This installation method requires strong familiarity with the command line and expertise administering Linux environments. </p>
-</div>
+<p>!!! caution
+    Installing and maintaining a production installation is not trivial. This installation method requires strong familiarity with the command line and expertise administering Linux environments. </p>
 <p>The core production stack consists of four components:</p>
 <ul>
 <li><strong>OpenCR Service</strong>: This includes primary API for fielding requests, and the record viewing and matching breaking UI. </li>
@@ -937,14 +1042,14 @@
 <ul>
 <li><strong>OpenHIM core and OpenHIM admin console</strong>. Requires MongoDB. OpenHIM is an authentication, authorization, and auditing layer. While OpenHIM is optional, nodes and users must be managed in some application if not OpenHIM. Nodes must have certificates issued to query OpenCR and they must be rotated out over time. The OpenCR Service can manage simply installations but using an enterprise secrets management tool is recommended. </li>
 </ul>
-<h2>Prerequisites</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Linux is the expected operating system for production.</p>
 <p>It is critical that systems administrators note the version compatibilities outlined below. This guide does not cover most aspects of enterprise systems administration, rather it attempts to cover the OpenCR platform. If there are key areas missing, please open an <a href="https://github.com/intrahealth/client-registry/issues/new">issue on GitHub</a>.</p>
 <ul>
 <li>If entities outside of your LAN are connecting to OpenCR, you will need a public-facing domain name. A domain is necessary for a certificate which is required for any queries.</li>
 <li>See <a href="../security/">Security</a></li>
 </ul>
-<h2>HAPI FHIR Server and Postgres</h2>
+<h2 id="hapi-fhir-server-and-postgres">HAPI FHIR Server and Postgres</h2>
 <p>HAPI FHIR must use a database backend in production. HAPI FHIR stores the patient demographic data from queries. If the data is lost, then OpenCR data is unrecoverable.</p>
 <ul>
 <li>Follow the <a href="https://hapifhir.io/hapi-fhir/docs/server_jpa/get_started.html">JPA Server information</a> and <a href="https://github.com/hapifhir/hapi-fhir-jpaserver-starter">instructions</a> for how to customize the hapi.properties file and build the server using maven.</li>
@@ -954,39 +1059,35 @@
 <li>Confirm that HAPI accepts requests. </li>
 <li>The web interface for HAPI should be disabled for privacy reasons.</li>
 </ul>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>In production, Postgres should run on multiple nodes with replication. This is to ensure high availability and backups of the data.</p>
-</div>
-<h2>ElasticSearch</h2>
+<p>!!! caution
+    In production, Postgres should run on multiple nodes with replication. This is to ensure high availability and backups of the data.</p>
+<h2 id="elasticsearch">ElasticSearch</h2>
 <ul>
 <li>Follow the instructions for <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/deb.html">installation</a></li>
 <li>Systemd is the preferred system and service manager. There are commands to initiate systemd and journalctl.</li>
 <li>The phonetic analysis package must be installed.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
+<div class="codehilite"><pre><span></span><code><span class="err">/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic</span>
 </code></pre></div>
 
 
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>ES is not production-ready when run one a single node. It is recommended to run ES on several nodes. Those nodes can also run followers of Postgres.</p>
-</div>
-<h2>OpenCR Service and UI</h2>
+<p>!!! caution
+    ES is not production-ready when run one a single node. It is recommended to run ES on several nodes. Those nodes can also run followers of Postgres.</p>
+<h2 id="opencr-service-and-ui">OpenCR Service and UI</h2>
 <p>Clone the repository into a directory of choice.</p>
-<div class="codehilite"><pre><span></span><code>git clone https://github.com/intrahealth/client-registry.git
+<div class="codehilite"><pre><span></span><code><span class="err">git clone https://github.com/intrahealth/client-registry.git</span>
 </code></pre></div>
 
 
 <p>Enter the server directory, install node packages.</p>
-<div class="codehilite"><pre><span></span><code>cd client-registry/server
-npm install
+<div class="codehilite"><pre><span></span><code><span class="err">cd client-registry/server</span>
+<span class="err">npm install</span>
 </code></pre></div>
 
 
 <p>Copy and edit the configuration file to your liking.</p>
-<div class="codehilite"><pre><span></span><code>cp config/config_development_template.json config/config_development.json
-# edit the servers...
+<div class="codehilite"><pre><span></span><code><span class="err">cp config/config_development_template.json config/config_development.json</span>
+<span class="err"># edit the servers...</span>
 </code></pre></div>
 
 
@@ -995,11 +1096,11 @@ npm install
 <li>Change <code>fhirServer.baseURL</code> to "http://localhost:8080/baseR4/"</li>
 </ul>
 <p>Run the server from inside client-registry/server:</p>
-<div class="codehilite"><pre><span></span><code>node lib/app.js
+<div class="codehilite"><pre><span></span><code><span class="err">node lib/app.js</span>
 </code></pre></div>
 
 
-<h2>OpenHIM (Optional)</h2>
+<h2 id="openhim-optional">OpenHIM (Optional)</h2>
 <p>OpenHIM supports the last 2 versions of NodeJS LTS and requires MongoDB.</p>
 <ul>
 <li>Follow the <a href="http://openhim.org/docs/installation/npm">instructions</a> to install OpenHIM core and admin console. The maintainers use the NPM PPA installation method.</li>

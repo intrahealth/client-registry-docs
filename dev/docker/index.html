@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
     
       
     
@@ -611,9 +617,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Local Installation using Docker
+      </label>
+    
     <a href="./" title="Local Installation using Docker" class="md-nav__link md-nav__link--active">
       Local Installation using Docker
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -636,8 +678,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -780,8 +822,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -909,6 +951,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -923,21 +988,15 @@
                 
                 
                 <h1 id="local-installation-using-docker">Local Installation using Docker</h1>
-<div class="admonition note">
-<p class="admonition-title">Time to complete</p>
-<p>10 Minutes</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This guide is for demonstrations or tests only, not for servers or production environments.</p>
-</div>
+<p>!!! note "Time to complete"
+    10 Minutes</p>
+<p>!!! warning
+    This guide is for demonstrations or tests only, not for servers or production environments.</p>
 <p>The easiest way to get started with OpenCR is to use Docker to launch ElasticSearch and HAPI FHIR Server and run the OpenCR Service directly. By running the OpenCR Service directly, it is easy to revise and reload decision rules.</p>
 <p>These instructions have been tested on Linux and macOS.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This installation method requires some familiarity with the command line.</p>
-</div>
-<h2>Prerequisites</h2>
+<p>!!! note
+    This installation method requires some familiarity with the command line.</p>
+<h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Any modern PC capable of running Docker for Desktop. <ul>
 <li>macOS: 2010 and newer Macs. macOS 10.13 or later (Sierra, Mojava, Catalina).</li>
@@ -949,53 +1008,51 @@
 <li><a href="https://nodejs.org/en/download/package-manager">Node 10</a> which includes npm.</li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a></li>
 </ul>
-<h2>Instructions</h2>
+<h2 id="instructions">Instructions</h2>
 <ul>
 <li>Clone the repository and change directory into the root folder.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>https://github.com/intrahealth/client-registry.git
-cd client-registry
+<div class="codehilite"><pre><span></span><code><span class="c">https://github.com/intrahealth/client-registry.git</span>
+<span class="err">cd client-registry</span>
 </code></pre></div>
 
 
 <ul>
 <li>Ensure that Docker is installed and running.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>docker --version
+<div class="codehilite"><pre><span></span><code><span class="err">docker --version</span>
 </code></pre></div>
 
 
 <ul>
 <li>Start ElasticSearch and HAPI FHIR Server using Docker. </li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You cannot use the existing hosted ElasticSearch image because OpenCR requires a plugin to be installed. The docker-compose file provided uses the Dockerfile-es which builds an ES image with the plugin.</p>
-</div>
-<div class="codehilite"><pre><span></span><code>docker-compose up fhir es
+<p>!!! warning 
+    You cannot use the existing hosted ElasticSearch image because OpenCR requires a plugin to be installed. The docker-compose file provided uses the Dockerfile-es which builds an ES image with the plugin.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">docker-compose up fhir es</span>
 </code></pre></div>
 
 
 <ul>
 <li>Switch to a new terminal window. Install the requirements for the OpenCR Service.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>cd server
-npm install
+<div class="codehilite"><pre><span></span><code><span class="err">cd server</span>
+<span class="err">npm install</span>
 </code></pre></div>
 
 
 <ul>
 <li>Copy a configuration for Docker for the OpenCR Service to use.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code>cp config/config_docker_template.json config/config_docker.json
+<div class="codehilite"><pre><span></span><code><span class="err">cp config/config_docker_template.json config/config_docker.json</span>
 </code></pre></div>
 
 
 <ul>
 <li>Run the server using the docker config for NODE_ENV.</li>
 </ul>
-<div class="codehilite"><pre><span></span><code># from client-registry/server
-sudo NODE_ENV=docker node lib/app.js
+<div class="codehilite"><pre><span></span><code><span class="err"># from client-registry/server</span>
+<span class="err">sudo NODE_ENV=docker node lib/app.js</span>
 </code></pre></div>
 
 

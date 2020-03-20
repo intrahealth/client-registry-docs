@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../css/pandas-dataframe.css">
+    
     
       
     
@@ -338,9 +344,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Use Cases
+      </label>
+    
     <a href="./" title="Use Cases" class="md-nav__link md-nav__link--active">
       Use Cases
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viral-load-test-request-paper" class="md-nav__link">
+    Viral Load Test Request (Paper)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viral-load-test-request-emr" class="md-nav__link">
+    Viral Load Test Request (EMR)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-based-surveillance" class="md-nav__link">
+    Case-Based Surveillance
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -634,8 +683,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../dev/queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../dev/basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -778,8 +827,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../dev/loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../dev/load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -907,6 +956,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viral-load-test-request-paper" class="md-nav__link">
+    Viral Load Test Request (Paper)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viral-load-test-request-emr" class="md-nav__link">
+    Viral Load Test Request (EMR)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-based-surveillance" class="md-nav__link">
+    Case-Based Surveillance
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -934,17 +1013,15 @@
 <p>A patient is registered at a clinic and has been assigned a UID. In the course of their clinical encounter, a sentinel event occurs, triggering the EMR to send limited clinical information to the Health Information Exchange (HIE). The HIE sends the data to a data analysis warehouse for population analysis and case-based surveillance.</p>
 </li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>It is important to note that in the above workflows OpenCR does not store or provide clinical data. Such processes are external to OpenCR and must be separately created, governed, and enabled. </p>
-</div>
-<h3>Viral Load Test Request (Paper)</h3>
+<p>!!! warning
+    It is important to note that in the above workflows OpenCR does not store or provide clinical data. Such processes are external to OpenCR and must be separately created, governed, and enabled. </p>
+<h3 id="viral-load-test-request-paper">Viral Load Test Request (Paper)</h3>
 <p><img alt="Link to HIV Load Test Requested by Paper" src="../images/vl.png" /></p>
 <p>A plasma specimen is received by a laboratory for HIV viral load testing. Demographic data and requesting location data is entered into the LMIS. The LMIS queries OpenCR for a UID. OpenCR provides the UID if one did not exist and stores limited patient demographic information but <strong>does not</strong> store test results. A use that this enables (but OpenCR <strong>does not</strong> provide) is the ability to track persons lab results over time.</p>
-<h3>Viral Load Test Request (EMR)</h3>
+<h3 id="viral-load-test-request-emr">Viral Load Test Request (EMR)</h3>
 <p><img alt="Link to HIV Load Test Requested by EMR" src="../images/emrvl.png" /></p>
 <p>A patient is registered at a clinic. The clinician recommends an HIV viral load test. The plasma specimen is sent for processing to the laboratory. OpenCR receives the UID and specimen and returns a diagnostic result that is then stored in the EMR. </p>
-<h3>Case-Based Surveillance</h3>
+<h3 id="case-based-surveillance">Case-Based Surveillance</h3>
 <p><img alt="Link to HIV Load Test Requested by EMR" src="../images/cbs.png" /></p>
 <p>A patient is registered at a clinic and has been assigned a UID. In the course of their clinical encounter, a sentinel event occurs, triggering the EMR to send limited clinical information to the Health Information Exchange (HIE). The HIE sends the data to a data analysis warehouse for population analysis and case-based surveillance.</p>
                 

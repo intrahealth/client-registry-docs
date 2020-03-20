@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../css/pandas-dataframe.css">
+    
     
       
     
@@ -634,8 +640,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../dev/queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../dev/basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -778,8 +784,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../dev/loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../dev/load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -922,10 +928,8 @@
                 
                 <h1 id="architecture">Architecture</h1>
 <p>OpenCR is not one application, instead it's a set of applications that work together in the <a href="http://ohie.org">Open Health Information Exchange (OpenHIE)</a> architecture to serve point-of-service systems, like EMRs, insurance mechanisms, and labs.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is not an OpenHIE product. The OpenHIE community of practice does not produce software products. Rather OpenHIE produces an architecture specification and is composed of a large, global community of practice around standards-based health information exchanges, particularly in low resource settings. Please <a href="https://ohie.org">join us</a>!</p>
-</div>
+<p>!!! note
+    This is not an OpenHIE product. The OpenHIE community of practice does not produce software products. Rather OpenHIE produces an architecture specification and is composed of a large, global community of practice around standards-based health information exchanges, particularly in low resource settings. Please <a href="https://ohie.org">join us</a>!</p>
 <p>The OpenCR architecture includes:</p>
 <ul>
 <li>The <a href="http://openhim.org"><strong>Open Health Information Mediator (OpenHIM)</strong></a> (Optional): The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions. OpenHIM is optional but the administrator must manage users and node access in some manner if not with OpenHIM.</li>
