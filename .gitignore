@@ -3,3 +3,6 @@
 
 # outtakes
 docs/outtakes.md
+
+# notebook checkpoints
+*.ipynb_checkpoints/
