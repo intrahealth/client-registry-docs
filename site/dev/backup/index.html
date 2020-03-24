@@ -930,7 +930,7 @@
                 
                 <h1 id="backup-and-recovery">Backup and Recovery</h1>
 <h1 id="backup">Backup</h1>
-<p>The primary datastore is the database configured for HAPI FHIR Server. This means that while an ES cluster should be backed-up, the ES index can be rebuilt from HAPI. </p>
+<p>The primary datastore is the database of HAPI FHIR Server. This means that while an ES cluster should be backed-up, the ES index can be rebuilt from HAPI. </p>
 <ul>
 <li>
 <p>Either Postgres or MySQL are recommended to be used with HAPI FHIR Server. In production, database should be cloned or replicas created and cloned and those backups tested.</p>
@@ -945,7 +945,7 @@
 <h1 id="recovery-policy">Recovery Policy</h1>
 <ul>
 <li>
-<p>Backups should be tested for their ability to be used for recovery. There are existing online resources on how to test backups. </p>
+<p>Backups should be tested in a non-production system for their ability to be used for recovery. There are existing online resources on how to test backups. </p>
 </li>
 <li>
 <p>A backup policy should include scheduled recovery tests to ensure that backups are suitable.</p>
@@ -960,7 +960,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 10, 2020
+                        Last update: March 24, 2020
                       
                     </small>
                   </div>

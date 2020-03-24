@@ -855,8 +855,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#client-registry-platform-hardening" class="md-nav__link">
-    Client Registry Platform Hardening
+  <a href="#opencr-platform-hardening" class="md-nav__link">
+    OpenCR Platform Hardening
   </a>
   
 </li>
@@ -867,8 +867,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    Authentication
+  <a href="#authentication-authorization-and-auditing" class="md-nav__link">
+    Authentication, Authorization, and Auditing
   </a>
   
     <nav class="md-nav">
@@ -884,6 +884,13 @@
           <li class="md-nav__item">
   <a href="#node-authentication" class="md-nav__link">
     Node Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-events" class="md-nav__link">
+    Audit Events
   </a>
   
 </li>
@@ -1024,8 +1031,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#client-registry-platform-hardening" class="md-nav__link">
-    Client Registry Platform Hardening
+  <a href="#opencr-platform-hardening" class="md-nav__link">
+    OpenCR Platform Hardening
   </a>
   
 </li>
@@ -1036,8 +1043,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#authentication" class="md-nav__link">
-    Authentication
+  <a href="#authentication-authorization-and-auditing" class="md-nav__link">
+    Authentication, Authorization, and Auditing
   </a>
   
     <nav class="md-nav">
@@ -1053,6 +1060,13 @@
           <li class="md-nav__item">
   <a href="#node-authentication" class="md-nav__link">
     Node Authentication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-events" class="md-nav__link">
+    Audit Events
   </a>
   
 </li>
@@ -1115,23 +1129,34 @@
 <li>Auditing, logging software</li>
 </ul>
 <p>See, for example, the <a href="https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-123.pdf">Guide to General Server Security: Recommendations of the National Institute of Standards and Technology</a> by Karen Scarfone, Wayne Jansen, Miles Tracy, July 2008, (NIST Special Publication 800-123).</p>
-<h3 id="client-registry-platform-hardening">Client Registry Platform Hardening</h3>
+<h3 id="opencr-platform-hardening">OpenCR Platform Hardening</h3>
 <p>In addition to the above general hardening practices that should be followed, some additional areas are important for the Client Registry.</p>
 <ul>
-<li>The admin interface should only be available on a local subnet, and further restricted with user and node authentication so that it is not exposed on the WAN.</li>
+<li>The <strong>OpenCR UI</strong> should only be available on a local subnet, and further restricted with user and node authentication so that it is not exposed on the WAN.</li>
 <li><strong>Close external ports</strong>: Ports for Client Registry services should be locked down to localhost. The only external port required is for TLS with point-of-service systems that make queries to the Client Registry Service. This includes ES and HAPI FHIR. Those services can serve localhost only and effectively. </li>
-<li><strong>TLS for interservice communication</strong>: Where Postgres and ES must communicate with other nodes TLS can be configured for ES for internode communication and Postgres for replication.</li>
+<li><strong>TLS for cluster (interservice) communication</strong>: Where Postgres and ES must communicate with other nodes TLS can be configured for ES for internode communication and Postgres for replication.</li>
 <li><strong>Disable HAPI Web Testing</strong>: The HAPI FHIR Server Web Testing UI should be disabled. This tool allows the viewing of demographic records on the server. It is not a tool suitable for production, or if it is used, then it is restricted to a local subnet and further restricted with user and node authentication.</li>
 <li><strong>Double-check for default passwords</strong>: Ensure no default passwords are in use for OpenHIM core and console, HAPI FHIR Server, ES, Postgres, and other services.</li>
 </ul>
-<h2 id="authentication">Authentication</h2>
+<h2 id="authentication-authorization-and-auditing">Authentication, Authorization, and Auditing</h2>
 <h3 id="user-authentication">User Authentication</h3>
-<p>Point-of-service systems should possess an appropriate identity provider solution built-in or externally. This also means following best practices for user authentication. </p>
-<p>The Client Registry Service and admin interface are the only direct access to demographic data systems that should require user authentication. As this Client Registry is meant for further customization during deployment, JWT and other user authentication solutions are not provided out-of-the-box but can be added.</p>
-<p>It is intended to support user-requested user authentication solutions as use cases are further identified.</p>
+<ul>
+<li>Point-of-service systems should possess an appropriate identity provider solution built-in or externally. This also means following best practices for user authentication. </li>
+<li>The Client Registry Service and admin interface are the only direct access to demographic data systems that should require user authentication. As this Client Registry is meant for further customization during deployment, JWT and other user authentication solutions are not provided out-of-the-box but can be added.</li>
+<li>It is intended to support user-requested user authentication solutions as use cases are further identified.</li>
+</ul>
 <h3 id="node-authentication">Node Authentication</h3>
-<p>The Client Registry follows best practices outlined in the <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf">ITI-19 standard</a> for node authentication. Only secure nodes -- one with the ability to authenticate itself to other nodes and transmit data securely -- should be allowed to communicate with the Client Registry.</p>
-<p>Systems administrators should ensure that all clients must be registered and certificates assigned to them. In production, the Client Registry should act as an OpenHIM mediator which provides an extra layer of security. Clients may be registered in OpenHIM.</p>
+<ul>
+<li>OpenCR follows best practices outlined in the <a href="https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2a.pdf">ITI-19 standard</a> for node authentication. </li>
+<li>Only secure nodes -- one with the ability to authenticate itself to other nodes and transmit data securely -- should be allowed to communicate with the Client Registry.</li>
+<li>Systems administrators should ensure that all clients must be registered and certificates assigned to them. In production, OpenCR may act as an OpenHIM mediator which provides an extra layer of security. Clients may be registered in OpenHIM.</li>
+</ul>
+<h3 id="audit-events">Audit Events</h3>
+<ul>
+<li>All transactions (including queries) are stored in audit events. These events are stored in the HAPI FHIR Server and viewable in the OpenCR UI. </li>
+<li>Being able to view audit events helps administrators run the system and tune queries,</li>
+<li>But, audit events must also be secured as they contain all information about queries. This means locking down the OpenCR by subnet, node, and user authentication.</li>
+</ul>
 <h2 id="atna-logging">ATNA Logging</h2>
 <p>OpenHIM supports the Audit Trail and Node Authentication (ATNA) Integration Profile, which establishes a standard for responsibly storing audit events. It is highly recommended that the OpenHIM be configured as such but only after it is ensured that all default passwords have been changed and the OpenHIM is operating on a local subnet and thus not exposed externally. See the above hardening notes.</p>
 <p>See the <a href="https://openhim.readthedocs.io/en/latest/user-guide/auditing.html">OpenHIM user guide</a> for information on ATNA configuration.</p>
@@ -1150,7 +1175,7 @@ openssl pkcs12 -export -in dhis2_cert.pem -inkey dhis2_key.pem -out dhis2.p12
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 12, 2020
+                        Last update: March 24, 2020
                       
                     </small>
                   </div>
