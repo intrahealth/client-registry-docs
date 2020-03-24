@@ -998,6 +998,20 @@
 }());
 </script>
 
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h3 id="duplicate-a-simple-curl-query-in-python">Duplicate a simple cURL query in Python.</h3>
+<p>This example is available in the Jupyter notebook at: <a href="https://github.com/intrahealth/client-registry-docs/blob/master/dev/simple_query_in_python.ipynb.ipynb">github.com/intrahealth/client-registry-docs/dev/simple_query_in_python.ipynb</a></p>
+<div class="codehilite"><pre><span></span><code>curl --cert sampleclientcertificates/openmrs.p12 --cert-type p12 --cacert certificates/server_cert.pem -d @/Users/richard/src/github.com/openhie/client-registry/DemoData/patient1_openmrs.json -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -XPOST https://localhost:3000/Patient
+</code></pre></div>
+
+
+</div>
+</div>
+
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
@@ -1011,32 +1025,15 @@
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<p><div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-This example is available in the Jupyter notebook at: <a href="https://github.com/intrahealth/client-registry-docs/blob/master/dev/simple_query_in_python.ipynb.ipynb">github.com/intrahealth/client-registry-docs/dev/simple_query_in_python.ipynb</a></p>
-<h3 id="duplicate-a-simple-curl-query-in-python">Duplicate a simple cURL query in Python.</h3>
-<div class="codehilite"><pre><span></span><code>curl --cert sampleclientcertificates/openmrs.p12 --cert-type p12 --cacert certificates/server_cert.pem -d @/Users/richard/src/github.com/openhie/client-registry/DemoData/patient1_openmrs.json -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -XPOST https://localhost:3000/Patient
-</code></pre></div>
-
-
-</div>
-</div>
-
-
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># This example assumes running from this folder in the repo</span>
-<span class="n">clientcert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/sampleclientcertificates&quot;</span><span class="p">)</span>
-<span class="n">clientcert</span> <span class="o">=</span> <span class="n">clientcert_folder</span> <span class="o">/</span> <span class="s2">&quot;openmrs.p12&quot;</span>
-
-<span class="n">servercert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/certificates&quot;</span><span class="p">)</span>
-<span class="n">servercert</span> <span class="o">=</span> <span class="n">servercert_folder</span> <span class="o">/</span> <span class="s2">&quot;server_cert.pem&quot;</span>
-
-<span class="n">payload_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../DemoData/&quot;</span><span class="p">)</span>
-<span class="n">payload_bytes</span> <span class="o">=</span> <span class="n">payload_folder</span> <span class="o">/</span> <span class="s2">&quot;patient1_openmrs.json&quot;</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># path to your git clone of github.com/intrahealth/client-registry</span>
+<span class="n">crhome</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s1">&#39;src&#39;</span> <span class="o">/</span> <span class="s1">&#39;github.com&#39;</span> <span class="o">/</span> <span class="s1">&#39;intrahealth&#39;</span> <span class="o">/</span> <span class="s1">&#39;client-registry&#39;</span>
+<span class="n">clientcert</span> <span class="o">=</span> <span class="n">crhome</span> <span class="o">/</span> <span class="s1">&#39;server&#39;</span> <span class="o">/</span> <span class="s1">&#39;sampleclientcertificates&#39;</span> <span class="o">/</span> <span class="s1">&#39;openmrs.p12&#39;</span>
+<span class="n">servercert</span> <span class="o">=</span> <span class="n">crhome</span> <span class="o">/</span> <span class="s1">&#39;server&#39;</span> <span class="o">/</span> <span class="s1">&#39;certificates&#39;</span> <span class="o">/</span> <span class="s1">&#39;server_cert.pem&#39;</span>
+<span class="n">csv_file</span> <span class="o">=</span> <span class="n">crhome</span> <span class="o">/</span> <span class="s1">&#39;tests&#39;</span> <span class="o">/</span> <span class="s1">&#39;uganda_data_v21_20201501.csv&#39;</span>
+<span class="n">payload_bytes</span> <span class="o">=</span> <span class="n">crhome</span> <span class="o">/</span> <span class="s1">&#39;DemoData&#39;</span> <span class="o">/</span> <span class="s1">&#39;patient1_openmrs.json&#39;</span>
 <span class="n">payload</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">payload_bytes</span><span class="p">)</span>
 </code></pre></div>
 
@@ -1067,6 +1064,29 @@ This example is available in the Jupyter notebook at: <a href="https://github.co
 
 </div>
 
+<div class="output_wrapper" markdown="1">
+<div class="output" markdown="1">
+
+
+<div class="output_area" markdown="1">
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Patient/9813646d-ac5f-46a1-95c0-ceca8a0f0541
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+</div>
+</div>
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
 </div>
                 
                   
@@ -1077,7 +1097,7 @@ This example is available in the Jupyter notebook at: <a href="https://github.co
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 20, 2020
+                        Last update: March 24, 2020
                       
                     </small>
                   </div>
