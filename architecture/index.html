@@ -932,10 +932,11 @@
     This is not an OpenHIE product. The OpenHIE community of practice does not produce software products. Rather OpenHIE produces an architecture specification and is composed of a large, global community of practice around standards-based health information exchanges, particularly in low resource settings. Please <a href="https://ohie.org">join us</a>!</p>
 <p>The OpenCR architecture includes:</p>
 <ul>
-<li>The <a href="http://openhim.org"><strong>Open Health Information Mediator (OpenHIM)</strong></a> (Optional): The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions. OpenHIM is optional but the administrator must manage users and node access in some manner if not with OpenHIM.</li>
+<li>The <a href="https://github.com/intrahealth/client-registry"><strong>OpenCR Service</strong></a>: The API for managing queries, routing traffic to the components, and overall entrypoint. It is written in Node JS.</li>
 <li>The <a href="http://hapifhir.io"><strong>HAPI FHIR Server</strong></a>: HAPI is the reference FHIR server in Java and scalable into production environments.</li>
 <li>The <a href="http://elastic.co/products/elasticsearch"><strong>ElasticSearch</strong></a>: Elasticsearch is a powerful search engine that is highly performant.</li>
-<li>An <strong>optional UI</strong> to view and break matches between records, and to select and chain together decision rules around matching algorithms.</li>
+<li>An <strong>optional UI</strong> to view and break matches between records, and view matching histories (audit events).</li>
+<li>The <a href="http://openhim.org"><strong>Open Health Information Mediator (OpenHIM)</strong></a> (Optional): The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions. OpenHIM is optional but the administrator must manage users and node access in some manner if not with OpenHIM.</li>
 </ul>
 <p><img alt="Alt text" src="../images/production_architecture.png" title="Production Architecture" /></p>
                 
@@ -947,7 +948,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 10, 2020
+                        Last update: March 24, 2020
                       
                     </small>
                   </div>
