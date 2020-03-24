@@ -13,7 +13,7 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
-        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/loadpy/">
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/load_bulk_data_in_python/">
       
       
         <meta name="author" content="IntraHealth">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Load Demo Data (Python) - OpenCR Documentation</title>
+        <title>Load bulk data in python - OpenCR Documentation</title>
       
     
     
@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
     
       
     
@@ -91,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#load-demo-data-python" tabindex="0" class="md-skip">
+      <a href="#load-bulk-data-in-python" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +123,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Load Demo Data (Python)
+                Load bulk data in python
               
             </span>
           
@@ -625,8 +631,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -779,8 +785,8 @@
       
     
     
-    <a href="./" title="Load Demo Data (Python)" class="md-nav__link md-nav__link--active">
-      Load Demo Data (Python)
+    <a href="./" title="Load bulk data in python" class="md-nav__link md-nav__link--active">
+      Load bulk data in python
     </a>
     
   </li>
@@ -919,12 +925,183 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/loadpy.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/load_bulk_data_in_python.ipynb" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="load-demo-data-python">Load Demo Data (Python)</h1>
-<p>Demonstration data is provided in the /tests directory in the <a href="https://github.com/intrahealth/client-registry">code repository</a>. </p>
-<h2></h2>
+                <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">requests_pkcs12</span> <span class="kn">import</span> <span class="n">get</span><span class="p">,</span> <span class="n">post</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">recordlinkage</span>
+
+<span class="kn">import</span> <span class="nn">fhirclient.models.patient</span> <span class="k">as</span> <span class="nn">p</span>
+<span class="kn">import</span> <span class="nn">fhirclient.models.humanname</span> <span class="k">as</span> <span class="nn">hn</span>
+<span class="kn">import</span> <span class="nn">fhirclient.models.contactpoint</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">fhirclient.models.fhirdate</span> <span class="k">as</span> <span class="nn">fd</span>
+<span class="kn">import</span> <span class="nn">fhirclient.models.identifier</span> <span class="k">as</span> <span class="nn">ident</span>
+<span class="kn">from</span> <span class="nn">fhirclient</span> <span class="kn">import</span> <span class="n">client</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># suppress warning: &quot;Certificate for localhost has no `subjectAltName`, falling back to check for a `commonName` for now&quot;</span>
+<span class="kn">import</span> <span class="nn">urllib3</span>
+<span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">urllib3</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">SubjectAltNameWarning</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h1 id="load-bulk-data-in-python">Load bulk data in Python</h1>
+<p>This example is available in the Jupyter notebook at: <a href="https://github.com/intrahealth/client-registry-docs/blob/master/docs/dev/simple_query.ipynb">github.com/intrahealth/client-registry-docs/docs/dev/load_bulk_data_in_python.ipynb</a>
+</div>
+</div></p>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># versions</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pandas version: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python Record Linkage version: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recordlinkage</span><span class="o">.</span><span class="n">_version</span><span class="o">.</span><span class="n">get_versions</span><span class="p">()[</span><span class="s1">&#39;version&#39;</span><span class="p">]),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numpy version: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FHIR client version: </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">__version__</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># This example assumes running from this folder in the repo</span>
+<span class="n">clientcert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/sampleclientcertificates&quot;</span><span class="p">)</span>
+<span class="n">clientcert</span> <span class="o">=</span> <span class="n">clientcert_folder</span> <span class="o">/</span> <span class="s2">&quot;openmrs.p12&quot;</span>
+
+<span class="n">servercert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/certificates&quot;</span><span class="p">)</span>
+<span class="n">servercert</span> <span class="o">=</span> <span class="n">servercert_folder</span> <span class="o">/</span> <span class="s2">&quot;server_cert.pem&quot;</span>
+
+<span class="n">csv_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../tests&quot;</span><span class="p">)</span>
+<span class="n">csv_file</span> <span class="o">=</span> <span class="n">csv_folder</span> <span class="o">/</span> <span class="s2">&quot;uganda_data_v21_20201501.csv&quot;</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="n">df_a</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+<span class="c1"># df_a = df_a.set_index(&#39;rec_id&#39;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of records :&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_a</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># some cleaning</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;rec_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;rec_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;given_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;given_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;surname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;surname&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;phone_number&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;phone_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;uganda_nin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;uganda_nin&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;art_number&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;art_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;female&#39;</span><span class="p">)</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="c1"># fhirclient validates and some birthdate fields are empty/improperly formatted</span>
+<span class="c1"># remove non-digits</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="s1">&#39;(\d+)&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># force into datetime (coerce has benefit that it removes anything outside of 8 digits)</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="c1"># now back into str or fhirdate will complain</span>
+<span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_a</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_a</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_a</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">patient</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">Patient</span><span class="p">()</span> <span class="c1"># not using rec_id as pandas id, leaving empty</span>
+    <span class="n">patient</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;sex&#39;</span><span class="p">]</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">hn</span><span class="o">.</span><span class="n">HumanName</span><span class="p">()</span>
+    <span class="n">name</span><span class="o">.</span><span class="n">given</span> <span class="o">=</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;given_name&#39;</span><span class="p">]]</span>
+    <span class="n">name</span><span class="o">.</span><span class="n">family</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;surname&#39;</span><span class="p">]</span>
+    <span class="n">patient</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span><span class="p">]</span>
+    <span class="n">phone</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">ContactPoint</span><span class="p">()</span>
+    <span class="n">phone</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;phone&#39;</span>
+    <span class="n">phone</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;phone_number&#39;</span><span class="p">]</span>
+    <span class="n">patient</span><span class="o">.</span><span class="n">telecom</span> <span class="o">=</span> <span class="p">[</span><span class="n">phone</span><span class="p">]</span>
+    <span class="n">patient</span><span class="o">.</span><span class="n">birthDate</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">FHIRDate</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;date_of_birth&#39;</span><span class="p">])</span>
+    <span class="n">emr</span> <span class="o">=</span> <span class="n">ident</span><span class="o">.</span><span class="n">Identifier</span><span class="p">()</span>
+    <span class="n">emr</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;http://clientregistry.org/openmrs&#39;</span>
+    <span class="n">emr</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;rec_id&#39;</span><span class="p">]</span>
+    <span class="n">art</span> <span class="o">=</span> <span class="n">ident</span><span class="o">.</span><span class="n">Identifier</span><span class="p">()</span>
+    <span class="n">art</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;http://system1/artnumber&#39;</span>
+    <span class="n">art</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;art_number&#39;</span><span class="p">]</span>
+    <span class="n">nin</span> <span class="o">=</span> <span class="n">ident</span><span class="o">.</span><span class="n">Identifier</span><span class="p">()</span>
+    <span class="n">nin</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="s1">&#39;http://system1/nationalid&#39;</span>
+    <span class="n">nin</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;uganda_nin&#39;</span><span class="p">]</span>
+    <span class="n">patient</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="p">[</span><span class="n">emr</span><span class="p">,</span> <span class="n">art</span><span class="p">,</span> <span class="n">nin</span><span class="p">]</span>
+    <span class="c1"># print(json.dumps(patient.as_json()))</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://localhost:3000/Patient&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">patient</span><span class="o">.</span><span class="n">as_json</span><span class="p">()),</span> 
+                    <span class="n">pkcs12_filename</span><span class="o">=</span><span class="n">clientcert</span><span class="p">,</span> <span class="n">pkcs12_password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="n">servercert</span><span class="p">)</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">],</span> <span class="s2">&quot; | &quot;</span><span class="p">,</span> <span class="nb">round</span><span class="p">((</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;ms&quot;</span><span class="p">)</span> <span class="c1"># response.headers[&#39;Date&#39;]</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+</div>
+
+</div>
                 
                   
                 
@@ -934,7 +1111,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 19, 2020
+                        Last update: March 20, 2020
                       
                     </small>
                   </div>

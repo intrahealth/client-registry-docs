@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
     
       
     
@@ -627,8 +633,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -647,9 +653,45 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Decision Rules
+      </label>
+    
     <a href="./" title="Decision Rules" class="md-nav__link md-nav__link--active">
       Decision Rules
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-decision-rules" class="md-nav__link">
+    How to Set Decision Rules
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -780,8 +822,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -909,6 +951,29 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-set-decision-rules" class="md-nav__link">
+    How to Set Decision Rules
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -923,13 +988,13 @@
                 
                 
                 <h1 id="decision-rules">Decision Rules</h1>
-<h2>Overview</h2>
+<h2 id="overview">Overview</h2>
 <p>Demographic data from submitting systems is stored in HAPI FHIR. It is also recommended that the demographic data that is primarily stored in HAPI FHIR be indexed into Elasticsearch.</p>
 <p>For match processing, there are two options. One is run in mediator-only mode, which is highly flexible and supports a handful of algorithms that can be chained together. Additional algorithms can be added as needed. </p>
 <p>The second is to use ES. ES is very fast and supports compound queries but currently only supports Levenshtein distance.  When using ES, every request to the FHIR Server is cached in ES.</p>
 <p>(One additional caveat for Levenshtein distance is that the mediator-only matching can support edit distances exceeding two, while ES edit distance cannot exceed two.)</p>
 <p>Every client wishing to use the Client Registry must be authenticated and authorized. See the configuration page for more information. </p>
-<h2>How to Set Decision Rules</h2>
+<h2 id="how-to-set-decision-rules">How to Set Decision Rules</h2>
 <p>Decision rules determine how matches are made among records, for example, by using a certain algorithm on one field and a different algorithm on another. </p>
 <p>Let's use the below example:</p>
 <p><code>rules.givenName</code> is used as one rule on the field givenName.</p>
@@ -1000,7 +1065,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../queriespy/" title="Example API Query (Python)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../basic_query_in_python/" title="Basic query in python" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1009,7 +1074,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Example API Query (Python)
+                Basic query in python
               </span>
             </div>
           </a>

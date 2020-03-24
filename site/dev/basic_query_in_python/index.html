@@ -13,7 +13,7 @@
         <meta name="description" content="Technical documentation for the Open Client Registry">
       
       
-        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/queriespy/">
+        <link rel="canonical" href="https://github.com/intrahealth/client-registry-docs/dev/basic_query_in_python/">
       
       
         <meta name="author" content="IntraHealth">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Example API Query (Python) - OpenCR Documentation</title>
+        <title>Basic query in python - OpenCR Documentation</title>
       
     
     
@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
     
       
     
@@ -91,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#example-api-query-python" tabindex="0" class="md-skip">
+      <a href="#duplicate-a-simple-curl-query-in-python" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -117,7 +123,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Example API Query (Python)
+                Basic query in python
               
             </span>
           
@@ -632,12 +638,37 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Basic query in python
+      </label>
     
-    <a href="./" title="Example API Query (Python)" class="md-nav__link md-nav__link--active">
-      Example API Query (Python)
+    <a href="./" title="Basic query in python" class="md-nav__link md-nav__link--active">
+      Basic query in python
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duplicate-a-simple-curl-query-in-python" class="md-nav__link">
+    Duplicate a simple cURL query in Python.
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -780,8 +811,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -906,8 +937,22 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#duplicate-a-simple-curl-query-in-python" class="md-nav__link">
+    Duplicate a simple cURL query in Python.
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
   
 </nav>
                   </div>
@@ -919,33 +964,43 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/queriespy.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/dev/basic_query_in_python.ipynb" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="example-api-query-python">Example API Query (Python)</h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This example is available in the Jupyter notebook at: <a href="https://github.com/intrahealth/client-registry/blob/master/examples/simple_query.ipynb">github.com/intrahealth/client-registry/examples/simple_query.ipynb</a></p>
-</div>
-<p>This is a simple query in Python exactly like the cURL query:</p>
-<div class="codehilite"><pre><span></span><code>curl --cert sampleclientcertificates/openmrs.p12 --cert-type p12 --cacert certificates/server_cert.pem -d @/Users/richard/src/github.com/openhie/client-registry/DemoData/patient1_openmrs.json -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -XPOST https://localhost:3000/addPatient
-</code></pre></div>
+                  <h1>Basic query in python</h1>
+                
+                <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-
-<p>The only requirement is a version of the requests package that has been modified to take p12 certs.</p>
-<div class="codehilite"><pre><span></span><code>pip3 install requests_pkcs12
-</code></pre></div>
-
-
-<p>Import the required modules.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="c1"># import requests modded dor pkcs12</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="c1"># import requests</span>
 <span class="kn">from</span> <span class="nn">requests_pkcs12</span> <span class="kn">import</span> <span class="n">get</span><span class="p">,</span> <span class="n">post</span>
 </code></pre></div>
 
 
-<p>This example assumes running from <code>github.com/intrahealth/client-registry/examples</code>. Change paths as required. Using the Path module ensures that the path resolution works in Mac, Linux, Windows.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">clientcert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/sampleclientcertificates&quot;</span><span class="p">)</span>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+This example is available in the Jupyter notebook at: <a href="https://github.com/intrahealth/client-registry-docs/blob/master/dev/simple_query_in_python.ipynb.ipynb">github.com/intrahealth/client-registry-docs/dev/simple_query_in_python.ipynb</a></p>
+<h3 id="duplicate-a-simple-curl-query-in-python">Duplicate a simple cURL query in Python.</h3>
+<div class="codehilite"><pre><span></span><code>curl --cert sampleclientcertificates/openmrs.p12 --cert-type p12 --cacert certificates/server_cert.pem -d @/Users/richard/src/github.com/openhie/client-registry/DemoData/patient1_openmrs.json -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -XPOST https://localhost:3000/Patient
+</code></pre></div>
+
+
+</div>
+</div>
+
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="c1"># This example assumes running from this folder in the repo</span>
+<span class="n">clientcert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/sampleclientcertificates&quot;</span><span class="p">)</span>
 <span class="n">clientcert</span> <span class="o">=</span> <span class="n">clientcert_folder</span> <span class="o">/</span> <span class="s2">&quot;openmrs.p12&quot;</span>
 
 <span class="n">servercert_folder</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;../server/certificates&quot;</span><span class="p">)</span>
@@ -957,14 +1012,33 @@
 </code></pre></div>
 
 
-<p>Define headers and initiated the POST request.</p>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
 <div class="codehilite"><pre><span></span><code><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://localhost:3000/Patient&quot;</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> 
                 <span class="n">pkcs12_filename</span><span class="o">=</span><span class="n">clientcert</span><span class="p">,</span> 
                 <span class="n">pkcs12_password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> 
                 <span class="n">verify</span><span class="o">=</span><span class="n">servercert</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </code></pre></div>
+
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">])</span>
+</code></pre></div>
+
+
+</div>
+
+</div>
                 
                   
                 
@@ -974,7 +1048,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: March 19, 2020
+                        Last update: March 20, 2020
                       
                     </small>
                   </div>

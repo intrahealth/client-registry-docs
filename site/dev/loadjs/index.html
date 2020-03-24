@@ -69,6 +69,12 @@
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
+      <link rel="stylesheet" href="../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../css/pandas-dataframe.css">
+    
     
       
     
@@ -625,8 +631,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../queriespy/" title="Example API Query (Python)" class="md-nav__link">
-      Example API Query (Python)
+    <a href="../basic_query_in_python/" title="Basic query in python" class="md-nav__link">
+      Basic query in python
     </a>
   </li>
 
@@ -767,9 +773,52 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Load Demo Data (JavaScript)
+      </label>
+    
     <a href="./" title="Load Demo Data (JavaScript)" class="md-nav__link md-nav__link--active">
       Load Demo Data (JavaScript)
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-node-packages" class="md-nav__link">
+    Install the Node Packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-script" class="md-nav__link">
+    Configure the Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-script" class="md-nav__link">
+    Running the Script
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -780,8 +829,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../loadpy/" title="Load Demo Data (Python)" class="md-nav__link">
-      Load Demo Data (Python)
+    <a href="../load_bulk_data_in_python/" title="Load bulk data in python" class="md-nav__link">
+      Load bulk data in python
     </a>
   </li>
 
@@ -909,6 +958,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-node-packages" class="md-nav__link">
+    Install the Node Packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-script" class="md-nav__link">
+    Configure the Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-the-script" class="md-nav__link">
+    Running the Script
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -924,17 +1003,17 @@
                 
                 <h1 id="load-demo-data-javascript">Load Demo Data (JavaScript)</h1>
 <p>Demonstration data is provided in the /tests directory in the <a href="https://github.com/intrahealth/client-registry">code repository</a>. </p>
-<h2>Install the Node Packages</h2>
-<div class="codehilite"><pre><span></span><code>cd tests
-npm install
+<h2 id="install-the-node-packages">Install the Node Packages</h2>
+<div class="codehilite"><pre><span></span><code><span class="err">cd tests</span>
+<span class="err">npm install</span>
 </code></pre></div>
 
 
-<h2>Configure the Script</h2>
+<h2 id="configure-the-script">Configure the Script</h2>
 <p>The /tests/uploadCSV.js script is used to upload the CSV data in the /tests directory.</p>
 <p>If using OpenHIM, then change the auth options and the IP address/hostname in /tests/uploadCSV</p>
-<div class="codehilite"><pre><span></span><code># make a copy to modify
-cp uploadCSV.js uploadCSV_mychanges.js
+<div class="codehilite"><pre><span></span><code><span class="err"># make a copy to modify</span>
+<span class="err">cp uploadCSV.js uploadCSV_mychanges.js</span>
 </code></pre></div>
 
 
@@ -960,16 +1039,14 @@ cp uploadCSV.js uploadCSV_mychanges.js
 
 
 <p>Notice the https as without OpenHIM the OpenCR Service encrypts the connections using TLS instead of OpenHIM doing so.</p>
-<h2>Running the Script</h2>
+<h2 id="running-the-script">Running the Script</h2>
 <p>While in the /tests directory, ensure that OpenCR is running and run the script, with the required argument of the CSV:</p>
 <div class="codehilite"><pre><span></span><code>sudo node uploadCSV_mychanges.js uganda_data_v21_20201501.csv
 </code></pre></div>
 
 
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>The script may take several hours to process all of the records.</p>
-</div>
+<p>!!! caution
+    The script may take several hours to process all of the records.</p>
                 
                   
                 
@@ -1016,13 +1093,13 @@ cp uploadCSV.js uploadCSV_mychanges.js
           </a>
         
         
-          <a href="../loadpy/" title="Load Demo Data (Python)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../load_bulk_data_in_python/" title="Load bulk data in python" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Load Demo Data (Python)
+                Load bulk data in python
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

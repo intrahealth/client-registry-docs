@@ -7,10 +7,11 @@ OpenCR is not one application, instead it's a set of applications that work toge
 
 The OpenCR architecture includes:
 
-* The [**Open Health Information Mediator (OpenHIM)**](http://openhim.org) (Optional): The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions. OpenHIM is optional but the administrator must manage users and node access in some manner if not with OpenHIM.
+* The [**OpenCR Service**](https://github.com/intrahealth/client-registry): The API for managing queries, routing traffic to the components, and overall entrypoint. It is written in Node JS.
 * The [**HAPI FHIR Server**](http://hapifhir.io): HAPI is the reference FHIR server in Java and scalable into production environments.
 * The [**ElasticSearch**](http://elastic.co/products/elasticsearch): Elasticsearch is a powerful search engine that is highly performant.
-* An **optional UI** to view and break matches between records, and to select and chain together decision rules around matching algorithms.
+* An **optional UI** to view and break matches between records, and view matching histories (audit events).
+* The [**Open Health Information Mediator (OpenHIM)**](http://openhim.org) (Optional): The OpenHIM is the entrypoint for POS systems, and includes authentication (are you who you say you are?), authorization (what roles do you have permission to fulfill?), and auditing of all transactions. OpenHIM is optional but the administrator must manage users and node access in some manner if not with OpenHIM.
 
 ![Alt text](images/production_architecture.png "Production Architecture")
 

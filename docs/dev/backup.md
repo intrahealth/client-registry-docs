@@ -2,7 +2,7 @@
 
 # Backup
 
-The primary datastore is the database configured for HAPI FHIR Server. This means that while an ES cluster should be backed-up, the ES index can be rebuilt from HAPI. 
+The primary datastore is the database of HAPI FHIR Server. This means that while an ES cluster should be backed-up, the ES index can be rebuilt from HAPI. 
 
 * Either Postgres or MySQL are recommended to be used with HAPI FHIR Server. In production, database should be cloned or replicas created and cloned and those backups tested.
 
@@ -12,6 +12,6 @@ The primary datastore is the database configured for HAPI FHIR Server. This mean
 
 # Recovery Policy
 
-* Backups should be tested for their ability to be used for recovery. There are existing online resources on how to test backups. 
+* Backups should be tested in a non-production system for their ability to be used for recovery. There are existing online resources on how to test backups. 
 
 * A backup policy should include scheduled recovery tests to ensure that backups are suitable.
