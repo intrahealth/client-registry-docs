@@ -37,7 +37,6 @@ nav:
   - User Manual: 
     - 'user/introduction.md'
     - 'user/process.md'
-    - 'user/benchmarks.md'
     - 'user/ui.md'
     - 'user/guide.md'
     - 'user/roles.md'
@@ -74,18 +73,18 @@ markdown_extensions:
       guess_lang: false
   - toc:
       toc_depth : "1-1"
-  - footnotes
+  - codehilite
+  # - pdf-export:
+  #     combined: true
+  # - footnotes
   #     permalink: true
-
+  
 # https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
 plugins:
   - search
   - git-revision-date-localized
   - mknotebooks
-markdown_extensions:
-  - codehilite
-  # - pdf-export:
-  #     combined: true
+
 
 # theme:
 # logo: 'images/logo.png' must be 128x128
