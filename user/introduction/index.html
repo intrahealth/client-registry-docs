@@ -440,38 +440,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Introduction
-      </label>
-    
     <a href="./" title="Introduction" class="md-nav__link md-nav__link--active">
       Introduction
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-does-opencr-do" class="md-nav__link">
-    What does OpenCR do?
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -494,20 +465,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../benchmarks/" title="Matching Benchmarks" class="md-nav__link">
-      Matching Benchmarks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ui/" title="Admin Interface" class="md-nav__link">
-      Admin Interface
+    <a href="../ui/" title="User Interface (CRUX)" class="md-nav__link">
+      User Interface (CRUX)
     </a>
   </li>
 
@@ -942,22 +901,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-does-opencr-do" class="md-nav__link">
-    What does OpenCR do?
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -974,15 +917,17 @@
                 <h1 id="introduction">Introduction</h1>
 <p>OpenCR is an open source and standards-based client registry. A client registry facilitates the exchange of patient information between disparate systems. A client registry holds patient identifers and may include patient demographic information. It is a necessary tool for public health to help manage patients, monitor outcomes, and conduct case-based surveillance.</p>
 <p>A client registry sits within a health information exchange (HIE). An HIE is used to safely and effectively exchange information. A critical component of an HIE are registries, such as those to manage a shared, canonical facility list, practitioners, and patients. </p>
-<h2 id="what-does-opencr-do">What does OpenCR do?</h2>
+<h2>What does OpenCR do?</h2>
 <p>OpenCR is offers the ability to:</p>
 <ul>
 <li>Assign and look-up unique identifiers,</li>
 <li>Allow connections from diverse point of service (POS) systems, such as electronic medical record (EMR) systems, that can submit messages in FHIR, and</li>
 <li>Configure decision rules around patient matching.</li>
 </ul>
-<p>!!! caution
-    This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.</p>
+</div>
 <p>The process for a point-of-service system like an EMR to get a unique ID from the Client Registry is straightforward though it looks complicated at first.</p>
 <ol>
 <li>A POS provides some demographic information to the Client Registry.</li>
@@ -991,8 +936,10 @@
 <li>If there is not an existing record, the Client Registry makes a new one and provides a unique ID back to the POS.</li>
 </ol>
 <p>As noted in the introduction, the Client Registry provides a unique identifier that also links to all other already matched records from submitting systems. This means that the Client Registry stores an identifier from submitting systems so that it can uniquely identify according to however the submitting systems store their records, but it also produces a UID for the entire domain using the service.</p>
-<p>!!! warning
-    The below workflows the Client Registry does not store or provide clinical data. Such processes are external to the Client Registry and must be separately created, governed, and enabled. </p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The below workflows the Client Registry does not store or provide clinical data. Such processes are external to the Client Registry and must be separately created, governed, and enabled. </p>
+</div>
                 
                   
                 

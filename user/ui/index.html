@@ -42,7 +42,7 @@
     
     
       
-        <title>Admin Interface - OpenCR Documentation</title>
+        <title>User Interface (CRUX) - OpenCR Documentation</title>
       
     
     
@@ -97,7 +97,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#admin-interface" tabindex="0" class="md-skip">
+      <a href="#user-interface-crux" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -123,7 +123,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Admin Interface
+                User Interface (CRUX)
               
             </span>
           
@@ -454,18 +454,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../benchmarks/" title="Matching Benchmarks" class="md-nav__link">
-      Matching Benchmarks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -476,8 +464,8 @@
       
     
     
-    <a href="./" title="Admin Interface" class="md-nav__link md-nav__link--active">
-      Admin Interface
+    <a href="./" title="User Interface (CRUX)" class="md-nav__link md-nav__link--active">
+      User Interface (CRUX)
     </a>
     
   </li>
@@ -926,7 +914,52 @@
                   <a href="https://github.com/intrahealth/client-registry-docs/edit/master/docs/user/ui.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="admin-interface">Admin Interface</h1>
+                <h1 id="user-interface-crux">User Interface (CRUX)</h1>
+<p>The OpenCR User Interface (CRUX) is a key way to monitor the operation of OpenCR. With CRUX, you can:</p>
+<ul>
+<li>View matches, break matches, revert broken matches</li>
+<li>Verifying FHIR messages are being processed correctly from submitting systems</li>
+<li>Validating matching is working as expected</li>
+<li>Perform deep inspection before putting it into production</li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>You may have access to the CRUX of a system, and that's a good thing. The CRUX allows users to be able to view any break any match, which includes viewing demographic data from submitting systems. It should be secure and only authorized users would be able to access it.</p>
+</div>
+<h2>Login</h2>
+<p>User must be added to the CRUX to be able to login.</p>
+<p><img alt="" src="../../images/cruxlogin.png" /></p>
+<h2>Landing Page</h2>
+<p>On landing inside CRUX, it display the records submitted in a row. These are individual records for POS that submit them. </p>
+<p><img alt="" src="../../images/cruxsplash.png" /></p>
+<p>It is easy to search for records on fields. In the below example, there are two records submitted that share the same CRUID. </p>
+<p><img alt="" src="../../images/cruxdupes.png" /></p>
+<h2>Record</h2>
+<p>The record page has a great deal of information, including:</p>
+<ul>
+<li>On the top right: All of the fields stored in the system</li>
+<li>On the top left: Matched records to the current one being viewed.</li>
+<li>Middle of the page: Broken matches, if they exist for the record.</li>
+<li>Bottom of the page: A history of all events affected the record, including creation, modification, and the decision rules used to make the matches.</li>
+</ul>
+<p><img alt="" src="../../images/cruxrecord.png" /></p>
+<h2>Matched Records and Break Match</h2>
+<p>Matched records are listed in a compact table with links to other record. </p>
+<p>There is also an option to break one or all matches. </p>
+<p><img alt="" src="../../images/cruxbreakmatch.png" /></p>
+<h3>Break and Revert Matches</h3>
+<p>A match can be broken. When a match is broken, the patient record is no longer linked to it, therefore its CRUID changes. </p>
+<p>Once a match is broken, it may be reverted, meaning that the match can be reinstated.</p>
+<p><img alt="" src="../../images/cruxrevertmatch.png" /></p>
+<h2>History</h2>
+<p>The history card shows the set of decision rules and overall submission information about each history event. All events include any decision rules that were used to make those matches and the specific ElasticSearch query.</p>
+<p><img alt="" src="../../images/cruxhistoryoverall.png" /></p>
+<h3>Submission</h3>
+<p>The submission information includes when the event occurred, the status, and the IP address of the submitting system. (The address 127.0.0.1 in the example means within the same computer, not from the network, and is for example purposes only.)</p>
+<p><img alt="" src="../../images/cruxhistoryipaddr.png" /></p>
+<h3>Decision Rules</h3>
+<p>Decision rules include the overall rule to evaluate the chain of decision rules, which is either probabilistic or deterministic. Then the card shows each decision rule and its configuration. This card helps understand how a decision was made and is critical for evaluation purposes.</p>
+<p><img alt="" src="../../images/cruxhistorydecisionrules.png" /></p>
                 
                   
                 
@@ -936,7 +969,7 @@
                   <div class="md-source-date">
                     <small>
                       
-                        Last update: February 16, 2020
+                        Last update: March 25, 2020
                       
                     </small>
                   </div>
@@ -958,7 +991,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../benchmarks/" title="Matching Benchmarks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../process/" title="Record Linkage Process" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -967,7 +1000,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Matching Benchmarks
+                Record Linkage Process
               </span>
             </div>
           </a>
