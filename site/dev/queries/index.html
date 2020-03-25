@@ -454,20 +454,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user/benchmarks/" title="Matching Benchmarks" class="md-nav__link">
-      Matching Benchmarks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../user/ui/" title="Admin Interface" class="md-nav__link">
-      Admin Interface
+    <a href="../../user/ui/" title="User Interface (CRUX)" class="md-nav__link">
+      User Interface (CRUX)
     </a>
   </li>
 
@@ -629,45 +617,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Example API Query (cURL)
-      </label>
-    
     <a href="./" title="Example API Query (cURL)" class="md-nav__link md-nav__link--active">
       Example API Query (cURL)
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#certificates-mandatory" class="md-nav__link">
-    Certificates (Mandatory)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-cli-query" class="md-nav__link">
-    A Simple CLI Query
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -951,29 +903,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#certificates-mandatory" class="md-nav__link">
-    Certificates (Mandatory)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-simple-cli-query" class="md-nav__link">
-    A Simple CLI Query
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -988,11 +917,11 @@
                 
                 
                 <h1 id="example-api-query-curl">Example API Query (cURL)</h1>
-<h2 id="certificates-mandatory">Certificates (Mandatory)</h2>
+<h2>Certificates (Mandatory)</h2>
 <p>A system querying the Client Registry needs a server-issued certificate or it will not be authorized to use the service.</p>
 <p>The way that this works is that a server creates a certificate for a client. The certificate is signed by the server issuing it. The querying system then uses that certificate that has been issued to them in their requests. The server's public key is used by the querying system to verify that the certificate being sent is how the server verifies that the certificate was created by them.</p>
 <p>There is a set of generated certificates for testing and demonstrations. They are not appropriate for production.</p>
-<h2 id="a-simple-cli-query">A Simple CLI Query</h2>
+<h2>A Simple CLI Query</h2>
 <p>Inside /client-registry/server directory, a cURL query using the provided example JSON file would be:</p>
 <div class="codehilite"><pre><span></span><code>curl --cert sampleclientcertificates/openmrs.p12 --cert-type p12 --cacert certificates/server_cert.pem -d @/Users/richard/src/github.com/openhie/client-registry/DemoData/patient1_openmrs.json -H <span class="s2">&quot;Content-Type: application/json&quot;</span> -XPOST https://localhost:3000/Patient
 </code></pre></div>

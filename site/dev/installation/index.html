@@ -454,20 +454,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../user/benchmarks/" title="Matching Benchmarks" class="md-nav__link">
-      Matching Benchmarks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../user/ui/" title="Admin Interface" class="md-nav__link">
-      Admin Interface
+    <a href="../../user/ui/" title="User Interface (CRUX)" class="md-nav__link">
+      User Interface (CRUX)
     </a>
   </li>
 
@@ -725,59 +713,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Local Installation
-      </label>
-    
     <a href="./" title="Local Installation" class="md-nav__link md-nav__link--active">
       Local Installation
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hapi-fhir-server-cli" class="md-nav__link">
-    HAPI FHIR Server CLI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elasticsearch" class="md-nav__link">
-    ElasticSearch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opencr-service-and-ui" class="md-nav__link">
-    OpenCR Service and UI
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -965,43 +903,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hapi-fhir-server-cli" class="md-nav__link">
-    HAPI FHIR Server CLI
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#elasticsearch" class="md-nav__link">
-    ElasticSearch
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#opencr-service-and-ui" class="md-nav__link">
-    OpenCR Service and UI
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1016,25 +917,31 @@
                 
                 
                 <h1 id="local-installation">Local Installation</h1>
-<p>!!! note "Time to complete"
-    60 Minutes</p>
-<p>!!! warning
-    This guide is for demonstrations or tests only, not for production environments.</p>
-<p>!!! note
-    This installation method requires familiarity with the command line.</p>
-<h2 id="prerequisites">Prerequisites</h2>
+<div class="admonition note">
+<p class="admonition-title">Time to complete</p>
+<p>60 Minutes</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This guide is for demonstrations or tests only, not for production environments.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This installation method requires familiarity with the command line.</p>
+</div>
+<h2>Prerequisites</h2>
 <ul>
 <li>CPU/RAM: Modern CPUs with 8GB RAM.</li>
 <li>Java version 8 (1.8). Oracle-licensed Java (requires sign-in) and <a href="https://adoptopenjdk.net">AdoptOpenJDK</a> (not sign-in required) have been tested.</li>
 <li><a href="https://nodejs.org/en/download/package-manager">Node 10</a> which includes npm.</li>
 <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a></li>
 </ul>
-<h2 id="hapi-fhir-server-cli">HAPI FHIR Server CLI</h2>
+<h2>HAPI FHIR Server CLI</h2>
 <p>For non-production environments, the HAPI maintainers provide a simple CLI-based tool to run it.</p>
 <p>The only required dependency is Java &gt;= 8 (1.8).</p>
 <p>See <a href="https://smilecdr.com/hapi-fhir/docs/tools/hapi_fhir_cli.html">HAPI FHIR CLI</a> for instructions for the OS of choice.</p>
 <p>The Client Registry requires FHIR version R4 and HAPI must be started for this version. To run HAPI:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">hapi-fhir-cli run-server -v r4</span>
+<div class="codehilite"><pre><span></span><code>hapi-fhir-cli run-server -v r4
 </code></pre></div>
 
 
@@ -1045,11 +952,11 @@
 </code></pre></div>
 
 
-<h2 id="elasticsearch">ElasticSearch</h2>
+<h2>ElasticSearch</h2>
 <p>Install and start ES for the intended OS. See the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html">ES install instructions</a></p>
 <p>The required version is &gt;=7.5.</p>
 <p>The phonetic analysis package must be installed. For example:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic</span>
+<div class="codehilite"><pre><span></span><code>/usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-phonetic
 </code></pre></div>
 
 
@@ -1059,21 +966,21 @@
 
 
 <p>Status should be yellow for a single-node cluster.</p>
-<h2 id="opencr-service-and-ui">OpenCR Service and UI</h2>
+<h2>OpenCR Service and UI</h2>
 <p>Clone the repository into a directory of choice.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">git clone https://github.com/intrahealth/client-registry.git</span>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/intrahealth/client-registry.git
 </code></pre></div>
 
 
 <p>Enter the server directory, install node packages.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">cd client-registry/server</span>
-<span class="err">npm install</span>
+<div class="codehilite"><pre><span></span><code>cd client-registry/server
+npm install
 </code></pre></div>
 
 
 <p>Copy and edit the configuration file to your liking.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">cp config/config_development_template.json config/config_development.json</span>
-<span class="err"># edit the servers...</span>
+<div class="codehilite"><pre><span></span><code>cp config/config_development_template.json config/config_development.json
+# edit the servers...
 </code></pre></div>
 
 
@@ -1082,8 +989,8 @@
 <li>Change <code>fhirServer.baseURL</code> to "http://localhost:8080/baseR4/"</li>
 </ul>
 <p>Run the server from inside client-registry/server:</p>
-<div class="codehilite"><pre><span></span><code><span class="err"># from client-registry/server</span>
-<span class="err">sudo NODE_ENV=development node lib/app.js</span>
+<div class="codehilite"><pre><span></span><code># from client-registry/server
+sudo NODE_ENV=development node lib/app.js
 </code></pre></div>
 
 

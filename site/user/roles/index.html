@@ -456,20 +456,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../benchmarks/" title="Matching Benchmarks" class="md-nav__link">
-      Matching Benchmarks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../ui/" title="Admin Interface" class="md-nav__link">
-      Admin Interface
+    <a href="../ui/" title="User Interface (CRUX)" class="md-nav__link">
+      User Interface (CRUX)
     </a>
   </li>
 
@@ -500,45 +488,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Roles and Responsibilities
-      </label>
-    
     <a href="./" title="Roles and Responsibilities" class="md-nav__link md-nav__link--active">
       Roles and Responsibilities
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    Responsibilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roles" class="md-nav__link">
-    Roles
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -949,29 +901,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#responsibilities" class="md-nav__link">
-    Responsibilities
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#roles" class="md-nav__link">
-    Roles
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -986,7 +915,7 @@
                 
                 
                 <h1 id="roles-and-responsibilities">Roles and Responsibilities</h1>
-<h2 id="responsibilities">Responsibilities</h2>
+<h2>Responsibilities</h2>
 <p>There are a great deal of responsibilities that must be addresses for a successful implementation beyond the OpenHIE Implementation Guide.</p>
 <ul>
 <li><strong>Which systems will connect to the CR and how will support for querying the CR be implemented on the POS side?</strong> There is emerging FHIR support for POS systems but features will need to be added to submit and process the queries. The Developer Guide includes a link to a reference implementation for OpenMRS MPI Client.</li>
@@ -996,7 +925,7 @@
 <li><strong>Who is responsible for providing preprocessed data to the CR?</strong> The CR accepts formatted FHIR messages. It does not impose its own algorithms for cleaning. Connecting POS systems must provide data in the correct format and preprocess the data before sending. Updates can be made to incorrect demographic data later and those will be added to existing records.</li>
 <li><strong>How will systems launch and scaling up be managed?</strong> What network and compute resources are available for deployment. Advanced Linux systems administration skills are required to launch and maintain the CR in production.</li>
 </ul>
-<h2 id="roles">Roles</h2>
+<h2>Roles</h2>
 <p>In actual practice, there are specific roles.</p>
 <ul>
 <li><strong>Point-of-service systems users</strong>: POS systems use the Client Registry to obtain a CRUID. This process is mostly invisible. Users of EMRs and other systems submitting queries may only see that there is a CRUID for a patient. The Client Registry is invisible to them.</li>

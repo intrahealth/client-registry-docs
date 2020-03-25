@@ -465,20 +465,8 @@
 
 
   <li class="md-nav__item">
-    <a href="user/benchmarks/" title="Matching Benchmarks" class="md-nav__link">
-      Matching Benchmarks
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="user/ui/" title="Admin Interface" class="md-nav__link">
-      Admin Interface
+    <a href="user/ui/" title="User Interface (CRUX)" class="md-nav__link">
+      User Interface (CRUX)
     </a>
   </li>
 
@@ -928,21 +916,25 @@
                 
                 <h1 id="welcome">Welcome</h1>
 <p><em>Thank you for taking an interest in the Open Client Registry (OpenCR)! This is a community project and meant for others to adopt to their use cases as they wish.</em></p>
-<p>!!! tip
-    Regardless if you're just curious, an implementer, or a developer, please read the this Overview tab first and then the User Manual. We've kept them short.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Regardless if you're just curious, an implementer, or a developer, please read the this Overview tab first and then the User Manual. We've kept them short.</p>
+</div>
 <h1 id="what-is-opencr">What is OpenCR?</h1>
 <p>OpenCR is an open source and standards-based client registry. A client registry facilitates the exchange of patient information between disparate systems. A client registry holds patient identifers and may include patient demographic information. It is a necessary tool for public health to help manage patients, monitor outcomes, and conduct case-based surveillance.</p>
 <p>A client registry sits within a health information exchange (HIE). An HIE is used to safely and effectively exchange information. A critical component of an HIE are registries, such as those to manage a shared, canonical facility list, practitioners, and patients. </p>
-<h2 id="what-does-opencr-do">What does OpenCR do?</h2>
+<h2>What does OpenCR do?</h2>
 <p>OpenCR is offers the ability to:</p>
 <ul>
 <li>Assign and look-up unique identifiers,</li>
 <li>Allow connections from diverse point of service (POS) systems, such as lab systems and electronic medical record (EMR) systems, that can submit messages in FHIR,</li>
 <li>Configure decision rules around patient matching.</li>
 </ul>
-<p>!!! caution
-    This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.</p>
-<h2 id="use-cases">Use Cases</h2>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This implementation does not allow point-of-service systems to get patient demographic information stored in the Client Registry. This is also not a Shared Health Record, nor does it contain patient clinical data.</p>
+</div>
+<h2>Use Cases</h2>
 <p>The Client Registry is one component in a more complex HIS architecture needed to accomplish important use cases, such as:</p>
 <ul>
 <li>
@@ -952,8 +944,10 @@
 <p><strong>Tracking patients lost to clinical care</strong>: EMRs are often not interoperable with one another, resulting in difficulty tracking patients as they move between facilities to seek care. A Client Registry will help data managers to track patients, decreasing instances of duplicate and incomplete records, patients LTFU, and sub-optimal care. </p>
 </li>
 </ul>
-<p>!!! caution
-    The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a way to enable use cases like deduplication - which must be an external process. </p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The Client Registry is not deduplicating or even touching patient clinical and demographic records within point-of-service systems. Instead, it provides a way to enable use cases like deduplication - which must be an external process. </p>
+</div>
 <h1 id="about">About</h1>
 <p>OpenCR was developed by IntraHealth International with support from PEPFAR through the USAID MEASURE Evaluation Project. Technical direction was provided by CDC. </p>
                 

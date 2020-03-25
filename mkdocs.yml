@@ -48,7 +48,7 @@ nav:
     - 'Getting Started':
       - 'dev/docker.md'
       - 'dev/queries.md'
-      - 'dev/basic_query_in_python.ipynb'
+      - 'notebooks/basic_query_in_python.ipynb'
       - 'dev/decision_rules.md'
     - 'Installation':
       - 'dev/requirements.md'
@@ -58,7 +58,7 @@ nav:
       - 'dev/installation_full.md'
     - 'Load Bulk Data':
       - 'dev/loadjs.md'
-      - 'dev/load_bulk_data_in_python.ipynb'
+      - 'notebooks/load_bulk_data_in_python.ipynb'
     - 'Production Considerations':
       - 'dev/security.md'
       - 'dev/backup.md'
