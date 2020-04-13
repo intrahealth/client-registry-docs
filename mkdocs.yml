@@ -18,8 +18,8 @@ theme:
     primary: "blue grey"
     accent: "indigo"
   language: "en"
-  feature:
-    tabs: true
+  features:
+    - tabs
   font:
     text: "Roboto"
     code: "Roboto Mono"
@@ -45,7 +45,7 @@ nav:
     - 'Introduction': 
       - 'dev/proficiencies.md'
       - 'dev/internals.md'
-    - 'Getting Started':
+    - 'Getting Started (Docker)':
       - 'dev/docker.md'
       - 'dev/queries.md'
       - 'notebooks/basic_query_in_python.ipynb'
@@ -73,17 +73,15 @@ markdown_extensions:
       guess_lang: false
   - toc:
       toc_depth : "1-1"
-  - codehilite
-  # - pdf-export:
-  #     combined: true
-  # - footnotes
-  #     permalink: true
+  - footnotes
   
-# https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
+# https://github.com/zhaoterryy/mkdocs-pdf-export-plugin not working
 plugins:
   - search
   - git-revision-date-localized
   - mknotebooks
+  # - pdf-export:
+  #     combined: true
 
 
 # theme:
