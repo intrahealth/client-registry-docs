@@ -84,6 +84,11 @@ plugins:
   # - pdf-export:
   #     combined: true
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/intrahealth/client-registry
+
 
 # theme:
 # logo: 'images/logo.png' must be 128x128
