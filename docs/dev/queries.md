@@ -1,5 +1,7 @@
 # Example API Query (cURL)
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 ## Certificates (Mandatory)
 
 A system querying the Client Registry needs a server-issued certificate or it will not be authorized to use the service.

@@ -1,5 +1,7 @@
 # Ansible
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 This documents how to use Ansible playbooks to set up a production-like server installation. It differs from a production installation in that certificates must not be self-signed in a production environment.
 
 > These steps are for installing on a server OS directly and require experience with remote configuration and Linux administration.

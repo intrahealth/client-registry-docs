@@ -1,5 +1,7 @@
 # Server Installation
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 !!! caution
     Installing and maintaining a production installation is not trivial. This installation method requires strong familiarity with the command line and expertise administering Linux environments. 
 

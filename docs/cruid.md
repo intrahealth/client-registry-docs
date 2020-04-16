@@ -1,5 +1,7 @@
 # Unique Identifiers
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 OpenCR creates unique idenfiers (CRUIDs) which provide the key for record linkage.
 
 ## Example

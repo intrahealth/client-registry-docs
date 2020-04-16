@@ -1,5 +1,7 @@
 # Configuration
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 Often there are many records of the same person but in many people in different systems. The purpose of the Client Registry is to link patients in different systems, but not to transfer any data, neither clinical records nor demographic data. 
 
 !!! caution 

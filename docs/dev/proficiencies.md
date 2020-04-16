@@ -1,5 +1,7 @@
 # Proficiencies
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 ## Linux Systems Administration
 
 OpenCR is not one application, it's several and is expected to be run on Linux. Persons installing and managing OpenCR require advanced expertise with Linux. Here are the major topics where knowledge is required:

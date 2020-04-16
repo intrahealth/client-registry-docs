@@ -1,5 +1,7 @@
 # Load Demo Data (JavaScript)
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 Demonstration data is provided in the /tests directory in the [code repository](https://github.com/intrahealth/client-registry). 
 
 ## Install the Node Packages

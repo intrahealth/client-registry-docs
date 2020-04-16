@@ -1,5 +1,7 @@
 # Use Cases
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 At its core, OpenCR provides a unique identifier (UID) that also links to all other already matched records from submitting systems. This means that OpenCR stores an identifier from submitting systems so that it can uniquely identify according to however the submitting systems store their records, but it also produces a UID for the entire domain using the service.
 
 Several workflows are supported out-of-the-box depending on the POS-OpenCR use case. For example:

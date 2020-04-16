@@ -1,5 +1,7 @@
 # Security
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 !!! warning
     It is difficult (and irresponsible) to try to explain all of the best practices in computer security. This page focuses on how security is addressed in the Open Client Registry. The information may be incomplete. Where there is more clarity or information needed, please provide feedback in an [issue on GitHub](https://github.com/intrahealth/client-registry/issues/new) so that it can be added.
 

@@ -1,5 +1,7 @@
 # OpenMRS MPI Client
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 ## Demo
 
 This demo shows how a patient is registered in OpenMRS with the MPI module (see below) and how that patient shows up in OpenCR where matches can be viewed and broken.

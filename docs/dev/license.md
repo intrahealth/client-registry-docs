@@ -1,5 +1,7 @@
 ## License
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 ## CR Service
 
 The CR Service is under a permissive license.

@@ -1,5 +1,7 @@
 # Internals
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 ## ElasticSearch
 
 ES is a web service around the Apache Software Foundation-supported Lucene search engine. ES provides a JSON-based REST API, cluster management, and other value-add on top of Lucene. Many of the features discussed below are actually in Lucene, and are not specific to ES, although these docs refer to ES as including Lucene features. This can be confusing. ES means ES which includes Lucene.

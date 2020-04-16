@@ -1,5 +1,7 @@
 # Matching Process
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 This is an overview of the matching process. 
 
 ## Generic Matching Process

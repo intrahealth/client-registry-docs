@@ -25,6 +25,8 @@ These instructions have been tested on Linux and macOS.
 
 ## Instructions
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 * Clone the repository and change directory into the root folder.
 ```
 https://github.com/intrahealth/client-registry.git

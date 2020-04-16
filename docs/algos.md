@@ -1,5 +1,7 @@
 # Intro to Algorithms
 
+**This site is deprecated. Please visit the latest docs at:[https://intrahealth.github.io/client-registry/](https://intrahealth.github.io/client-registry/)**
+
 Algorithms can be deterministic, fuzzy, probabilistic, or a combination of approaches; most include some element of automatic matching plus human review. No perfect algorithm currently exists [^1]. Typically, the creator(s) of the client registry will agree on the appropriate threshold to determine a "match" and this may need to be recalibrated over time.
 
 ## Approaches
